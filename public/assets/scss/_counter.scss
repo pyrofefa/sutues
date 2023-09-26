@@ -1,0 +1,45 @@
+
+.single-counter-box {
+    text-align: center;
+    margin-bottom: 60px;
+    .counter-number span {
+        font-size: 70px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 1px;
+        color: #171717;
+        @media #{$xs} {
+            font-size: 50px;
+        }
+    }
+    
+    p.counter-number {
+        font-size: 40px;
+    }
+    
+    h6 {
+        font-size: 18px;
+        font-weight: 500;
+        @media #{$xs} {
+            font-size: 16px;
+        }
+    }
+}
+
+
+// Counter # 02
+
+.counter-wrapper-two {
+    margin-top: 50px;
+    .counter-number span {
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 1;
+    }
+    h6{
+        font-size: 18px;
+        @media #{$lg} {
+            font-size: 16px;
+        }
+    }
+}

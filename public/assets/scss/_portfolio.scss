@@ -1,0 +1,121 @@
+
+ul.port-menu {
+    list-style: none;
+    padding: 0;
+    margin-right: 10px;
+    @media #{$sm} {
+        float: left;
+    }
+
+    @media #{$xs} {
+        float: left;
+    }
+
+    &.recent{
+        float: none;
+    }
+  
+}
+
+
+ul.port-menu li {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 20px;
+    color: $black;
+    cursor: pointer;
+    
+
+    @media #{$sm} {
+        padding: 10px; 
+    }
+
+    @media #{$xs} {
+        padding: 10px; 
+    }
+    &:hover{
+        color: $primary_color;
+    }    
+}
+
+.portfolio-list {
+    overflow: hidden;
+    margin-left: -1%;
+    margin-top: 20px;
+}
+
+.single-portfolio-item {
+    float: left;
+    width: 31.50%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-color: #eee;
+    position: relative;
+    margin-left: 1%;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    
+    @media #{$md} {
+        width: 46%; 
+    }
+
+    @media #{$sm} {
+        width: 100%; 
+    }
+
+    @media #{$xs} {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .portfolio-details {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        transform: translateY(50px);
+        transition: all ease 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        span {
+            background: #fff;
+            padding: 10px;
+            border-radius: 0;
+            font-size: 14px;
+        }
+        
+        h5 {
+            background: #fff;
+            display: block;
+            padding: 10px 20px;
+            margin: 10px 0;    
+        }
+    }
+    &:hover .portfolio-details{
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+// Portfolio - Standard 
+
+.portfolio-title h3 {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.portfolio-title h6 {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #8b8b8b;
+    margin-top: 10px;
+}
+
+.single-portfolio-wrapper {
+    margin-bottom: 60px;
+}

@@ -1,0 +1,17 @@
+.cta-area {
+    position: relative;
+    z-index: 1;
+    height: 500px;
+    
+    h2 {
+        font-size: 80px;
+        font-weight: 500;
+        line-height: 90px;
+        @media #{$xs} {
+            font-size: 45px;
+            line-height: 50px;
+        }
+        
+    }
+}
+

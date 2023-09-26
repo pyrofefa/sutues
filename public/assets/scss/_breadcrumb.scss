@@ -1,0 +1,89 @@
+.breadcrumb-area {
+    background-image: url(../img/breadcrumb/about.jpg);
+}
+
+.breadcrumb-area {
+    height: 480px;
+    background-size: cover;
+    background-position: center bottom;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+	z-index: 1;
+
+    .breadcrumb-title {
+        position: relative;
+        z-index: 999;        
+    }
+	
+	& .breadcrumb-title h1 {
+		font-size: 65px;
+		font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: $white;
+        margin: 0;
+        
+        @media #{$md} {
+            font-size: 50px;
+           }
+    
+           @media #{$sm} {
+            font-size: 40px;
+           }
+
+           @media #{$xs} {
+            font-size: 40px;
+           }
+    }
+	
+}
+
+.service-bg {
+    background-image: url(../img/breadcrumb/service.jpg);
+}
+
+.contact-bread-bg {
+    background-image: url(../img/breadcrumb/contact-bg.jpg);
+}
+
+.faq-bg {
+    background-image: url(../img/breadcrumb/faq.jpg);
+    background-position: center;
+}
+
+.price-bg {
+    background-image: url(../img/breadcrumb/price.jpg);
+    background-position: center;
+}
+
+.port-standard {
+    background-image: url(../img/breadcrumb/portfolio-standard.jpg);
+    background-position: center;
+}
+
+.port-gallery {
+    background-image: url(../img/breadcrumb/portfolio-gallery.jpg);
+    background-position: center;
+}
+
+.port-slider {
+    background-image: url(../img/breadcrumb/portfolio-slider.jpg);
+    background-position: center;
+}
+
+.breadcrumb-area.port-list-layout .breadcrumb-title h1 {
+    font-size: 55px;
+    @media #{$xs} {
+        font-size: 40px;
+       }
+}
+
+.port-details {
+    background-image: url(../img/breadcrumb/portfolio-slider.jpg);
+    background-position: center;
+}
+
+

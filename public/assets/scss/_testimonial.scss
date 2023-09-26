@@ -1,0 +1,119 @@
+.quote-icon {
+    margin-bottom: 30px;
+}
+
+.testimonial-content p {
+    font-size: 30px;
+    line-height: 1.5;
+    @media #{$xs} {
+        font-size: 24px;
+    }
+}
+
+.testimonial-author {
+    margin-top: 30px;
+    img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    h6 {
+        color: #fff;
+        font-size: 18px;
+        margin-top: 30px;
+        span {
+            display: block;
+            opacity: .5;
+            font-size: 90%;
+            margin-top: 5px;
+        }
+    }
+}
+
+
+// Testimonial # 02
+
+.testimonial-two .testimonial-author h6 {
+    color: inherit;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+// Testimonial # 03
+
+#testimonial-3 {
+
+    .single-testimonial-item {
+        border: 1px solid #333;
+        padding: 40px 35px;
+    }
+    
+    .testimonial-rating i {
+        font-size: 16px;
+        color: #eee;
+        margin-bottom: 25px;
+    }
+
+    .testimonial-content {
+        margin-top: 20px;
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            color: #eee;
+        }
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .testimonial-thumb img {
+        border-radius: 50%;
+    }
+        
+    .testimonial-title {
+        padding-left: 15px;
+        h5 {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #eee;
+        }
+        p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 25px;
+        }
+    }
+        
+    .testimonial-carousel .owl-stage-outer {
+        margin: -15px;
+        padding: 15px;
+    }
+    
+    .testimonial-carousel .owl-dots button.owl-dot span {
+        width: 17px;
+        height: 8px;
+        background: #333;
+        margin-right: 10px;
+        margin-top: 20px;
+        transition: .3s;
+      }
+      
+      .testimonial-carousel .owl-dots button.owl-dot.active span {
+        width: 45px;
+        height: 8px;
+        background: #fff;
+    }
+      
+      .testimonial-carousel .owl-dots {
+        text-align: center;
+        margin-top: 50px;
+      }
+}
+
+.single-testimonial-item img {
+    width: inherit !important;
+  }
