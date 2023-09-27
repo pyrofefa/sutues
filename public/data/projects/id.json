@@ -1,0 +1,11 @@
+{
+  "projectId": {
+    "featureImg": "/assets/img/project/feature-img.jpg",
+    "year": "2023",
+    "client": "Private Residence",
+    "architect": "Mouroushi Hikoma",
+    "location": "Bali, Indonesia",
+    "galleryImg1": "/assets/img/portfolio/2.jpg",
+    "galleryImg2": "/assets/img/portfolio/6.jpg"
+  }
+}

@@ -17,7 +17,9 @@ onMounted(() => {
     <div class="navigation">
       <div class="container">
         <div class="header-inner-box">
-          <Link href="/" class="logo">Architex</Link>
+          <Link href="/" class="logo">
+            <img alt="" src="/assets/img/Header-Sutues.png" width="200" />
+          </Link>
           <div class="main-menu d-none d-lg-block">
             <ul>
               <li>
@@ -36,7 +38,7 @@ onMounted(() => {
                     <Link href="/">Objetivos</Link>
                   </li>
                   <li>
-                    <Link href="/">Secretarios generales</Link>
+                    <Link href="/secretarios">Secretarios generales</Link>
                   </li>
                   <li>
                     <Link href="/">Estructura organizacion</Link>
@@ -77,10 +79,33 @@ onMounted(() => {
               </li>
             </ul>
           </div>
-
           <MoblieMenu />
         </div>
       </div>
     </div>
   </div>
 </template>
+<style>
+  .main-menu ul > li > ul {
+    position: absolute;
+    top: 100%;
+    width: 230px;
+    background-color: #fff;
+    left: 0;
+    z-index: 999;
+    /*box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);*/
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.5s ease-in-out;
+    padding: 10px 0px;
+}
+.main-menu ul > li > ul li a {
+    display: block;
+    color: black;
+    padding: 12px 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+</style>

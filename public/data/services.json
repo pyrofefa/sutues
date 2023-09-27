@@ -1,0 +1,64 @@
+{
+  "services": [
+    {
+      "id": "1",
+      "icon": "/assets/img/icon/flat.png",
+      "title": "Structural Design",
+      "excerpt": "Neque porro quisquam est qui dolorem ipsum quia dolor"
+    },
+    {
+      "id": "2",
+      "icon": "/assets/img/icon/architecture.png",
+      "title": "Floor Planning",
+      "excerpt": "Neque porro quisquam est qui dolorem ipsum quia dolor"
+    },
+    {
+      "id": "3",
+      "icon": "/assets/img/icon/sketch.png",
+      "title": "Sketch Drawing",
+      "excerpt": "Neque porro quisquam est qui dolorem ipsum quia dolor"
+    },
+    {
+      "id": "4",
+      "icon": "/assets/img/icon/floor-plan.png",
+      "title": "Interior & Exterior",
+      "excerpt": "Neque porro quisquam est qui dolorem ipsum quia dolor"
+    },
+    {
+      "id": "5",
+      "icon": "/assets/img/icon/architecture.png",
+      "title": "Floor Planning",
+      "excerpt": "In dignissim libero et tincidunt congue. Mauris sed tellus lectus. Duis at consectetur quam. Quisque arcu neque, eleifend et metus"
+    },
+    {
+      "id": "6",
+      "icon": "/assets/img/icon/flat.png",
+      "title": "Concept Drawing",
+      "excerpt": "In dignissim libero et tincidunt congue. Mauris sed tellus lectus. Duis at consectetur quam. Quisque arcu neque, eleifend et metus"
+    },
+    {
+      "id": "7",
+      "icon": "/assets/img/icon/house-design.png",
+      "title": "Functional Spaces",
+      "excerpt": "In dignissim libero et tincidunt congue. Mauris sed tellus lectus. Duis at consectetur quam. Quisque arcu neque, eleifend et metus"
+    },
+    {
+      "id": "8",
+      "icon": "/assets/img/icon/floor-plan.png",
+      "title": "Interior Design",
+      "excerpt": "In dignissim libero et tincidunt congue. Mauris sed tellus lectus. Duis at consectetur quam. Quisque arcu neque, eleifend et metus"
+    },
+    {
+      "id": "9",
+      "icon": "/assets/img/icon/3d-cube.png",
+      "title": "3D Modeling",
+      "excerpt": "In dignissim libero et tincidunt congue. Mauris sed tellus lectus. Duis at consectetur quam. Quisque arcu neque, eleifend et metus"
+    },
+    {
+      "id": "10",
+      "icon": "/assets/img/icon/sketch.png",
+      "title": "Sketch Drawing",
+      "excerpt": "In dignissim libero et tincidunt congue. Mauris sed tellus lectus. Duis at consectetur quam. Quisque arcu neque, eleifend et metus"
+    }
+  ]
+}

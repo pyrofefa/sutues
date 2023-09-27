@@ -1,0 +1,44 @@
+{
+  "testimonials": [
+    {
+      "id": "t1",
+      "img": "/assets/img/testimonials-img-2.png",
+      "comment": "Laudem aperiri oportere nec ad, vel et ceteros nominati et nula disputationi sed ea lorem vis prompta vis, ad mutat luptatum euripidis.",
+      "name": "Pual Scholes",
+      "rank": "Constraction Manager",
+      "rating": 0
+    },
+    {
+      "id": "t2",
+      "img": "/assets/img/testimonials-img-2.png",
+      "comment": "Laudem aperiri oportere nec ad, vel et ceteros nominati et nula disputationi sed ea lorem vis prompta vis, ad mutat luptatum euripidis.",
+      "name": "Ryans Gigs",
+      "rank": "Site Engineer",
+      "rating": 0
+    },
+    {
+      "id": "t3",
+      "img": "/assets/img/testimonial/1.jpg",
+      "comment": "I cannot believe that lorem all ipsum dolor amet, consectetur adipiscing elit. Tincidunt id sit turpis nunc mi.",
+      "name": "John Taylor",
+      "rank": "CEO at Creativex",
+      "rating": 5
+    },
+    {
+      "id": "t4",
+      "img": "/assets/img/testimonial/2.jpg",
+      "comment": "I cannot believe that lorem all ipsum dolor amet, consectetur adipiscing elit. Tincidunt id sit turpis nunc mi.",
+      "name": "Dorkas Key",
+      "rank": "CEO at Creativex",
+      "rating": 4
+    },
+    {
+      "id": "t5",
+      "img": "/assets/img/testimonial/3.jpg",
+      "comment": "I cannot believe that lorem all ipsum dolor amet, consectetur adipiscing elit. Tincidunt id sit turpis nunc mi.",
+      "name": "Darika Samak",
+      "rank": "CEO at Creativex",
+      "rating": 5
+    }
+  ]
+}

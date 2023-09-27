@@ -1,0 +1,43 @@
+{
+  "plans": [
+    {
+      "id": "1",
+      "plan": "Standard",
+      "value": 75,
+      "per": "Sq Feet",
+      "recommendation": "Residential Interior Design",
+      "feature": [
+        "Interior Design",
+        "Floor Planning",
+        "Home Decoration",
+        "Free Drawing"
+      ]
+    },
+    {
+      "id": "2",
+      "plan": "Advance",
+      "value": 150,
+      "per": "Sq Feet",
+      "recommendation": "Residential Interior Design",
+      "feature": [
+        "Interior Design",
+        "Floor Planning",
+        "Home Decoration",
+        "Free Drawing"
+      ]
+    },
+    {
+      "id": "3",
+      "plan": "Premium",
+      "value": 300,
+      "per": "Sq Feet",
+      "recommendation": "Residential Interior Design",
+      "feature": [
+        "Interior Design",
+        "Floor Planning",
+        "Home Decoration",
+        "Free Drawing"
+      ]
+    }
+  ]
+}

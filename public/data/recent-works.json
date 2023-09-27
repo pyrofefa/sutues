@@ -1,0 +1,24 @@
+{
+  "works": [
+    {
+      "id": "1",
+      "title": "Exhibition Center",
+      "tag": "Interior"
+    },
+    {
+      "id": "2",
+      "title": "Hall Room",
+      "tag": "Interior"
+    },
+    {
+      "id": "3",
+      "title": "Residential Block",
+      "tag": "Interior"
+    },
+    {
+      "id": "4",
+      "title": "Commercial Room",
+      "tag": "Interior"
+    }
+  ]
+}

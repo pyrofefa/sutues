@@ -1,0 +1,92 @@
+{
+  "team": [
+    {
+      "id": "1",
+      "name": "Jason Mount",
+      "designation": "Founder",
+      "img": "/assets/img/team/1.jpg",
+      "social": {
+        "fb": "#",
+        "tw": "#",
+        "ln": "#"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Rio Ferdinernd",
+      "designation": "Founder",
+      "img": "/assets/img/team/2.jpg",
+      "social": {
+        "fb": "#",
+        "tw": "#",
+        "ln": "#"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Namania Vidic",
+      "designation": "Founder",
+      "img": "/assets/img/team/3.jpg",
+      "social": {
+        "fb": "#",
+        "tw": "#",
+        "ln": "#"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Patric Evra",
+      "designation": "Founder",
+      "img": "/assets/img/team/4.jpg",
+      "social": {
+        "fb": "#",
+        "tw": "#",
+        "ln": "#"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Roy Kane",
+      "designation": "Founder",
+      "img": "/assets/img/team/5.jpg",
+      "social": {
+        "fb": "#",
+        "tw": "#",
+        "ln": "#"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Phil Jhones",
+      "designation": "Founder",
+      "img": "/assets/img/team/6.jpg",
+      "social": {
+        "fb": "#",
+        "tw": "#",
+        "ln": "#"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Alex Hevertz",
+      "designation": "Founder",
+      "img": "/assets/img/team/7.jpg",
+      "social": {
+        "fb": "#",
+        "tw": "#",
+        "ln": "#"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Frank Lamperd",
+      "designation": "Founder",
+      "img": "/assets/img/team/8.jpg",
+      "social": {
+        "fb": "#",
+        "tw": "#",
+        "ln": "#"
+      }
+    }
+  ]
+}

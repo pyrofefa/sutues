@@ -1,0 +1,100 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "img": "/assets/img/project/1.jpg",
+      "name": "Fastin Meseum",
+      "location": "2R Edward Ave",
+      "category": "",
+      "tags": ""
+    },
+    {
+      "id": "2",
+      "img": "/assets/img/project/2.jpg",
+      "name": "Station Home",
+      "location": "2R Edward Ave",
+      "category": "",
+      "tags": ""
+    },
+    {
+      "id": "3",
+      "img": "/assets/img/project/3.jpg",
+      "name": "Fastin Meseum",
+      "location": "2R Edward Ave",
+      "category": "",
+      "tags": ""
+    },
+    {
+      "id": "4",
+      "img": "/assets/img/project/4.jpg",
+      "name": "Station Home",
+      "location": "2R Edward Ave",
+      "category": "",
+      "tags": ""
+    },
+    {
+      "id": "5",
+      "img": "/assets/img/portfolio/1.jpg",
+      "name": "Micalu Meseum",
+      "location": "",
+      "category": "Construction",
+      "tags": "design building construction"
+    },
+    {
+      "id": "6",
+      "img": "/assets/img/portfolio/2.jpg",
+      "name": "Hall Room",
+      "location": "",
+      "category": "Interior",
+      "tags": "interior"
+    },
+    {
+      "id": "7",
+      "img": "/assets/img/portfolio/3.jpg",
+      "name": "Drawing Room",
+      "location": "",
+      "category": "Interior",
+      "tags": "interior"
+    },
+    {
+      "id": "8",
+      "img": "/assets/img/portfolio/4.jpg",
+      "name": "National Perliament",
+      "location": "",
+      "category": "Construction",
+      "tags": "construction building"
+    },
+    {
+      "id": "9",
+      "img": "/assets/img/portfolio/5.jpg",
+      "name": "Pentagone House",
+      "location": "",
+      "category": "Architecture",
+      "tags": "interior building"
+    },
+    {
+      "id": "10",
+      "img": "/assets/img/portfolio/6.jpg",
+      "name": "Kitchen Cabinet",
+      "location": "",
+      "category": "Interior",
+      "tags": "building"
+    },
+    {
+      "id": "11",
+      "img": "/assets/img/portfolio/7.jpg",
+      "name": "String ",
+      "location": "",
+      "category": "Business",
+      "tags": "building"
+    },
+    {
+      "id": "12",
+      "img": "/assets/img/portfolio/8.jpg",
+      "name": "Pentagun",
+      "location": "",
+      "category": "Business",
+      "tags": "building"
+    }
+  ]
+}

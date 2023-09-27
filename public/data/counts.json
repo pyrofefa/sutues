@@ -1,0 +1,28 @@
+{
+  "counts": [
+    {
+      "id": "1",
+      "number": 1037,
+      "project": "Project Completed",
+      "suffix": ""
+    },
+    {
+      "id": "2",
+      "number": 156,
+      "project": "Qualified Architect",
+      "suffix": ""
+    },
+    {
+      "id": "3",
+      "number": 750,
+      "project": "Work Facilities",
+      "suffix": "+"
+    },
+    {
+      "id": "4",
+      "number": 30,
+      "project": "Worldwide Branches",
+      "suffix": "+"
+    }
+  ]
+}

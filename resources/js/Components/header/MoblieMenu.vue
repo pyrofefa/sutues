@@ -1,4 +1,6 @@
 <script setup>
+import { Link } from '@inertiajs/vue3'
+
 import { onMounted } from "vue";
 
 onMounted(() => {
@@ -38,14 +40,14 @@ onMounted(() => {
               <a class="has-arrow" href="#">Homes</a>
               <ul class="sub-menu">
                 <li>
-                  <router-link :to="{ name: 'home' }">Home - One</router-link>
+                  <Link  href="/">Home - One</Link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'home2' }">Home - Two</router-link>
+                  <Link  href="/">Home - Two</Link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'home3' }"
-                    >Home - Three</router-link
+                  <Link  href="/"
+                    >Home - Three</Link
                   >
                 </li>
               </ul>
@@ -54,21 +56,21 @@ onMounted(() => {
               <a class="has-arrow" href="#">Pages</a>
               <ul class="sub-menu">
                 <li>
-                  <router-link :to="{ name: 'about' }">About</router-link>
+                  <Link  href="/">About</Link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'services' }">Services</router-link>
+                  <Link  href="/">Services</Link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'team' }">Our Team</router-link>
+                  <Link  href="/">Our Team</Link>
                 </li>
                 <li>
-                  <router-link :to="{ name: 'price' }"
-                    >Pricing Plans</router-link
+                  <Link  href="/"
+                    >Pricing Plans</Link
                   >
                 </li>
                 <li>
-                  <router-link :to="{ name: 'faq' }">FaQ Page</router-link>
+                  <Link  href="/">FaQ Page</Link>
                 </li>
               </ul>
             </li>
@@ -76,18 +78,18 @@ onMounted(() => {
               <a class="has-arrow" href="#">Portfolio</a>
               <ul class="sub-menu">
                 <li>
-                  <router-link :to="{ name: 'portfolioStandard' }"
-                    >Standard</router-link
+                  <Link href="/"
+                    >Standard</Link
                   >
                 </li>
                 <li>
-                  <router-link :to="{ name: 'portfolioGallery' }"
-                    >Gallery</router-link
+                  <Link  href="/"
+                    >Gallery</Link
                   >
                 </li>
                 <li>
-                  <router-link :to="{ name: 'portfolioSlider' }"
-                    >Slider</router-link
+                  <Link  href="/"
+                    >Slider</Link
                   >
                 </li>
                 <li class="nav-item">
@@ -97,27 +99,27 @@ onMounted(() => {
                   </a>
                   <ul class="sub-menu-two">
                     <li>
-                      <router-link :to="{ name: 'portfolioLayout2' }"
-                        >Two Columns</router-link
+                      <Link  href="/"
+                        >Two Columns</Link
                       >
                     </li>
                     <li>
-                      <router-link :to="{ name: 'portfolioLayout3' }"
-                        >Three Columns</router-link
+                      <Link  href="/"
+                        >Three Columns</Link
                       >
                     </li>
                     <li>
-                      <router-link :to="{ name: 'portfolioLayout4' }"
-                        >Four Columns</router-link
+                      <Link  href="/"
+                        >Four Columns</Link
                       >
                     </li>
                   </ul>
                 </li>
 
                 <li>
-                  <router-link
-                    :to="{ name: 'portfolioDetails', params: { id: '1' } }"
-                    >Portfolio Details</router-link
+                  <Link
+                  href="/"
+                    >Portfolio Details</Link
                   >
                 </li>
               </ul>
@@ -126,18 +128,18 @@ onMounted(() => {
               <a class="has-arrow" href="#">Blog</a>
               <ul class="sub-menu">
                 <li>
-                  <router-link :to="{ name: 'blogs' }">Blogs</router-link>
+                  <Link  href="/">Blogs</Link>
                 </li>
                 <li>
-                  <router-link
-                    :to="{ name: 'blogDetails', params: { id: '1' } }"
-                    >Blog Details</router-link
+                  <Link
+                  href="/"
+                    >Blog Details</Link
                   >
                 </li>
               </ul>
             </li>
             <li>
-              <router-link :to="{ name: 'contact' }">Contact</router-link>
+              <Link  href="/">Contact</Link>
             </li>
           </ul>
         </nav>
@@ -148,8 +150,8 @@ onMounted(() => {
           <a href="tel:123-456-7890"
             ><i class="fal fa-phone"></i>123-456-7890</a
           >
-          <router-link :to="{ name: 'contact' }" class="theme-btn bordered-btn"
-            >Contact Us</router-link
+          <Link  href="/" class="theme-btn bordered-btn"
+            >Contact Us</Link
           >
         </div>
       </div>

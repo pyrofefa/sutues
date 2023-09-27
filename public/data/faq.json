@@ -1,0 +1,29 @@
+{
+  "faq": [
+    {
+      "id": "1",
+      "question": "What services do architects provide?",
+      "answer": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum."
+    },
+    {
+      "id": "2",
+      "question": "At what point in my project should I involve an architect?",
+      "answer": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum."
+    },
+    {
+      "id": "3",
+      "question": "How do I find the right architect for my project?",
+      "answer": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum."
+    },
+    {
+      "id": "4",
+      "question": "Don't architects add substantial cost to a project?",
+      "answer": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum."
+    },
+    {
+      "id": "5",
+      "question": "Would I be better off using an Architectural Technician for smaller projects?",
+      "answer": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum."
+    }
+  ]
+}

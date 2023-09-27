@@ -1,0 +1,28 @@
+{
+  "service_categories": [
+    {
+      "id": "1",
+      "icon": "/assets/img/icon/align.png",
+      "title": "Residential",
+      "excerpt": "There are many variations of passages of Lorem Ipsum available, but the majority"
+    },
+    {
+      "id": "2",
+      "icon": "/assets/img/icon/layer.png",
+      "title": "Landscape",
+      "excerpt": "There are many variations of passages of Lorem Ipsum available, but the majority"
+    },
+    {
+      "id": "3",
+      "icon": "/assets/img/icon/zoom-in.png",
+      "title": "Exterior",
+      "excerpt": "There are many variations of passages of Lorem Ipsum available, but the majority"
+    },
+    {
+      "id": "4",
+      "icon": "/assets/img/icon/layers.png",
+      "title": "Interior",
+      "excerpt": "There are many variations of passages of Lorem Ipsum available, but the majority"
+    }
+  ]
+}

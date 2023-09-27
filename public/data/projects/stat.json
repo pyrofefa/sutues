@@ -1,0 +1,28 @@
+{
+  "stat": [
+    {
+      "id": "1",
+      "number": 8670,
+      "status": "Site Area",
+      "suffix": ""
+    },
+    {
+      "id": "2",
+      "number": 6700,
+      "status": "Building Surface",
+      "suffix": ""
+    },
+    {
+      "id": "3",
+      "number": 150,
+      "status": "Building Height",
+      "suffix": "+"
+    },
+    {
+      "id": "4",
+      "number": 36,
+      "status": "Number of Stories",
+      "suffix": "+"
+    }
+  ]
+}

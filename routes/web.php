@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [webController::class, 'index'])->name('inicio');
 Route::get('/conocenos', [webController::class, 'conocenos'])->name('conocenos');
+Route::get('/secretarios', [webController::class, 'secretarios'])->name('secretarios');
+
 
 
 require __DIR__.'/auth.php';

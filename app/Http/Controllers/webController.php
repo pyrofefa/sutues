@@ -13,4 +13,8 @@ class webController extends Controller
     {
         return Inertia::render('Web/Conocenos');
     }
+    public function secretarios()
+    {
+        return Inertia::render('Web/Secretarios');
+    }
 }

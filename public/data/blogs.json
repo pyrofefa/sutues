@@ -1,0 +1,58 @@
+{
+  "blogs": [
+    {
+      "id": "1",
+      "category": "Interior Design",
+      "published": "April 10, 2023",
+      "title": "Creative Design: A Structure of Passion",
+      "thumb_heading": "What to Expect When Working with an Interior Designer",
+      "excerpt": "Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci",
+      "img": "/assets/img/blog/1.jpg"
+    },
+    {
+      "id": "2",
+      "category": "Architecture",
+      "published": "April 10, 2023",
+      "thumb_heading": "Private Contemporary Home Balancing Openness",
+      "title": "Building Blocks: A Showcase of Architect",
+      "excerpt": "Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci",
+      "img": "/assets/img/blog/2.jpg"
+    },
+    {
+      "id": "3",
+      "category": "Exterior Design",
+      "published": "April 10, 2023",
+      "title": "Xcube: A beautiful Architectural Masterpiece",
+      "thumb_heading": "Stylish Modern Ranch Exuding a Welcoming Feel",
+      "excerpt": "Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci",
+      "img": "/assets/img/blog/3.jpg"
+    },
+    {
+      "id": "4",
+      "category": "Exterior Design",
+      "published": "April 10, 2023",
+      "thumb_heading": "Stylish Modern Ranch Exuding a Welcoming Feel",
+      "title": "Xcube: A beautiful Architectural Masterpiece",
+      "excerpt": "Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci",
+      "img": "/assets/img/blog/4.jpg"
+    },
+    {
+      "id": "5",
+      "category": "Architecture",
+      "published": "April 10, 2023",
+      "thumb_heading": "Private Contemporary Home Balancing Openness",
+      "title": "Building Blocks: A Showcase of Architect",
+      "excerpt": "Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci",
+      "img": "/assets/img/blog/5.jpg"
+    },
+    {
+      "id": "6",
+      "category": "Interior Design",
+      "published": "April 10, 2023",
+      "title": "Creative Design: A Structure of Passion",
+      "thumb_heading": "What to Expect When Working with an Interior Designer",
+      "excerpt": "Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci",
+      "img": "/assets/img/blog/6.jpg"
+    }
+  ]
+}
