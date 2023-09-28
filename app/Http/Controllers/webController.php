@@ -9,6 +9,10 @@ class webController extends Controller
     {
         return Inertia::render('Web/Inicio');
     }
+    public function history()
+    {
+        return Inertia::render('Web/History');
+    }
     public function conocenos()
     {
         return Inertia::render('Web/Conocenos');

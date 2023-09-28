@@ -40,7 +40,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [webController::class, 'index'])->name('inicio');
 Route::get('/conocenos', [webController::class, 'conocenos'])->name('conocenos');
-Route::get('/secretarios', [webController::class, 'secretarios'])->name('secretarios');
+
+Route::get('/historia', [webController::class, 'history'])->name('conocenos');
+Route::get('/secretarios', [webController::class, 'secretarios'])->name('history');
 
 
 

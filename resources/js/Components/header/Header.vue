@@ -26,7 +26,7 @@ onMounted(() => {
                 <a href="#">Conocenos <i class="las la-angle-down"></i></a>
                 <ul class="sub-menu">
                   <li>
-                    <Link href="/">Historia</Link>
+                    <Link href="/historia">Historia</Link>
                   </li>
                   <li>
                     <Link href="/">Misión</Link>
