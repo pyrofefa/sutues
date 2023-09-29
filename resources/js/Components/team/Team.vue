@@ -10,10 +10,8 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <Header />
   <div class="team-section section-padding pb-60">
     <div class="container">
-      <BreadcrumbTwo />
       <div class="row">
         <div class="section-title">
           <h2>Secretarios Generales</h2>
@@ -26,13 +24,6 @@ onMounted(async () => {
             <div class="team-info">
               <h5>{{ t.name }}</h5>
               <p>{{ t.designation }}</p>
-            </div>
-            <div class="social-icon">
-              <a :href="t.social.fb">
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-              <a :href="t.social.tw"><i class="lab la-twitter"></i></a>
-              <a :href="t.social.ln"><i class="lab la-linkedin"></i></a>
             </div>
           </div>
         </div>

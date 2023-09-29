@@ -7,7 +7,12 @@
         <!-- Fonts -->
         <!-- Scripts -->
         @routes
-            @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
+            @vite([
+                'resources/js/app.js', 
+                "resources/js/Pages/{$page['component']}.vue",
+                'resources/js/assets/backToTop.js'
+                
+                ])
         @inertiaHead  
         <!-- Font Awesome CSS -->
         <link href="{{ asset('assets/css/fontAwesomePro.css') }}" rel="stylesheet" />
@@ -58,7 +63,6 @@
         <!-- Nice Select JS -->
         <script src="{{ asset('/assets/js/jquery.nice-select.min.js') }}"></script>
         <!-- Back To Top JS -->
-        <script src="{{ asset('/assets/js/backToTop.js') }}"></script>
         <!-- Metis Menu JS -->
         <script src="{{ asset('/assets/js/metismenu.js') }}"></script>
         <!-- Progress Bar JS -->

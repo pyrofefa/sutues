@@ -5,8 +5,7 @@
         <div class="col-xl-6 col-lg-6 col-md-12">
           <div class="about-content-wrap">
             <div class="section-title">
-              <h6>Nosotros</h6>
-              <h2>Historia</h2>
+              <h3>Sindicato Único de Trabajadores de la Universidad Estatal de Sonora</h3>
             </div>
             <p>
               Nulla gravida dignissim magna, lacinia suscipit diam. Ut ut
@@ -15,9 +14,7 @@
               pretium mauris nec consequat. Sed condimentum pellentesque lorem.
               Phasellus imperdiet mi ultrices, tristique est vitae
             </p>
-            <div class="section-title">
-              <h2>Mision</h2>
-            </div>
+            <br>
             <p>
               Nulla gravida dignissim magna, lacinia suscipit diam. Ut ut
               viverra velit. Aenean et felis arcu. Aliquam vitae justo erat.
@@ -25,9 +22,7 @@
               pretium mauris nec consequat. Sed condimentum pellentesque lorem.
               Phasellus imperdiet mi ultrices, tristique est vitae
             </p>
-            <div class="section-title">
-              <h2>Vision</h2>
-            </div>
+            <br>
             <p>
               Nulla gravida dignissim magna, lacinia suscipit diam. Ut ut
               viverra velit. Aenean et felis arcu. Aliquam vitae justo erat.
