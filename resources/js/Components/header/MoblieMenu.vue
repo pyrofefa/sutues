@@ -27,131 +27,79 @@ onMounted(() => {
   <div class="mobile-nav-bar d-block col-sm-1 col-6 d-lg-none">
     <div class="mobile-nav-wrap">
       <div id="hamburger">
-        <i class="las la-bars"></i>
+        <i class="fa-solid fa-bars"></i>
       </div>
       <!-- mobile menu - responsive menu  -->
       <div class="mobile-nav">
         <button type="button" class="close-nav">
-          <i class="las la-times-circle"></i>
+          <i class="fa-solid fa-close"></i>
         </button>
         <nav class="sidebar-nav">
           <ul class="metismenu" id="mobile-menu">
             <li>
-              <a class="has-arrow" href="#">Homes</a>
+              <a class="has-arrow" href="#">Conócenos</a>
               <ul class="sub-menu">
                 <li>
-                  <Link  href="/">Home - One</Link>
+                    <Link href="/conocenos/historia">Historia</Link>
                 </li>
                 <li>
-                  <Link  href="/">Home - Two</Link>
+                    <Link href="/conocenos/estatutos">Estatutos</Link>
                 </li>
                 <li>
-                  <Link  href="/"
-                    >Home - Three</Link
-                  >
+                    <Link href="/conocenos/objetivos">Objetivos</Link>
+                </li>
+                <li>
+                    <Link href="/conocenos/secretarios">Secretarios Generales</Link>
+                </li>
+                <li>
+                    <Link href="/conocenos/estuctura-organizacional">Estructura Organizacional</Link>
+                </li>
+                <li>
+                    <Link href="/conocenos/comite">Comité Actual</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a class="has-arrow" href="#">Pages</a>
+              <a href="#">Documentos</a>
+            </li>
+            <li>
+              <a href="#">Convocatorias</a>
+            </li>
+            <li>
+              <a class="has-arrow" href="#">Transparencia</a>
               <ul class="sub-menu">
                 <li>
-                  <Link  href="/">About</Link>
+                    <Link href="/">Procedimiento de solicitud</Link>
                 </li>
                 <li>
-                  <Link  href="/">Services</Link>
+                    <Link href="/">Oficina de Enlace</Link>
                 </li>
                 <li>
-                  <Link  href="/">Our Team</Link>
+                    <Link href="/">Comité de Transparencia</Link>
                 </li>
                 <li>
-                  <Link  href="/"
-                    >Pricing Plans</Link
-                  >
-                </li>
-                <li>
-                  <Link  href="/">FaQ Page</Link>
+                    <Link href="/">Obligaciones de Transparencia</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a class="has-arrow" href="#">Portfolio</a>
-              <ul class="sub-menu">
-                <li>
-                  <Link href="/"
-                    >Standard</Link
-                  >
-                </li>
-                <li>
-                  <Link  href="/"
-                    >Gallery</Link
-                  >
-                </li>
-                <li>
-                  <Link  href="/"
-                    >Slider</Link
-                  >
-                </li>
-                <li class="nav-item">
-                  <a href="#"
-                    >List Layouts <i class="las la-arrow-right"></i>
-                    <span class="sub-nav-toggler"></span>
-                  </a>
-                  <ul class="sub-menu-two">
-                    <li>
-                      <Link  href="/"
-                        >Two Columns</Link
-                      >
-                    </li>
-                    <li>
-                      <Link  href="/"
-                        >Three Columns</Link
-                      >
-                    </li>
-                    <li>
-                      <Link  href="/"
-                        >Four Columns</Link
-                      >
-                    </li>
-                  </ul>
-                </li>
-
-                <li>
-                  <Link
-                  href="/"
-                    >Portfolio Details</Link
-                  >
-                </li>
-              </ul>
+              <a href="#">Documentos</a>
             </li>
             <li>
-              <a class="has-arrow" href="#">Blog</a>
-              <ul class="sub-menu">
-                <li>
-                  <Link  href="/">Blogs</Link>
-                </li>
-                <li>
-                  <Link
-                  href="/"
-                    >Blog Details</Link
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link  href="/">Contact</Link>
+              <a href="#">Convocatorias</a>
             </li>
           </ul>
         </nav>
         <div class="action-bar">
-          <a href="mailto:info@architex.com"
-            ><i class="las la-envelope"></i>info@architex.com</a
-          >
-          <a href="tel:123-456-7890"
-            ><i class="fal fa-phone"></i>123-456-7890</a
+          <a href="#">
+            <i class="fa-solid fa-location-dot fa-xl"></i>
+            Ley Federal del Trabajo, S/N esquina con Perimetral. Universidad Estatal de Sonora.
+          </a>
+          <a href="tel:+5216622851152"
+            ><i class="fal fa-phone"></i>(662) 285 1152</a
           >
           <Link  href="/" class="theme-btn bordered-btn"
-            >Contact Us</Link
+            >Contactanos</Link
           >
         </div>
       </div>
@@ -159,3 +107,37 @@ onMounted(() => {
     <div :class="route.name === 'home3' ? 'overlay-two' : 'overlay'"></div>
   </div>
 </template>
+<style>
+.mobile-nav {
+    position: fixed;
+    right: -380px;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    transition: right 0.5s ease-in;
+    background-color: #832e2d;
+    padding: 20px;
+    z-index: 9999;
+    box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);
+}
+.mobile-nav .sidebar-nav .metismenu a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    color: #fff;
+    outline-width: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #fff;
+}
+.mobile-nav .sidebar-nav .metismenu a:hover, .mobile-nav .sidebar-nav .metismenu a:focus, .mobile-nav .sidebar-nav .metismenu a:active {
+    text-decoration: none;
+    color: #f8f9fa;
+    background: #832e2d;
+}
+</style>

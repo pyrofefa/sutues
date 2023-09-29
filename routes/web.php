@@ -38,11 +38,16 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/', [webController::class, 'index'])->name('inicio');
-Route::get('/conocenos', [webController::class, 'conocenos'])->name('conocenos');
-
-Route::get('/historia', [webController::class, 'history'])->name('conocenos');
-Route::get('/secretarios', [webController::class, 'secretarios'])->name('history');
+/**SPA */
+Route::get('/', [webController::class, 'home'])->name('home');
+Route::prefix('conocenos')->group(function () {
+    Route::get('/historia', [webController::class, 'history'])->name('history');
+    Route::get('/estatutos', [webController::class, 'statutes'])->name('statutes');
+    Route::get('/objetivos', [webController::class, 'objectives'])->name('objectives');
+    Route::get('/secretarios', [webController::class, 'secretaries'])->name('secretaries');
+    Route::get('/estuctura-organizacional', [webController::class, 'organization'])->name('organization');
+    Route::get('/comite', [webController::class, 'staff'])->name('staff');
+})->name('about');
 
 
 

@@ -5,7 +5,7 @@ import MoblieMenu from "./MoblieMenu.vue";
 
 
 onMounted(() => {
-  
+
 });
 </script>
 <template>
@@ -23,28 +23,25 @@ onMounted(() => {
           <div class="main-menu d-none d-lg-block">
             <ul>
               <li>
-                <a href="#">Conocenos <i class="las la-angle-down"></i></a>
+                <a href="#">Conócenos<i class="las la-angle-down"></i></a>
                 <ul class="sub-menu">
                   <li>
-                    <Link href="/historia">Historia</Link>
+                    <Link href="/conocenos/historia">Historia</Link>
                   </li>
                   <li>
-                    <Link href="/">Misión</Link>
+                    <Link href="/conocenos/estatutos">Estatutos</Link>
                   </li>
                   <li>
-                    <Link href="/">Visión</Link>
+                    <Link href="/conocenos/objetivos">Objetivos</Link>
                   </li>
                   <li>
-                    <Link href="/">Objetivos</Link>
+                    <Link href="/conocenos/secretarios">Secretarios Generales</Link>
                   </li>
                   <li>
-                    <Link href="/secretarios">Secretarios generales</Link>
+                    <Link href="/conocenos/estuctura-organizacional">Estructura Organizacional</Link>
                   </li>
                   <li>
-                    <Link href="/">Estructura organizacion</Link>
-                  </li>
-                  <li>
-                    <Link href="/">Comité actual</Link>
+                    <Link href="/conocenos/comite">Comité Actual</Link>
                   </li>
                 </ul>
               </li>

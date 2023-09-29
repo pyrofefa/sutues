@@ -5,20 +5,26 @@ use Inertia\Inertia;
 
 class webController extends Controller
 {
-    public function index()
-    {
-        return Inertia::render('Web/Inicio');
+    public function home(){
+        return Inertia::render('Web/Home');
     }
-    public function history()
-    {
-        return Inertia::render('Web/History');
+    public function history(){
+        return Inertia::render('Web/About/History');
     }
-    public function conocenos()
-    {
-        return Inertia::render('Web/Conocenos');
+    public function statutes(){
+        return Inertia::render('Web/About/Statutes');
     }
-    public function secretarios()
-    {
-        return Inertia::render('Web/Secretarios');
+    public function objectives(){
+        return Inertia::render('Web/About/Objectives');
     }
+    public function secretaries(){
+        return Inertia::render('Web/About/Secretaries');
+    }
+    public function organization(){
+        return Inertia::render('Web/About/Organization');
+    }
+    public function staff(){
+        return Inertia::render('Web/About/Staff');
+    }
+
 }
