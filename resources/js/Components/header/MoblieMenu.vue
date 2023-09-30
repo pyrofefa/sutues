@@ -60,10 +60,10 @@ onMounted(() => {
               </ul>
             </li>
             <li>
-              <a href="#">Documentos</a>
+              <Link href="/documentos">Documentos</Link>
             </li>
             <li>
-              <a href="#">Convocatorias</a>
+              <Link href="/convocatorias">Convocatorias</Link>
             </li>
             <li>
               <a class="has-arrow" href="#">Transparencia</a>
@@ -83,10 +83,7 @@ onMounted(() => {
               </ul>
             </li>
             <li>
-              <a href="#">Documentos</a>
-            </li>
-            <li>
-              <a href="#">Convocatorias</a>
+              <Link href="/noticias">Noticias</Link>
             </li>
           </ul>
         </nav>

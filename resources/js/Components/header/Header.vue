@@ -46,10 +46,10 @@ onMounted(() => {
                 </ul>
               </li>
               <li>
-                <Link href="/conocenos">Documentos</Link>
+                <Link href="/documentos">Documentos</Link>
               </li>
               <li>
-                <Link href="/conocenos">Convocatorias</Link>
+                <Link href="/convocatorias">Convocatorias</Link>
               </li>
               <li>
                 <a href="#">Transparencia <i class="las la-angle-down"></i></a>
@@ -69,7 +69,7 @@ onMounted(() => {
                 </ul>
               </li>
               <li>
-                <Link href="/conocenos">Noticias</Link>
+                <Link href="/noticias">Noticias</Link>
               </li>
               <li>
                 <Link href="/conocenos">Contactanos</Link>

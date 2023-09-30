@@ -19,18 +19,16 @@
     <div class="about-section section-padding">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-6 col-md-7">
-                    <div class="about-content-wrap">
-                        <div class="section-title">
-                            <h4>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam harum voluptates totam ipsam! Pariatur enim maiores iure harum, officiis nam voluptatum quibusdam quisquam unde necessitatibus numquam provident ad quae eos!
-                            </h4>
-                        </div>
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="about-bg-wrapper">
+                        <img alt="our project design" src="/assets/img/organigrama-sutues1.jpg">
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-5">
+            </div>
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="about-bg-wrapper">
-                        <img alt="our project design" src="/assets/img/about/about-bg-1.jpg">
+                        <img alt="our project design" src="/assets/img/organigrama-sutues2.jpg">
                     </div>
                 </div>
             </div>
