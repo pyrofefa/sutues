@@ -7,7 +7,7 @@
   import BackToTop from '@/Components/BackToTop.vue'
 </script>
 <template>
-   <Header />
+  <Header />
   <HeroAreaTwo />
   <AboutSectionTwo />
   <Service /> 

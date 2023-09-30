@@ -95,7 +95,7 @@ onMounted(() => {
           <a href="tel:+5216622851152"
             ><i class="fal fa-phone"></i>(662) 285 1152</a
           >
-          <Link  href="/" class="theme-btn bordered-btn"
+          <Link  href="/contactanos" class="theme-btn bordered-btn"
             >Contactanos</Link
           >
         </div>

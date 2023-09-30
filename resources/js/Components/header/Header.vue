@@ -72,7 +72,7 @@ onMounted(() => {
                 <Link href="/noticias">Noticias</Link>
               </li>
               <li>
-                <Link href="/conocenos">Contactanos</Link>
+                <Link href="/contactanos">Contactanos</Link>
               </li>
             </ul>
           </div>

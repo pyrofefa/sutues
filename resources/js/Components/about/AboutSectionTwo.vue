@@ -1,5 +1,5 @@
 <template>
-  <div class="about-section section-padding">
+  <div class="about-section section-padding wow fadeInLeft animated" data-wow-delay="200ms">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-xl-6 col-lg-6 col-md-12">
