@@ -36,6 +36,9 @@ class webController extends Controller
     }
     public function news(){
         return Inertia::render('Web/News');
+    }
+    public function newsDetails($id){
+        return Inertia::render('Web/NewsDetail');
     }   
     public function contactUs(){
         return Inertia::render('Web/ContactUs');

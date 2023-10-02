@@ -10,12 +10,12 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <div class="team-section section-padding pb-60">
+  <div class="team-section section-padding pb-60 wow animated fadeInLeft" data-wow-delay="200ms">
     <div class="container">
       <div class="row">
-        <div class="section-title">
+        <!--<div class="section-title">
           <h2>Secretarios Generales</h2>
-        </div>
+        </div>-->
         <div v-for="t in team" :key="t.id" class="col-xl-3 col-lg-3 col-md-6">
           <div class="single-team-item">
             <div class="team-img">

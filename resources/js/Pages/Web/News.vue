@@ -1,6 +1,8 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
+    import { Link } from '@inertiajs/vue3'
+
 </script>
 <template>
     <Header />
@@ -26,14 +28,16 @@
                             <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
                         </a>
                         <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
+                            <span>
+                                <a href="#">Interior Design</a>
+                            </span>
                             <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
+                                <Link href="/noticias/1" class="">What to Expect When Working with an Interior Designer</Link>
                             </h3>
                             <div class="blog-date">
                                 <p>April 10, 2023</p>
                             </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
+                            <Link href="/noticias/1" class="read-more">Read More</Link>
                         </div>
                     </div>
                 </div>
