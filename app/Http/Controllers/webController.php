@@ -27,4 +27,21 @@ class webController extends Controller
         return Inertia::render('Web/About/Staff');
     }
 
+    //
+    public function documents(){
+        return Inertia::render('Web/Documents');
+    }
+    public function convocations(){
+        return Inertia::render('Web/Convocations');
+    }
+    public function news(){
+        return Inertia::render('Web/News');
+    }
+    public function newsDetails($id){
+        return Inertia::render('Web/NewsDetail');
+    }   
+    public function contactUs(){
+        return Inertia::render('Web/ContactUs');
+    }   
+    
 }

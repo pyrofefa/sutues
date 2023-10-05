@@ -48,6 +48,16 @@ Route::prefix('conocenos')->group(function () {
     Route::get('/estuctura-organizacional', [webController::class, 'organization'])->name('organization');
     Route::get('/comite', [webController::class, 'staff'])->name('staff');
 })->name('about');
+Route::get('/documentos', [webController::class, 'documents'])->name('documents');
+Route::get('/convocatorias', [webController::class, 'convocations'])->name('convocations');
+
+Route::get('/noticias', [webController::class, 'news'])->name('news');
+Route::get('/noticias/{id}', [webController::class, 'newsDetails'])->name('newsDetails');
+
+Route::get('/contactanos', [webController::class, 'contactUs'])->name('contactUs');
+
+
+
 
 
 

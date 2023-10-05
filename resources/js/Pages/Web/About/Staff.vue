@@ -1,10 +1,19 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
+    import { onMounted, ref } from "vue";
+    import axios from "axios";
+
+    const team = ref([]);
+
+    onMounted(async () => {
+    const { data: fetchedTeam } = await axios.get("/data/team.json");
+    team.value = fetchedTeam.team;
+    });
 </script>
 <template>
     <Header />
-    <div class="breadcrumb-area bread-bg">
+    <div class="breadcrumb-area bread-bg staff">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -16,27 +25,28 @@
             </div>
         </div>
     </div>
-    <div class="about-section section-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-6 col-md-7">
-                    <div class="about-content-wrap">
-                        <div class="section-title">
-                            <h4>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam harum voluptates totam ipsam! Pariatur enim maiores iure harum, officiis nam voluptatum quibusdam quisquam unde necessitatibus numquam provident ad quae eos!
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-5">
-                    <div class="about-bg-wrapper">
-                        <img alt="our project design" src="/assets/img/about/about-bg-1.jpg">
-                    </div>
-                </div>
+    <div class="team-section section-padding pb-60 wow animated fadeInLeft" data-wow-delay="200ms">
+    <div class="container">
+      <div class="row">
+        <div v-for="t in team" :key="t.id" class="col-xl-3 col-lg-3 col-md-6">
+          <div class="single-team-item">
+            <div class="team-img">
+              <img :alt="t.name" :src="t.img" />
             </div>
+            <div class="team-info">
+              <h5>{{ t.name }}</h5>
+              <p>{{ t.designation }}</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
     <Footer />
 </template>
-
+<style>
+.staff {
+    background-image: url(../../../../../public/assets/img/protesta_sutues.jpg);
+}
+</style>
 

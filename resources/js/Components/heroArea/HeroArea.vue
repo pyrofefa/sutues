@@ -14,8 +14,8 @@ onMounted(() => {
     smartSpeed: 2000,
     slideSpeed: 600,
     navText: [
-      "<i class='las la-arrow-left'></i>",
-      "<i class='las la-arrow-right'></i>",
+      "<i class='fa-solid fa-arrow-left'></i>",
+      "<i class='fa-solid fa-arrow-right'></i>",
     ],
     responsive: {
       0: {

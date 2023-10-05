@@ -60,10 +60,10 @@ onMounted(() => {
               </ul>
             </li>
             <li>
-              <a href="#">Documentos</a>
+              <Link href="/documentos">Documentos</Link>
             </li>
             <li>
-              <a href="#">Convocatorias</a>
+              <Link href="/convocatorias">Convocatorias</Link>
             </li>
             <li>
               <a class="has-arrow" href="#">Transparencia</a>
@@ -83,10 +83,7 @@ onMounted(() => {
               </ul>
             </li>
             <li>
-              <a href="#">Documentos</a>
-            </li>
-            <li>
-              <a href="#">Convocatorias</a>
+              <Link href="/noticias">Noticias</Link>
             </li>
           </ul>
         </nav>
@@ -98,7 +95,7 @@ onMounted(() => {
           <a href="tel:+5216622851152"
             ><i class="fal fa-phone"></i>(662) 285 1152</a
           >
-          <Link  href="/" class="theme-btn bordered-btn"
+          <Link  href="/contactanos" class="theme-btn bordered-btn"
             >Contactanos</Link
           >
         </div>
