@@ -37,7 +37,7 @@
                             <div class="blog-date">
                                 <p>April 10, 2023</p>
                             </div>
-                            <Link href="/noticias/1" class="read-more">Read More</Link>
+                            <Link href="/noticias/1" class="read-more">Leer más</Link>
                         </div>
                     </div>
                 </div>

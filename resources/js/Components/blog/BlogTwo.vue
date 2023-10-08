@@ -15,57 +15,52 @@ onBeforeMount(async () => {
 });
 </script>
 <template>
-  <div
-    class="blog-two section-padding pb-60"
-    :class="type ? 'blog-page' : 'blog-section '"
-  >
+  <div class="blog-two section-padding pb-10 blog-section">
     <div class="container">
-      <div v-if="!type" class="row justify-content-center">
+      <div class="row justify-content-center">
         <div class="col-xl-6 text-center">
           <div class="section-title">
-            <h6>Blog</h6>
-            <h2>Follow The Latest News</h2>
+            <h2>Sigue las últimas noticias</h2>
           </div>
         </div>
       </div>
-      <div class="row mt-40" v-if="blogs.length > 0">
-        <div
-          v-for="(blog, i) in type ? blogs : blogs.slice(0, 3)"
-          :key="blog.id"
-          class="col-xl-4 col-lg-4 col-md-6 col-12"
-        >
+      <div class="row mt-10">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
           <div class="single-blog-wrap">
             <div class="blog-bg">
-              <img :alt="blog.category" :src="blog.img" />
+              <img alt="Interior Design" src="/assets/img/blog/1.jpg">
             </div>
             <div class="blog-content">
-              <h3>
-                <router-link
-                  :to="{ name: 'blogDetails', params: { id: blog.id } }"
-                  >{{ blog.title }}</router-link
-                >
-              </h3>
-              <p>
-                {{ blog.excerpt }}
-              </p>
-              <router-link
-                class="details-link"
-                :to="{ name: 'blogDetails', params: { id: blog.id } }"
-                ><i class="las la-long-arrow-alt-right"></i
-              ></router-link>
+              <h3><a href="/blog/1" class="">Creative Design: A Structure of Passion</a></h3>
+              <p>Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci</p>
+              <a href="/blog/1" class="details-link"><i class="fa la-long-arrow-alt-right"></i></a>
             </div>
           </div>
         </div>
-        <ul v-if="type" class="pagination">
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li aria-current="page" class="page-item">
-            <a class="page-link" href="#">2</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#"><i class="las la-angle-right"></i></a>
-          </li>
-        </ul>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div class="single-blog-wrap">
+            <div class="blog-bg">
+              <img alt="Architecture" src="/assets/img/blog/2.jpg">
+            </div>
+            <div class="blog-content">
+              <h3><a href="/blog/2" class="">Building Blocks: A Showcase of Architect</a></h3>
+              <p>Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci</p>
+              <a href="/blog/2" class="details-link"><i class="las la-long-arrow-alt-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div class="single-blog-wrap">
+            <div class="blog-bg">
+              <img alt="Exterior Design" src="/assets/img/blog/3.jpg">
+            </div>
+            <div class="blog-content">
+              <h3><a href="/blog/3" class="">Xcube: A beautiful Architectural Masterpiece</a></h3>
+              <p>Maecenas ac sem rutrum, lacinia nisl in, luctus ex. Nam gravida porttitor orci</p>
+              <a href="/blog/3" class="details-link"><i class="las la-long-arrow-alt-right"></i></a>
+            </div>
+          </div>
+        </div><!--v-if-->
       </div>
     </div>
   </div>

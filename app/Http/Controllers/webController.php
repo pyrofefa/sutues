@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
+use App\Models\Secretary;
+
 class webController extends Controller
 {
     public function home(){
@@ -18,7 +20,10 @@ class webController extends Controller
         return Inertia::render('Web/About/Objectives');
     }
     public function secretaries(){
-        return Inertia::render('Web/About/Secretaries');
+        $secretaries = Secretary::with('person')->orderBy('period','desc')->get();
+        return Inertia::render('Web/About/Secretaries',[
+            'secretaries' => $secretaries
+        ]);
     }
     public function organization(){
         return Inertia::render('Web/About/Organization');
