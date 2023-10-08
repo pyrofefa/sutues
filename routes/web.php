@@ -7,6 +7,7 @@ use Inertia\Inertia;
 
 use App\Http\Controllers\webController;
 use App\Http\Controllers\Admin\SecretariesController;
+use App\Http\Controllers\Admin\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +20,6 @@ use App\Http\Controllers\Admin\SecretariesController;
 |
 */
 
-/*Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});*/
-
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -39,6 +31,7 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->group(function () {
         Route::resource('secretaries',SecretariesController::class);
+        Route::resource('staff',StaffController::class);
 
     })->name('admin');
 });

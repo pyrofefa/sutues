@@ -35,6 +35,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('secretaries.index')" :active="route().current('secretaries.index')">
                                     Secretarios Generales
                                 </NavLink>
+                                <NavLink :href="route('staff.index')" :active="route().current('staff.index')">
+                                    Comité Actual
+                                </NavLink>
                             </div>
                         </div>
 

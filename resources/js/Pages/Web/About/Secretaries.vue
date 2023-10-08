@@ -1,11 +1,9 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
-
     defineProps({ 
         secretaries: Array 
     });
-
 </script>
 <template>
     <Header />
@@ -27,7 +25,7 @@
                     <div class="row">
                         <div v-for="secretary in secretaries" :key="secretary.id" class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-team-item">
-                                <div class="team-img" v-if="secretaries.photo == null">
+                                <div class="team-img" v-if="secretaries.person.photo == null">
                                     <img :alt="secretary.person.name" src="/assets/img/secretary.jpeg" />
                                 </div>
                                 <div class="team-img" v-else>

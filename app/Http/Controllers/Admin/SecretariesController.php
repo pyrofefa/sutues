@@ -7,7 +7,6 @@ use Inertia\Inertia;
 use App\Models\Secretary;
 use App\Models\Person;
 
-
 class SecretariesController extends Controller
 {
     public function index(){
@@ -39,8 +38,7 @@ class SecretariesController extends Controller
             'secretary' => $secretary
         ]);
     }
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
         $person = Person::find($id);
         $person->name = $request->name;
         $person->last_name = $request->lastName;
@@ -53,9 +51,7 @@ class SecretariesController extends Controller
 
         return redirect()->route('secretaries.index')->with('message', 'Blog Updated Successfully');
     }
-
-    public function destroy($id)
-    {
+    public function destroy($id){
         $person = Person::find($id)->delete();
         $secretary = Secretary::where('person_id',$id)->delete();
         sleep(1);

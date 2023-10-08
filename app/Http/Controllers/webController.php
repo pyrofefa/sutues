@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 use App\Models\Secretary;
+use App\Models\Staff;
+
 
 class webController extends Controller
 {
@@ -29,7 +31,10 @@ class webController extends Controller
         return Inertia::render('Web/About/Organization');
     }
     public function staff(){
-        return Inertia::render('Web/About/Staff');
+        $staff = Staff::with('person')->get();
+        return Inertia::render('Web/About/Staff',[
+            'staff' => $staff
+        ]);
     }
 
     //
