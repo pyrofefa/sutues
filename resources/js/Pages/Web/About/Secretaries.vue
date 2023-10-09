@@ -25,7 +25,7 @@
                     <div class="row">
                         <div v-for="secretary in secretaries" :key="secretary.id" class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-team-item">
-                                <div class="team-img" v-if="secretaries.person.photo == null">
+                                <div class="team-img" v-if="secretary.person.photo == null">
                                     <img :alt="secretary.person.name" src="/assets/img/secretary.jpeg" />
                                 </div>
                                 <div class="team-img" v-else>

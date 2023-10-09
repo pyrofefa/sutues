@@ -5,7 +5,7 @@ use Inertia\Inertia;
 
 use App\Models\Secretary;
 use App\Models\Staff;
-
+use App\Models\News;
 
 class webController extends Controller
 {
@@ -45,10 +45,16 @@ class webController extends Controller
         return Inertia::render('Web/Convocations');
     }
     public function news(){
-        return Inertia::render('Web/News');
+        $news = News::with('type')->where('type_id',1)->get();
+        return Inertia::render('Web/News',[
+            'news' => $news
+        ]);
     }
     public function newsDetails($id){
-        return Inertia::render('Web/NewsDetail');
+        $news = News::find($id);
+        return Inertia::render('Web/NewsDetail',[
+            'news' => $news
+        ]);
     }   
     public function contactUs(){
         return Inertia::render('Web/ContactUs');

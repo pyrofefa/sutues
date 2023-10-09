@@ -38,6 +38,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('staff.index')" :active="route().current('staff.index')">
                                     Comité Actual
                                 </NavLink>
+                                <NavLink :href="route('news.index')" :active="route().current('news.index')">
+                                    Noticias
+                                </NavLink>
                             </div>
                         </div>
 

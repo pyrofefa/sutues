@@ -4,7 +4,7 @@ import { Head, Link, useForm  } from '@inertiajs/vue3'
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 
 defineProps({
-    secretaries: {
+    news: {
         type: Object,
         required: true,
     },
@@ -20,11 +20,11 @@ function destroy(id) {
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Noticia" />
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Secretarios Generales</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Noticias</h2>
         </template>
 
         <div class="py-12">
@@ -33,7 +33,7 @@ function destroy(id) {
                     <div class="p-6 bg-white border-b border-gray-200">
                         <div class="flex justify-between">
                             <Link
-                                :href="route('secretaries.create')"
+                                :href="route('news.create')"
                                 class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
                             >
                                 Nuevo 
@@ -43,21 +43,19 @@ function destroy(id) {
                             <table class="table-auto w-full">
                                 <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                     <tr>
-                                        <th class="px-4 py-2">Nombre</th>
-                                        <th class="px-4 py-2">Apellidos</th>
-                                        <th class="px-4 py-2">Perido</th>
+                                        <th class="px-4 py-2">Titulo</th>
+                                        <th class="px-4 py-2">Descripcion</th>
                                         <th class="px-4 py-2">Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-sm divide-y divide-gray-100" v-if="secretaries.length > 0">
-                                    <template v-for="secretary in secretaries">
+                                <tbody class="text-sm divide-y divide-gray-100" v-if="news.length > 0">
+                                    <template v-for="item in news">
                                         <tr>
-                                            <td class="border px-4">{{ secretary.person.name }}</td>
-                                            <td class="border px-4">{{ secretary.person.last_name }}</td>
-                                            <td class="border px-4">{{ secretary.period }}</td>
+                                            <td class="border px-4">{{ item.title }}</td>
+                                            <td class="border px-4">{{ item.description }}</td>
                                             <td class="border px-4 py-4" style="width: 300px">
-                                                <Link :href="route('secretaries.edit', secretary.person.id)" class="px-4 py-2 text-white bg-blue-600 rounded-lg">Editar</Link>
-                                                <PrimaryButton class="px-4 py-2 text-white bg-red-600 rounded-lg" @click="destroy(secretary.person.id)">
+                                                <Link :href="route('news.edit', item.id)" class="px-4 py-2 text-white bg-blue-600 rounded-lg">Editar</Link>
+                                                <PrimaryButton class="px-4 py-2 text-white bg-red-600 rounded-lg" @click="destroy(item.id)">
                                                     Eliminar
                                                 </PrimaryButton>
                                             </td>
@@ -67,7 +65,7 @@ function destroy(id) {
                                 </tbody>
                                 <tbody v-else>
                                     <tr class="bg-red-400 text-white text-center">
-                                        <td colspan="4" class="border px-4 py-2">No hay secretarios para mostrar</td>
+                                        <td colspan="4" class="border px-4 py-2">No hay noticias para mostrar</td>
                                     </tr>
                                 </tbody>
                             </table>

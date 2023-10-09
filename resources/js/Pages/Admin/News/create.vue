@@ -5,30 +5,23 @@ import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
-
-const props = defineProps({
-    secretary: {
-        type: Object,
-        default: () => ({}),
-    },
-});
+import CkEditor from "@/Components/CkEditor.vue";
 
 const form = useForm({
-    id: props.secretary.person.id,
-    name: props.secretary.person.name,
-    lastName: props.secretary.person.last_name,
-    period: props.secretary.period,
+    title: "",
+    description: "",
+    content: ""
 });
 
 const submit = () => {
-    form.put(route("secretaries.update", props.secretary.person.id));
+    form.post(route("news.store"));
 };
 </script>
 <template>
-    <Head title="Editar Secretario" />
+    <Head title="Crear Noticia" />
     <AuthenticatedLayout title="Crear proyecto">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Secretarios Generales</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Noticia</h2>
         </template>
         
         <div class="py-12">
@@ -37,59 +30,45 @@ const submit = () => {
                     <div class="p-6 bg-white border-b border-gray-200">
                         <form @submit.prevent="submit">
                             <div>
-                                <InputLabel for="name" value="Nombres" />
+                                <InputLabel for="title" value="Titulo" />
 
                                 <TextInput
-                                    id="name"
+                                    id="title"
                                     type="text"
                                     class="mt-1 block w-full"
-                                    v-model="form.name"
+                                    v-model="form.title"
                                     required
                                     autofocus
-                                    autocomplete="name"
+                                    autocomplete="title"
                                 />
 
                                 <InputError
                                     class="mt-2"
-                                    :message="form.errors.name"
+                                    :message="form.errors.title"
                                 />
                             </div>
 
                             <div class="my-6">
-                                <InputLabel for="lastName" value="Apellidos" />
+                                <InputLabel for="description" value="Descripcion" />
 
                                 <TextInput
-                                    id="lastName"
+                                    id="description"
                                     type="text"
                                     class="mt-1 block w-full"
-                                    v-model="form.lastName"
+                                    v-model="form.description"
                                     required
                                     autofocus
-                                    autocomplete="lastName"
+                                    autocomplete="description"
                                 />
 
                                 <InputError
                                     class="mt-2"
-                                    :message="form.errors.lastName"
+                                    :message="form.errors.description"
                                 />
                             </div>
                             <div class="my-6">
-                                <InputLabel for="period" value="Periodo" />
-
-                                <TextInput
-                                    id="period"
-                                    type="text"
-                                    class="mt-1 block w-full"
-                                    v-model="form.period"
-                                    required
-                                    autofocus
-                                    autocomplete="period"
-                                />
-
-                                <InputError
-                                    class="mt-2"
-                                    :message="form.errors.period"
-                                />
+                                <InputLabel for="content" value="Contenido" />                            
+                                <CkEditor v-model="form.content" />                               
                             </div>
                             <PrimaryButton
                                 type="submit"

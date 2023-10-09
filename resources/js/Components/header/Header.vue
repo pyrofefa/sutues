@@ -111,4 +111,12 @@ onMounted(() => {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+.main-menu ul > li > ul li a:hover {
+    display: block;
+    color: #832e2d;
+    padding: 12px 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 </style>
