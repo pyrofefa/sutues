@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('description');
             $table->integer('type_id');
             $table->longText('content');
+            $table->date('start');
+            $table->date('end');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

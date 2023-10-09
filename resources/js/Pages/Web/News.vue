@@ -34,15 +34,15 @@
                         </a>
                         <div class="blog-content">
                             <span>
-                                <a href="#">{{ item.title }}n</a>
+                                <a href="#">{{ item.title }}</a>
                             </span>
                             <h3>
-                                <Link :href="route('newsDetails', item.id)" class="">{{ item.description }}</Link>
+                                <Link :href="route('newsDetails', item.slug)" class="">{{ item.description }}</Link>
                             </h3>
                             <div class="blog-date">
                                 <p>{{ moment(item.updated_at).locale('es').format('LL') }}</p>
                             </div>
-                            <Link :href="route('newsDetails', item.id)" class="read-more">Leer más</Link>
+                            <Link :href="route('newsDetails', item.slug)" class="read-more">Leer más</Link>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,8 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import moment from 'moment'
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -21,6 +23,7 @@ createInertiaApp({
             .use(ZiggyVue, Ziggy)
             .use(CKEditor)
             .use(moment)
+            .use(VueDatePicker)
             .mount(el);
     },
     progress: {

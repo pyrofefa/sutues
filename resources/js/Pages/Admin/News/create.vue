@@ -6,11 +6,14 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import CkEditor from "@/Components/CkEditor.vue";
+import Datepicker from "@/Components/Datepicker.vue";
 
 const form = useForm({
     title: "",
     description: "",
-    content: ""
+    content: "",
+    start: "",
+    end: ""
 });
 
 const submit = () => {
@@ -49,6 +52,14 @@ const submit = () => {
                             </div>
 
                             <div class="my-6">
+                                <InputLabel for="description" value="Inicio" />
+                                <Datepicker v-model="form.start" />  
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="description" value="Final" />
+                                <Datepicker v-model="form.end" />  
+                            </div>
+                            <div class="my-6">
                                 <InputLabel for="description" value="Descripcion" />
 
                                 <TextInput
@@ -68,7 +79,7 @@ const submit = () => {
                             </div>
                             <div class="my-6">
                                 <InputLabel for="content" value="Contenido" />                            
-                                <CkEditor v-model="form.content" />                               
+                                <CkEditor v-model="form.content" />                                                               
                             </div>
                             <PrimaryButton
                                 type="submit"

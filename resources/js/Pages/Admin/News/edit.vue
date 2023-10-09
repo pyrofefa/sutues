@@ -26,7 +26,7 @@ const submit = () => {
 };
 </script>
 <template>
-    <Head title="Crear Noticia" />
+    <Head title="Editar Noticia" />
     <AuthenticatedLayout title="Crear proyecto">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Noticia</h2>

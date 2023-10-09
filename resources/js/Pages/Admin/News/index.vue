@@ -14,13 +14,13 @@ const form = useForm({});
 
 function destroy(id) {
     if (confirm("Are you sure you want to Delete")) {
-        form.delete(route("secretaries.destroy", id));
+        form.delete(route("news.destroy", id));
     }
 }
 </script>
 
 <template>
-    <Head title="Noticia" />
+    <Head title="Noticias" />
 
     <AuthenticatedLayout>
         <template #header>

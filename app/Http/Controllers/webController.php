@@ -50,8 +50,8 @@ class webController extends Controller
             'news' => $news
         ]);
     }
-    public function newsDetails($id){
-        $news = News::find($id);
+    public function newsDetails($slug){
+        $news = News::where('slug','=', $slug)->firstOrFail();
         return Inertia::render('Web/NewsDetail',[
             'news' => $news
         ]);
