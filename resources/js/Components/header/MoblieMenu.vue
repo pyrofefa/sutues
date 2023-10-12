@@ -85,6 +85,12 @@ onMounted(() => {
             <li>
               <Link href="/noticias">Noticias</Link>
             </li>
+            <li>
+                <Link href="/noticias">Proveedores</Link>
+              </li>
+            <li>
+                <a href="http://finanzas.sutues.org.mx/login.aspx">Sistema Financiero</a>
+            </li>
           </ul>
         </nav>
         <div class="action-bar">

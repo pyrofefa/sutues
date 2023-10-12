@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-5">
                     <div class="about-bg-wrapper">
-                        <img alt="our project design" src="/assets/img/about/about-bg-1.jpg">
+                        <img alt="our project design" src="/assets/img/history.png">
                     </div>
                 </div>
             </div>
@@ -59,5 +59,10 @@
     </div>
     <Footer />
 </template>
+<style>
+.history {
+    background-image: url(../../../../../public/assets/img/historyHeader.jpeg);
+}
+</style>
 
 

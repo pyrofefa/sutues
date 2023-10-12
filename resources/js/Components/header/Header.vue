@@ -72,7 +72,13 @@ onMounted(() => {
                 <Link href="/noticias">Noticias</Link>
               </li>
               <li>
+                <Link href="/noticias">Proveedores</Link>
+              </li>
+              <li>
                 <Link href="/contactanos">Contactanos</Link>
+              </li>
+              <li>
+                <a href="http://finanzas.sutues.org.mx/login.aspx" target="_blank">Sistema Financiero</a>
               </li>
             </ul>
           </div>
@@ -100,6 +106,14 @@ onMounted(() => {
 .main-menu ul > li > ul li a {
     display: block;
     color: black;
+    padding: 12px 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.main-menu ul > li > ul li a:hover {
+    display: block;
+    color: #832e2d;
     padding: 12px 25px;
     font-size: 12px;
     text-transform: uppercase;
