@@ -6,6 +6,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import CkEditor from "@/Components/CkEditor.vue";
+import Datepicker from "@/Components/Datepicker.vue";
 
 const props = defineProps({
     news: {
@@ -19,10 +20,16 @@ const form = useForm({
     title: props.news.title,
     description: props.news.description,
     content: props.news.content,
+    start:  props.news.start,
+    end:  props.news.end,
+    picture:  props.news.picture,
+    _method: "PUT"
 });
 
 const submit = () => {
-    form.put(route("news.update", props.news.id));
+    form.post(route("news.update", props.news.id),{
+        forceFormData: true,
+    });
 };
 </script>
 <template>
@@ -55,7 +62,17 @@ const submit = () => {
                                     :message="form.errors.title"
                                 />
                             </div>
-
+                            <div class="my-6">
+                                <InputLabel for="description" value="Inicio" />
+                                <Datepicker v-model="form.start" />  
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="description" value="Final" />
+                                <Datepicker v-model="form.end" />  
+                            </div>
+                              <div class="my-6">
+                                <input type="file" @input="form.picture = $event.target.files[0]" />
+                            </div>
                             <div class="my-6">
                                 <InputLabel for="description" value="Descripcion" />
 

@@ -13,11 +13,14 @@ const form = useForm({
     description: "",
     content: "",
     start: "",
-    end: ""
+    end: "",
+    picture:""
 });
 
 const submit = () => {
-    form.post(route("news.store"));
+    form.post(route("news.store"),{
+        forceFormData: true,
+    });
 };
 </script>
 <template>
@@ -60,6 +63,10 @@ const submit = () => {
                                 <Datepicker v-model="form.end" />  
                             </div>
                             <div class="my-6">
+                                <input type="file" @input="form.picture = $event.target.files[0]" />
+                            </div>
+
+                            <div class="my-6">
                                 <InputLabel for="description" value="Descripcion" />
 
                                 <TextInput
@@ -83,7 +90,7 @@ const submit = () => {
                             </div>
                             <PrimaryButton
                                 type="submit"
-                                :class="{ 'opacity-25': form.processing }"
+                                class="success"
                                 :disabled="form.processing"
                             >
                                 Guardar

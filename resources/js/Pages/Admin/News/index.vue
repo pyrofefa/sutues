@@ -40,7 +40,7 @@ function destroy(id) {
                             </Link>
                         </div>
                         <div class="mt-4">
-                            <table class="table-auto w-full">
+                            <table class="table table-striped">
                                 <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                     <tr>
                                         <th class="px-4 py-2">Titulo</th>

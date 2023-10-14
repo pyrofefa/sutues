@@ -19,6 +19,7 @@ const news = useForm({
     title: props.news.title,
     content: props.news.content,
     date: props.news.updated_at,
+    picture: props.news.picture,
 });
 
 const blog = ref({});
@@ -57,7 +58,8 @@ onMounted(() => {
         <div class="col-xl-8 col-lg-8 col-12">
           <div class="blog-content-wrap">
             <div class="blog-feature-img">
-              <img alt="blog feature" src="/assets/img/blog/blog-details-1.jpg" />
+              <img v-if="news.picture == null" alt="blog feature" src="/assets/img/blog/blog-details-1.jpg" />
+              <img v-else :alt="news.title" :src="'/storage/'+ news.picture"  /> 
             </div>
             <div v-html="news.content" />
           </div>          

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->integer('type_id');
             $table->longText('content');
+            $table->string('picture')->nullable();
             $table->date('start');
             $table->date('end');
             $table->string('slug')->unique();
