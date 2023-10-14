@@ -10,8 +10,6 @@
             @vite([
                 'resources/js/app.js',
                 "resources/js/Pages/{$page['component']}.vue",
-                'resources/js/assets/backToTop.js'
-
                 ])
         @inertiaHead
         <!-- Font Awesome CSS -->

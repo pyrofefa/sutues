@@ -2,12 +2,17 @@
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
     import { Link } from '@inertiajs/vue3'
+    import PaginationNews from '@/Components/PaginationNews.vue'
     import moment from 'moment/moment'
     import 'moment/locale/es';
     
-    defineProps({ 
-        news: Array 
+    defineProps({
+        news: {
+            type: Object,
+            default: () => ({}),
+        },
     });
+
 </script>
 <template>
     <Header />
@@ -27,7 +32,7 @@
         <div class="container">
             <!--v-if-->
             <div class="row mt-30">
-                <div v-for="item in news" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
+                <div v-for="item in news.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                         <a href="/blog/1" class="blog-img">
                             <img v-if="item.picture == null" alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
@@ -47,22 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <ul class="pagination">
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li aria-current="page" class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </li>
-                </ul>
+                <PaginationNews class="mt-6" :links="news.links" />
             </div>
         </div>
     </div>
