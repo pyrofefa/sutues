@@ -1,6 +1,7 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
+    import HeroAreaNews from '@/Components/heroArea/HeroAreaNews.vue'
     import { Link } from '@inertiajs/vue3'
     import PaginationNews from '@/Components/PaginationNews.vue'
     import moment from 'moment/moment'
@@ -16,18 +17,7 @@
 </script>
 <template>
     <Header />
-    <div class="breadcrumb-area bread-bg">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="breadcrumb-title">
-                        <h1>Noticias</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <HeroAreaNews :data="news.data" />
     <div class="blog-two section-padding pb-60 blog-page">
         <div class="container">
             <!--v-if-->
@@ -35,7 +25,7 @@
                 <div v-for="item in news.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                         <a href="/blog/1" class="blog-img">
-                            <img v-if="item.picture == null" alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
+                            <img v-if="item.picture == null" alt="Interior Design" class="img-fluid" src="/assets/img/newsHeader.png">
                             <img v-else :alt="item.title" :src="'/storage/'+ item.picture" class="img-fluid" /> 
                         </a>
                         <div class="blog-content">

@@ -19,5 +19,12 @@ class DatabaseSeeder extends Seeder
              'email' => 'test@example.com',
              'password' => Hash::make('password'),
          ]);
+
+         $this->call(CreateTypesSeeder::class);
+         $this->call(NewsSeeder::class);
+         $this->call(PeopleSeeder::class);
+         $this->call(SecretariesSeeder::class);
+         $this->call(OfficeSeeder::class);
+
     }
 }

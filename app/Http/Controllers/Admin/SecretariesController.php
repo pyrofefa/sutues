@@ -20,7 +20,7 @@ class SecretariesController extends Controller
     }
     public function store(Request $request){
         $person = new Person();
-        $person->name = $request->name;
+        $person->first_name = $request->name;
         $person->last_name = $request->lastName;
         $person->save();
 
@@ -40,7 +40,7 @@ class SecretariesController extends Controller
     }
     public function update(Request $request, $id){
         $person = Person::find($id);
-        $person->name = $request->name;
+        $person->first_name = $request->name;
         $person->last_name = $request->lastName;
         $person->save();
 

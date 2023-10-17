@@ -6,6 +6,8 @@ use Inertia\Inertia;
 
 use App\Models\Staff;
 use App\Models\Person;
+use App\Models\Office;
+use App\Models\Position;
 
 class StaffController extends Controller
 {
@@ -16,17 +18,23 @@ class StaffController extends Controller
         ]);
     }
     public function create(){
-        return Inertia::render('Admin/Staff/create');
+        $office = Office::all();
+        $position = Position::all();
+        return Inertia::render('Admin/Staff/create',[
+            'office' => $office,
+            'position' => $position
+        ]);
     }
     public function store(Request $request){
         $person = new Person();
-        $person->name = $request->name;
+        $person->first_name = $request->name;
         $person->last_name = $request->lastName;
         $person->save();
 
         $staff = new Staff();
         $staff->person_id = $person->id;
-        $staff->position = $request->position;
+        $staff->office_id = $request->office;
+        $staff->position_id = $request->position;
         $staff->save();
         sleep(1);
 
@@ -40,12 +48,14 @@ class StaffController extends Controller
     }
     public function update(Request $request, $id){
         $person = Person::find($id);
-        $person->name = $request->name;
+        $person->first_name = $request->name;
         $person->last_name = $request->lastName;
         $person->save();
 
         $staff = Staff::where('person_id',$id)->first();
-        $staff->position = $request->position;
+        $staff->position_id = $request->position;
+        $staff->office_id = $request->office;
+        $staff->position_id = $request->position;
         $staff->save();
         sleep(1);
 

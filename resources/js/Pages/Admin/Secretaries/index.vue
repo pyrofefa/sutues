@@ -28,7 +28,7 @@ function destroy(id) {
         </template>
 
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <div class="flex justify-between">
@@ -52,7 +52,7 @@ function destroy(id) {
                                 <tbody class="text-sm divide-y divide-gray-100" v-if="secretaries.length > 0">
                                     <template v-for="secretary in secretaries">
                                         <tr>
-                                            <td class="border px-4">{{ secretary.person.name }}</td>
+                                            <td class="border px-4">{{ secretary.person.first_name }}</td>
                                             <td class="border px-4">{{ secretary.person.last_name }}</td>
                                             <td class="border px-4">{{ secretary.period }}</td>
                                             <td class="border px-4 py-4" style="width: 300px">

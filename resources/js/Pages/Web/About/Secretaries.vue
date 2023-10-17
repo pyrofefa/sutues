@@ -26,13 +26,13 @@
                         <div v-for="secretary in secretaries" :key="secretary.id" class="col-xl-3 col-lg-3 col-md-6">
                             <div class="single-team-item">
                                 <div class="team-img" v-if="secretary.person.photo == null">
-                                    <img :alt="secretary.person.name" src="/assets/img/secretary.jpeg" />
+                                    <img :alt="secretary.person.first_name" src="/assets/img/secretary.jpeg" />
                                 </div>
                                 <div class="team-img" v-else>
-                                    <img :alt="secretary.person.name" src="/assets/img/secretary.jpeg" />
+                                    <img :alt="secretary.person.first_name" src="/assets/img/secretary.jpeg" />
                                 </div>
                                 <div class="team-info">
-                                    <h5>{{ secretary.person.name }} {{ secretary.person.last_name }}</h5>
+                                    <h5>{{ secretary.person.first_name }} {{ secretary.person.last_name }}</h5>
                                     <p>{{ secretary.period }}</p>
                                 </div>
                             </div>

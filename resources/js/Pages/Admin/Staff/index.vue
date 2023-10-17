@@ -51,7 +51,7 @@ function destroy(id) {
                                     <tbody class="text-sm divide-y divide-gray-100" v-if="staff.length > 0">
                                         <template v-for="item in staff">
                                             <tr>
-                                                <td class="border px-4">{{ item.person.name }}</td>
+                                                <td class="border px-4">{{ item.person.first_name }}</td>
                                                 <td class="border px-4">{{ item.person.last_name }}</td>
                                                 <td class="border px-4">{{ item.position }}</td>
                                                 <td class="border px-4 py-4" style="width: 300px">

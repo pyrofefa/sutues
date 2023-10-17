@@ -1,15 +1,24 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { router } from '@inertiajs/vue3'
 import { Head, useForm  } from '@inertiajs/vue3';
 import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 
+defineProps({
+    office: {
+        type: Object,
+    },
+    position: {
+        type: Object,
+    },
+})
+
 const form = useForm({
     name: "",
     lastName: "",
+    office: "",
     position: ""
 });
 
@@ -67,18 +76,20 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                <InputLabel for="position" value="Cargo" />
-
-                                <TextInput
-                                    id="position"
-                                    type="text"
-                                    class="mt-1 block w-full"
-                                    v-model="form.position"
-                                    required
-                                    autofocus
-                                    autocomplete="position"
+                                <InputLabel for="position" value="Oficina" />
+                                <select class="form-select" aria-label="Default select example" v-model="form.office" >
+                                    <option v-for="item in office" :value="item.id"> {{ item.description }}</option>
+                                </select>                              
+                                <InputError
+                                    class="mt-2"
+                                    :message="form.errors.office"
                                 />
-
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="position" value="Cargo" />
+                                <select class="form-select" aria-label="Default select example" v-model="form.position" >
+                                    <option v-for="item in position" :value="item.id"> {{ item.description }}</option>
+                                </select>                              
                                 <InputError
                                     class="mt-2"
                                     :message="form.errors.position"

@@ -14,4 +14,7 @@ class Person extends Model
     public function staff(){
         return $this->belongsTO('App\Models\Staff', 'person_id', 'id');
     }
+    public function position(){
+        return $this->belongsTO('App\Models\Position', 'person_id', 'id');
+    }
 }

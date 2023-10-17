@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
+use App\Models\Person;
 use App\Models\Secretary;
 use App\Models\Staff;
 use App\Models\News;
@@ -31,7 +32,7 @@ class webController extends Controller
         return Inertia::render('Web/About/Organization');
     }
     public function staff(){
-        $staff = Staff::with('person')->get();
+        $staff = Staff::with('person')->with('position')->get();
         return Inertia::render('Web/About/Staff',[
             'staff' => $staff
         ]);
@@ -45,7 +46,7 @@ class webController extends Controller
         return Inertia::render('Web/Convocations');
     }
     public function news(){
-        $news = News::with('type')->where('type_id',1)->paginate(20);
+        $news = News::with('type')->where('type_id',1)->paginate(21);
         return Inertia::render('Web/News',[
             'news' => $news
         ]);

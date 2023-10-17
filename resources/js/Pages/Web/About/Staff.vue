@@ -25,14 +25,14 @@
           <div v-for="item in staff" :key="item.id" class="col-xl-3 col-lg-3 col-md-6">
             <div class="single-team-item">
               <div class="team-img" v-if="item.person.photo == null">
-                <img :alt="item.person.name" src="/assets/img/secretary.jpeg" />
+                <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
               </div>
               <div class="team-img" v-else>
-                <img :alt="item.person.name" src="/assets/img/secretary.jpeg" />
+                <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
               </div>
               <div class="team-info">
-                <h5>{{ item.person.name }} {{ item.person.last_name }}</h5>
-                <p>{{ item.position }}</p>
+                <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
+                <p>{{ item.position.description }}</p>
               </div>
             </div>
           </div>

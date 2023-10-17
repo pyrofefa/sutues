@@ -13,7 +13,7 @@ use App\Models\Type;
 class NewsController extends Controller
 {
     public function index(){
-        $news = News::with('type')->where('type_id',1)->get();
+        $news = News::with('type')->where('type_id',1)->paginate(10);
         return Inertia::render('Admin/News/index',[
             'news' => $news
         ]);

@@ -12,7 +12,7 @@ return new class extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->id();
-            $table->string('name',35);
+            $table->string('first_name',35);
             $table->string('last_name',35);
             $table->string('photo')->nullable();
             $table->timestamps();
