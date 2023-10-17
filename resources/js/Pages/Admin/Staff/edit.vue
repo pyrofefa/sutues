@@ -12,12 +12,19 @@ const props = defineProps({
         type: Object,
         default: () => ({}),
     },
+    office: {
+        type: Object,
+    },
+    position: {
+        type: Object,
+    },
 });
 
 const form = useForm({
     id: props.staff.person.id,
-    name: props.staff.person.name,
+    name: props.staff.person.first_name,
     lastName: props.staff.person.last_name,
+    office: props.staff.office,
     position: props.staff.position,
 });
 
@@ -75,21 +82,23 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                <InputLabel for="position" value="Cargo" />
-
-                                <TextInput
-                                    id="position"
-                                    type="text"
-                                    class="mt-1 block w-full"
-                                    v-model="form.position"
-                                    required
-                                    autofocus
-                                    autocomplete="position"
-                                />
-
+                                <InputLabel for="position" value="Oficina" />
+                                <select class="form-select" aria-label="Default select example" v-model="form.office" >
+                                    <option v-for="item in office" :value="item.id"> {{ item.description }}</option>
+                                </select>                              
                                 <InputError
                                     class="mt-2"
-                                    :message="form.errors.period"
+                                    :message="form.errors.office"
+                                />
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="position" value="Cargo" />
+                                <select class="form-select" aria-label="Default select example" v-model="form.position" >
+                                    <option v-for="item in position" :value="item.id"> {{ item.description }}</option>
+                                </select>                              
+                                <InputError
+                                    class="mt-2"
+                                    :message="form.errors.position"
                                 />
                             </div>
                             <PrimaryButton

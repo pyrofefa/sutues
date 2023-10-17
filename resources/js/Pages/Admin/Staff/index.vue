@@ -26,7 +26,7 @@ function destroy(id) {
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Comité Actual</h2>
         </template>
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div>
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <div class="flex justify-between">
@@ -53,7 +53,7 @@ function destroy(id) {
                                             <tr>
                                                 <td class="border px-4">{{ item.person.first_name }}</td>
                                                 <td class="border px-4">{{ item.person.last_name }}</td>
-                                                <td class="border px-4">{{ item.position }}</td>
+                                                <td class="border px-4">{{ item.position.description }}</td>
                                                 <td class="border px-4 py-4" style="width: 300px">
                                                     <Link :href="route('staff.edit', item.person.id)" class="px-4 py-2 text-white bg-blue-600 rounded-lg">Editar</Link>
                                                     <PrimaryButton class="px-4 py-2 text-white bg-red-600 rounded-lg" @click="destroy(item.person.id)">

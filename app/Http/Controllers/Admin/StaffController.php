@@ -12,7 +12,7 @@ use App\Models\Position;
 class StaffController extends Controller
 {
     public function index(){
-        $staff = Staff::with('person')->get();
+        $staff = Staff::with('person')->with('position')->get();
         return Inertia::render('Admin/Staff/index',[
             'staff' => $staff
         ]);
@@ -41,9 +41,13 @@ class StaffController extends Controller
         return redirect()->route('staff.index')->with('message', 'Blog Created Successfully');
     }
     public function edit($id){
-        $staff = Staff::where('person_id',$id)->with('person')->first();
+        $staff = Staff::where('person_id',$id)->with('person')->with('position')->first();
+        $office = Office::all();
+        $position = Position::all();
         return Inertia::render('Admin/Staff/edit',[
-            'staff' => $staff
+            'staff' => $staff,
+            'office' => $office,
+            'position' => $position
         ]);
     }
     public function update(Request $request, $id){
