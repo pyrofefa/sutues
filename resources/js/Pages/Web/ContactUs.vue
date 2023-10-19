@@ -21,7 +21,7 @@
             <div class="row gx-5">
                 <div class="col-xl-6 col-lg-6 col-12">
                     <div class="contact-page google-map">
-                        <iframe allowfullscreen="" height="600" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" style="border: 0px;" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3690.404245521138!2d91.80989606467384!3d22.338360085303748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sdewanhat%20near%20Chattogram!5e0!3m2!1sen!2sbd!4v1677069314806!5m2!1sen!2sbd"></iframe>
+                        <iframe allowfullscreen="" height="600" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" style="border: 0px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d938.0045873859566!2d-110.9616755637356!3d29.120912553240323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce8691c675f397%3A0x9cfda459c8e7339!2sUES%20Hermosillo!5e0!3m2!1ses-419!2smx!4v1697744694370!5m2!1ses-419!2smx"></iframe>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-12">

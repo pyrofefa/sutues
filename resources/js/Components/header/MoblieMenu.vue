@@ -69,7 +69,7 @@ onMounted(() => {
               <a class="has-arrow" href="#">Transparencia</a>
               <ul class="sub-menu">
                 <li>
-                    <Link href="/transparencia/procedimiento-solicitud">Procedimiento de solicitud</Link>
+                    <Link href="/transparencia/procedimiento-solicitud">Procedimiento de Solicitud</Link>
                 </li>
                 <li>
                     <Link href="/transparencia/oficina-de-enlace">Oficina de Enlace</Link>
