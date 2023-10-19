@@ -55,16 +55,16 @@ onMounted(() => {
                 <a href="#">Transparencia <i class="las la-angle-down"></i></a>
                 <ul class="sub-menu">
                   <li>
-                    <Link href="/">Procedimiento de solicitud</Link>
+                    <Link href="/transparencia/procedimiento-solicitud">Procedimiento de solicitud</Link>
                   </li>
                   <li>
-                    <Link href="/">Oficina de Enlace</Link>
+                    <Link href="/transparencia/oficina-de-enlace">Oficina de Enlace</Link>
                   </li>
                   <li>
-                    <Link href="/">Comité de Transparencia</Link>
+                    <Link href="/transparencia/comite-de-transparencia">Comité de Transparencia</Link>
                   </li>
                   <li>
-                    <Link href="/">Obligaciones de Transparencia</Link>
+                    <Link href="/transparencia/obligaciones-de-transparencia">Obligaciones de Transparencia</Link>
                   </li>
                 </ul>
               </li>
@@ -72,7 +72,7 @@ onMounted(() => {
                 <Link href="/noticias">Noticias</Link>
               </li>
               <li>
-                <Link href="/noticias">Proveedores</Link>
+                <Link href="/proveedores">Proveedores</Link>
               </li>
               <li>
                 <Link href="/contactanos">Contactanos</Link>

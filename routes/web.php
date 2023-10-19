@@ -57,15 +57,18 @@ Route::prefix('conocenos')->group(function () {
 })->name('about');
 Route::get('/documentos', [webController::class, 'documents'])->name('documents');
 Route::get('/convocatorias', [webController::class, 'convocations'])->name('convocations');
+Route::prefix('transparencia')->group(function () {
+    Route::get('/procedimiento-solicitud', [webController::class, 'applicationProcedure'])->name('applicationProcedure');
+    Route::get('/oficina-de-enlace', [webController::class, 'cordinationOffice'])->name('cordinationOffice');
+    Route::get('/comite-de-transparencia', [webController::class, 'transparencyCommission'])->name('transparencyCommission');
+    Route::get('/obligaciones-de-transparencia', [webController::class, 'transparencyObligations'])->name('transparencyObligations');
+})->name('transparency');
 
 Route::get('/noticias', [webController::class, 'news'])->name('news');
 Route::get('/noticias/{slug}', [webController::class, 'newsDetails'])->name('newsDetails');
+Route::get('/proveedores', [webController::class, 'suppliers'])->name('suppliers');
 
 Route::get('/contactanos', [webController::class, 'contactUs'])->name('contactUs');
-
-
-
-
 
 
 require __DIR__.'/auth.php';
