@@ -32,7 +32,7 @@
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
-                <p>{{ item.position.description }}</p>
+                <p><strong>{{ item.position.description }}</strong></p>
               </div>
             </div>
           </div>
@@ -44,6 +44,15 @@
 <style>
 .staff {
     background-image: url(../../../../../public/assets/img/protesta_sutues.jpg);
+}
+p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    position: relative;
+    color: #000;
+    white-space: pre-line;
 }
 </style>
 

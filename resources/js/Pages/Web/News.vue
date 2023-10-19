@@ -12,25 +12,28 @@
             type: Object,
             default: () => ({}),
         },
+        data: {
+            type: Array,
+        },
     });
 
 </script>
 <template>
     <Header />
-    <HeroAreaNews :data="news.data" />
+    <HeroAreaNews :data="data" />
     <div class="blog-two section-padding pb-60 blog-page">
         <div class="container">
             <!--v-if-->
             <div class="row mt-30">
                 <div v-for="item in news.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
+                        <Link :href="route('newsDetails', item.slug)" class="blog-img">
                             <img v-if="item.picture == null" alt="Interior Design" class="img-fluid" src="/assets/img/newsHeader.png">
                             <img v-else :alt="item.title" :src="'/storage/'+ item.picture" class="img-fluid" /> 
-                        </a>
+                        </Link>
                         <div class="blog-content">
                             <span>
-                                <a href="#">{{ item.title }}</a>
+                                <Link :href="route('newsDetails', item.slug)">{{ item.title }}</Link>
                             </span>
                             <h3>
                                 <Link :href="route('newsDetails', item.slug)" class="">{{ item.description }}</Link>
