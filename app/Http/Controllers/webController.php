@@ -48,6 +48,10 @@ class webController extends Controller
         return Inertia::render('Web/Transparency/CordinationOffice');
     }
     public function transparencyCommission(){
+        $staff = Staff::with('person')->with('position')->get();
+        return Inertia::render('Web/About/Staff',[
+            'staff' => $staff
+        ]);
         return Inertia::render('Web/Transparency/TransparencyCommission');
     }
     public function transparencyObligations(){
