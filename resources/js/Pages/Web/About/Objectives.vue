@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-7">
-                    <div class="about-content-wrap">
+                    <div class="about-content-wrap wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                         <div class="section-title">
                             <h3> 
                                 Según consta en nuestros estatutos, el SUTUES tiene los siguientes objetivos: 
@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-5">
                     <div class="about-bg-wrapper">
-                        <img alt="our project design" src="/assets/img/about/about-bg-1.jpg">
+                        <img alt="our project design" src="/assets/img/history.png">
                     </div>
                 </div>
             </div>

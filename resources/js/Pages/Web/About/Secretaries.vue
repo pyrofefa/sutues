@@ -24,7 +24,7 @@
                 <div class="container">
                     <div class="row">
                         <div v-for="secretary in secretaries" :key="secretary.id" class="col-xl-3 col-lg-3 col-md-6">
-                            <div class="single-team-item">
+                            <div class="single-team-item wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                                 <div class="team-img" v-if="secretary.person.photo == null">
                                     <img :alt="secretary.person.first_name" src="/assets/img/secretary.jpeg" />
                                 </div>

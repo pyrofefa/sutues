@@ -22,8 +22,11 @@
     <div class="team-section section-padding pb-60 wow animated fadeInLeft" data-wow-delay="200ms">
       <div class="container">
         <div class="row">
+          <!--<div class="section-title text-center">
+            <h2>Comité Ejecutivo Sindical</h2>
+          </div>-->
           <div v-for="item in staff" :key="item.id" class="col-xl-3 col-lg-3 col-md-6">
-            <div class="single-team-item">
+            <div class="single-team-item wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
               <div class="team-img" v-if="item.person.photo == null">
                 <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
               </div>
@@ -42,9 +45,7 @@
     <Footer />
 </template>
 <style>
-.staff {
-    background-image: url(../../../../../public/assets/img/protesta_sutues.jpg);
-}
+
 p {
     font-family: "DM Sans", sans-serif;
     font-size: 16px;

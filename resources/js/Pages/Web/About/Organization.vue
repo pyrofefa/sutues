@@ -16,19 +16,12 @@
             </div>
         </div>
     </div>
-    <div class="about-section section-padding">
+    <div class="about-section section-padding wow animated fadeInLeft" data-wow-delay="200ms">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="about-bg-wrapper">
-                        <img alt="our project design" src="/assets/img/organigrama-sutues1.jpg">
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-xl-12 col-lg-12 col-md-12">
-                    <div class="about-bg-wrapper">
-                        <img alt="our project design" src="/assets/img/organigrama-sutues2.jpg">
+                        <img alt="our project design" src="/assets/img/organigrama.jpg">
                     </div>
                 </div>
             </div>
