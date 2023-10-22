@@ -23,7 +23,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                         <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
+                            <img alt="Interior Design" class="img-fluid" src="/assets/img/documents.png">
                         </a>
                         <div class="blog-content">
                             <span><a href="#">Interior Design</a></span>

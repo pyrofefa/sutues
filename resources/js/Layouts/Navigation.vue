@@ -42,6 +42,14 @@
             Noticias
           </NavLink>
         </li>
+        <li class="relative px-6 py-3">
+          <NavLink :href="route('documents.index')" :active="route().current('documents.index') || route().current('documents.create') || route().current('documents.edit')">
+            <template #icon>
+              <i class="fa-solid fa-newspaper"></i>
+            </template>
+            Documentos
+          </NavLink>
+        </li>
       </ul>
     </div>
   </aside>

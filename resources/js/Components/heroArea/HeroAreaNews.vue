@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted } from "vue";
+import { Link } from '@inertiajs/vue3'
 
 defineProps(['data'])
 
@@ -79,6 +80,7 @@ onMounted(() => {
                 <h1>
                   {{ d.title }}
                 </h1>
+                <Link :href="route('newsDetails', d.slug)" class="theme-btn">Leer más</Link>
               </div>
             </div>
           </div>

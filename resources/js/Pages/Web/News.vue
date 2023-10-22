@@ -21,10 +21,17 @@
 <template>
     <Header />
     <HeroAreaNews :data="data" />
-    <div class="blog-two section-padding pb-60 blog-page">
+    <div class="blog-two section-padding pb-60 pt-10 blog-page">
         <div class="container">
-            <!--v-if-->
-            <div class="row mt-30">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-6">
+                    <div class="search-bar-wrap d-flex text-right">
+                        <input placeholder="Buscar" type="search" />
+                        <i class="fal fa-search"></i>
+                    </div>
+                </div>                
+            </div>
+            <div class="row mt-30 pt-10">
                 <div v-for="item in news.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                         <Link :href="route('newsDetails', item.slug)" class="blog-img">
@@ -56,5 +63,9 @@
     text-transform: uppercase;
     font-size: 16px;
     opacity: 13.5;
+}
+.search-bar-wrap {
+    background: #eee;
+    padding: 15px;
 }
 </style>

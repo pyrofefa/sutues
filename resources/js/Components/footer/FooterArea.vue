@@ -29,12 +29,12 @@
                   <a href="https://www.facebook.com/Sutues23" target="_blank">
                     <i class="fa-brands fa-facebook fa-2x"></i>Facebook
                   </a>
-                  <a href="#">
+                  <!--<a href="#">
                     <i class="fa-brands fa-instagram fa-2x"></i>Instagram
                   </a>
                   <a href="#">
                     <i class="fa-brands fa-square-twitter fa-2x"></i>Twitter
-                  </a>
+                  </a>-->
                 </div>
               </li>
             </ul>
@@ -53,6 +53,6 @@
       color: #fff;
 }
 .footer-area a {
-      color: #fff;
+    color: #ffff !important;
 }
 </style>

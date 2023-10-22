@@ -33,9 +33,17 @@ class webController extends Controller
         return Inertia::render('Web/About/Organization');
     }
     public function staff(){
-        $staff = Staff::with('person')->with('position')->get();
+        $staff = Staff::with('person')->with('position')->join('office', 'office.id', '=', 'staff.office_id')->where('office.id',1)->get();
+        $vigilance = Staff::with('person')->with('position')->join('office', 'office.id', '=', 'staff.office_id')->where('office.id',2)->get();
+        $honor = Staff::with('person')->with('position')->join('office', 'office.id', '=', 'staff.office_id')->where('office.id',3)->get();
+        $delegation = Staff::with('person')->with('position')->join('office', 'office.id', '=', 'staff.office_id')->where('office.id',4)->get();
+
+
         return Inertia::render('Web/About/Staff',[
-            'staff' => $staff
+            'staff' => $staff,
+            'vigilance' => $vigilance,
+            'honor' => $honor,
+            'delegation' => $delegation
         ]);
     }
     /**End About */
@@ -48,14 +56,19 @@ class webController extends Controller
         return Inertia::render('Web/Transparency/CordinationOffice');
     }
     public function transparencyCommission(){
-        $staff = Staff::with('person')->with('position')->get();
-        return Inertia::render('Web/About/Staff',[
+        $staff = Staff::with('person')->with('position')->join('office', 'office.id', '=', 'staff.office_id')->where('office.id',2)->get();
+        return Inertia::render('Web/Transparency/TransparencyCommission',[
             'staff' => $staff
         ]);
         return Inertia::render('Web/Transparency/TransparencyCommission');
     }
     public function transparencyObligations(){
         return Inertia::render('Web/Transparency/TransparencyObligations');
+    }
+    public function transparencyObligationsYear($year){
+        return Inertia::render('Web/Transparency/TransparencyObligations/Year',[
+            'year' => $year
+        ]);
     }
     /**End Trasparency */
 
