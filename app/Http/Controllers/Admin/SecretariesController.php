@@ -10,7 +10,7 @@ use App\Models\Person;
 class SecretariesController extends Controller
 {
     public function index(){
-        $secretaries = Secretary::with('person')->orderBy('period','desc')->get();
+        $secretaries = Secretary::with('person')->orderBy('period','desc')->paginate(10);
         return Inertia::render('Admin/Secretaries/index',[
             'secretaries' => $secretaries
         ]);

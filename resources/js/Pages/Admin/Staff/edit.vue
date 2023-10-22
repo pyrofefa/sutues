@@ -25,7 +25,7 @@ const form = useForm({
     name: props.staff.person.first_name,
     lastName: props.staff.person.last_name,
     office: props.staff.office,
-    position: props.staff.position,
+    position: props.staff.position.id,
 });
 
 const submit = () => {
@@ -82,6 +82,7 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
+                                {{ form }}
                                 <InputLabel for="position" value="Oficina" />
                                 <select class="form-select" aria-label="Default select example" v-model="form.office" >
                                     <option v-for="item in office" :value="item.id"> {{ item.description }}</option>

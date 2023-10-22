@@ -2,21 +2,27 @@
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
     import HeroAreaNews from '@/Components/heroArea/HeroAreaNews.vue'
-    import { Link } from '@inertiajs/vue3'
+    import { router, Link } from '@inertiajs/vue3'
+
     import PaginationNews from '@/Components/PaginationNews.vue'
     import moment from 'moment/moment'
     import 'moment/locale/es';
+    import { ref, watch } from 'vue'
     
-    defineProps({
+    const props = defineProps({
         news: {
             type: Object,
             default: () => ({}),
         },
         data: {
             type: Array,
-        },
+        }
     });
 
+    const term = ref('');    
+    watch(term, (value) => {
+        router.get( route( 'news', { term: value } ), {}, { preserveState: true } );
+    });
 </script>
 <template>
     <Header />
@@ -26,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-5 col-md-6 col-sm-6">
                     <div class="search-bar-wrap d-flex text-right">
-                        <input placeholder="Buscar" type="search" />
+                        <input placeholder="Buscar" type="search" v-model='term' @keyup="search" preserve-scroll />
                         <i class="fal fa-search"></i>
                     </div>
                 </div>                

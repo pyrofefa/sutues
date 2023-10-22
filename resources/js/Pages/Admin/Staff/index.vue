@@ -1,7 +1,9 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head, Link, useForm  } from '@inertiajs/vue3'
-import PrimaryButton from "@/Components/PrimaryButton.vue";
+import Pagination from '@/Components/Pagination.vue'
+import { inject } from 'vue'
+const Swal = inject('$swal')
 
 defineProps({
     staff: {
@@ -13,27 +15,37 @@ defineProps({
 const form = useForm({});
 
 function destroy(id) {
-    if (confirm("Are you sure you want to Delete")) {
-        form.delete(route("staff.destroy", id));
-    }
+    Swal.fire({
+        title: 'Estás seguro?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            form.delete(route("staff.destroy", id));
+            Swal.fire({
+                icon: 'success',
+                text: 'Eliminado!'
+            })
+        }
+    })
 }
 </script>
-
 <template>
-    <Head title="Dashboard" />
+    <Head title="Comite actual" />
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Comité Actual</h2>
         </template>
-        <div class="py-12">
+        <div>
             <div>
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <div class="flex justify-between">
-                            <Link
-                                :href="route('staff.create')"
-                                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
-                            >
+                            <Link :href="route('staff.create')" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
                                 Nuevo 
                             </Link>
                         </div>
@@ -48,19 +60,22 @@ function destroy(id) {
                                             <th class="px-4 py-2">Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-sm divide-y divide-gray-100" v-if="staff.length > 0">
-                                        <template v-for="item in staff">
+                                    <tbody class="text-sm divide-y divide-gray-100" v-if="staff.data.length > 0">
+                                        <template v-for="item in staff.data">
                                             <tr>
-                                                <td class="border px-4">{{ item.person.first_name }}</td>
-                                                <td class="border px-4">{{ item.person.last_name }}</td>
-                                                <td class="border px-4">{{ item.position.description }}</td>
-                                                <td class="border px-4 py-4" style="width: 300px">
-                                                    <Link :href="route('staff.edit', item.person.id)" class="px-4 py-2 text-white bg-blue-600 rounded-lg">Editar</Link>
-                                                    <PrimaryButton class="px-4 py-2 text-white bg-red-600 rounded-lg" @click="destroy(item.person.id)">
-                                                        Eliminar
-                                                    </PrimaryButton>
+                                                <td class="px-4 py-3 text-sm">{{ item.person.first_name }}</td>
+                                                <td class="px-4 py-3 text-sm">{{ item.person.last_name }}</td>
+                                                <td class="px-4 py-3 text-sm">{{ item.position.description }}</td>
+                                                <td class="px-4 py-3 text-sm">
+                                                    <div class="flex items-center space-x-4 text-sm">
+                                                        <Link :href="route('staff.edit', item.person.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
+                                                            <i class="fa-solid fa-pen-to-square"></i>
+                                                        </Link>
+                                                        <button @click="destroy(item.person.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Delete">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </button>
+                                                    </div>                                                  
                                                 </td>
-                                                
                                             </tr>
                                         </template>
                                     </tbody>
@@ -72,6 +87,7 @@ function destroy(id) {
                                 </table>
                             </div>
                         </div>
+                        <Pagination :links="staff.links" />
                     </div>
                 </div>
             </div>

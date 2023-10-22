@@ -6,7 +6,6 @@ use Inertia\Inertia;
 use Illuminate\Support\Str as Str;
 use Illuminate\Support\Facades\Storage;
 
-
 use App\Models\News;
 use App\Models\Type;
 

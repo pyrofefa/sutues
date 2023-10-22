@@ -11,6 +11,9 @@ import CKEditor from '@ckeditor/ckeditor5-vue';
 import moment from 'moment'
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -24,6 +27,7 @@ createInertiaApp({
             .use(CKEditor)
             .use(moment)
             .use(VueDatePicker)
+            .use(VueSweetalert2)
             .mount(el);
     },
     progress: {

@@ -76,17 +76,22 @@ class webController extends Controller
 
     //
     public function documents(){
-        return Inertia::render('Web/Documents');
+        $documents = News::with('type')->where('type_id',3)->orderBy('end','desc')->paginate(10);
+        return Inertia::render('Web/Documents',[
+            'documents' => $documents
+        ]);
     }
     public function convocations(){
         return Inertia::render('Web/Convocations');
     }
-    public function news(){
+    public function news(Request $request){
         $data = News::with('type')->where('type_id',1)->where('start','>=',date('Y-m-d'))->orderBy('end')->get();
-        $news = News::with('type')->where('type_id',1)->orderBy('end','desc')->paginate(21);
+        //$news = 
         return Inertia::render('Web/News',[
             'data' => $data,
-            'news' => $news
+            'news' => News::with('type')->where('type_id',1)->when($request->term, function($query, $term){
+                $query->where('title', 'LIKE', '%'.$term.'%');
+            })->orderBy('end','desc')->paginate(21)
         ]);
     }
     public function newsDetails($slug){
