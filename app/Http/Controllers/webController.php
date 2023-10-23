@@ -60,7 +60,6 @@ class webController extends Controller
         return Inertia::render('Web/Transparency/TransparencyCommission',[
             'staff' => $staff
         ]);
-        return Inertia::render('Web/Transparency/TransparencyCommission');
     }
     public function transparencyObligations(){
         return Inertia::render('Web/Transparency/TransparencyObligations');
@@ -72,13 +71,12 @@ class webController extends Controller
     }
     /**End Trasparency */
 
-
-
     //
-    public function documents(){
-        $documents = News::with('type')->where('type_id',3)->orderBy('end','desc')->paginate(10);
+    public function documents(Request $request){
         return Inertia::render('Web/Documents',[
-            'documents' => $documents
+            'documents' => News::with('type')->where('type_id',3)->when($request->term, function($query, $term){
+                $query->where('title', 'LIKE', '%'.$term.'%');
+            })->orderBy('end','desc')->paginate(21)
         ]);
     }
     public function convocations(){
@@ -86,7 +84,6 @@ class webController extends Controller
     }
     public function news(Request $request){
         $data = News::with('type')->where('type_id',1)->where('start','>=',date('Y-m-d'))->orderBy('end')->get();
-        //$news = 
         return Inertia::render('Web/News',[
             'data' => $data,
             'news' => News::with('type')->where('type_id',1)->when($request->term, function($query, $term){

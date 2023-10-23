@@ -68,7 +68,7 @@ class NewsController extends Controller
             $filename = $request->file('picture')->getClientOriginalName();
             $news->picture = $filename;
             $file = $request->file('picture');
-            Storage::disk('public')->put($filename, \File::get($file));
+            Storage::disk('public')->put('/news/'.$filename, \File::get($file));
         }
         
         $news->save();
@@ -77,6 +77,8 @@ class NewsController extends Controller
         return redirect()->route('news.index')->with('message', 'Blog Updated Successfully');
     }
     public function destroy($id){
+        $file = News::find($id);
+        Storage::disk('public')->delete('/news/'.$file->picture);
         $news = News::find($id)->delete();
         sleep(1);
 

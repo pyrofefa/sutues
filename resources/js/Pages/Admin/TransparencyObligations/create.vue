@@ -5,15 +5,16 @@ import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
+import FileUpload from "@/Components/FileUpload.vue";
 
 const form = useForm({
-    title: "",
-    description: "",
+    year: "",
+    article: "",
     file:""
 });
 
 const submit = () => {
-    form.post(route("documents.store"),{
+    form.post(route("transparency-obligations.store"),{
         forceFormData: true,
     });
 };
@@ -22,25 +23,25 @@ const submit = () => {
     <Head title="Crear Noticia" />
     <AuthenticatedLayout title="Crear proyecto">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Documento</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Obligaciones</h2>
         </template>
         
         <div class="py-12">
-            <div class="mx-auto max-w-7xl">
+            <div class="mx-auto max-w-12xl">
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <form @submit.prevent="submit">
                             <div>
-                                <InputLabel for="title" value="Titulo" />
+                                <InputLabel for="year" value="Año" />
 
                                 <TextInput
-                                    id="title"
+                                    id="year"
                                     type="text"
                                     class="mt-1 block w-full"
-                                    v-model="form.title"
+                                    v-model="form.year"
                                     required
                                     autofocus
-                                    autocomplete="title"
+                                    autocomplete="year"
                                 />
 
                                 <InputError
@@ -49,24 +50,24 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                <input type="file" @input="form.file = $event.target.files[0]" />
-                            </div>
-                            <div class="my-6">
-                                <InputLabel for="description" value="Descripcion" />
+                                <InputLabel for="article" value="Articulo" />
 
                                 <TextInput
-                                    id="description"
+                                    id="article"
                                     type="text"
                                     class="mt-1 block w-full"
-                                    v-model="form.description"
+                                    v-model="form.article"
                                     required
                                     autofocus
-                                    autocomplete="description"
+                                    autocomplete="article"
                                 />
                                 <InputError
                                     class="mt-2"
-                                    :message="form.errors.description"
+                                    :message="form.errors.article"
                                 />
+                            </div>
+                              <div class="my-6">
+                                <FileUpload @input="form.file = $event.target.files" />
                             </div>
                             <PrimaryButton
                                 type="submit"

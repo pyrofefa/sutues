@@ -50,6 +50,14 @@
             Documentos
           </NavLink>
         </li>
+        <li class="relative px-6 py-3">
+          <NavLink :href="route('transparency-obligations.index')" :active="route().current('transparency-obligations.index') || route().current('transparency-obligations.create') || route().current('transparency-obligations.edit')">
+            <template #icon>
+              <i class="fa-solid fa-newspaper"></i>
+            </template>
+            Obligaciones de transparencia
+          </NavLink>
+        </li>
       </ul>
     </div>
   </aside>

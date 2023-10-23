@@ -3,7 +3,6 @@
     import Footer from '@/Components/footer/FooterArea.vue'
     import HeroAreaNews from '@/Components/heroArea/HeroAreaNews.vue'
     import { router, Link } from '@inertiajs/vue3'
-
     import PaginationNews from '@/Components/PaginationNews.vue'
     import moment from 'moment/moment'
     import 'moment/locale/es';

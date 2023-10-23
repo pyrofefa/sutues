@@ -37,12 +37,20 @@ class DocumentsController extends Controller
             $filename = $request->file('file')->getClientOriginalName();
             $news->picture = $filename;
             $file = $request->file('file');
-            Storage::disk('public')->put($filename, \File::get($file));
+            Storage::disk('public')->put('/documents/'.$filename, \File::get($file));
         }
         
         $news->save();
         sleep(1);
 
-        return redirect()->route('news.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('documents.index')->with('message', 'Blog Created Successfully');
+    }
+    public function destroy($id){
+        $file = News::find($id);
+        Storage::disk('public')->delete('/documents/'.$file->picture);
+        $news = News::find($id)->delete();
+        sleep(1);
+        
+        return redirect()->route('documents.index')->with('message', 'Blog Delete Successfully');
     }
 }
