@@ -7,6 +7,7 @@ use App\Models\Person;
 use App\Models\Secretary;
 use App\Models\Staff;
 use App\Models\News;
+use App\Models\TransparencyObligation;
 
 class webController extends Controller
 {
@@ -62,7 +63,10 @@ class webController extends Controller
         ]);
     }
     public function transparencyObligations(){
-        return Inertia::render('Web/Transparency/TransparencyObligations');
+        $years = TransparencyObligation::select('year')->orderBy('year','desc')->get();
+        return Inertia::render('Web/Transparency/TransparencyObligations',[
+            'years' => $years
+        ]);
     }
     public function transparencyObligationsYear($year){
         return Inertia::render('Web/Transparency/TransparencyObligations/Year',[

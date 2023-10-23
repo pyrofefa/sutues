@@ -1,6 +1,14 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
-    import Footer from '@/Components/footer/FooterArea.vue'
+    import Footer from '@/Components/footer/FooterArea.vue';
+    import { Link } from '@inertiajs/vue3'
+
+    const props = defineProps({
+        years: {
+            type: Object,
+            default: () => ({}),
+        }
+    });
 </script>
 <template>
     <Header />
@@ -24,36 +32,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="portfolio-list">
-                        <a href="/transparencia/obligaciones-de-transparencia/2023" class="single-portfolio-item">
-                            <img alt="Micalu Meseum" src="/assets/img/transparencyObligations.png">
-                            <div class="portfolio-details">
-                                <h5>2023</h5>
-                            </div>
-                        </a>
-                        <a href="/portfolio/6" class="single-portfolio-item">
-                            <img alt="Hall Room" src="/assets/img/portfolio/2.jpg">
-                            <div class="portfolio-details">
-                                <h5>2022</h5>
-                            </div>
-                        </a>
-                        <a href="/portfolio/7" class="single-portfolio-item">
-                            <img alt="Drawing Room" src="/assets/img/portfolio/3.jpg">
-                            <div class="portfolio-details">
-                                <h5>2021</h5>
-                            </div>
-                        </a>
-                        <a href="/portfolio/8" class="single-portfolio-item">
-                            <img alt="National Perliament" src="/assets/img/portfolio/4.jpg">
-                            <div class="portfolio-details">
-                                <h5>2020</h5>
-                            </div>
-                        </a>
-                        <a href="/portfolio/8" class="single-portfolio-item">
-                            <img alt="National Perliament" src="/assets/img/portfolio/4.jpg">
-                            <div class="portfolio-details">
-                                <h5>2019</h5>
-                            </div>
-                        </a>
+                        <div v-for="item in years">
+                            <Link :href="route('transparencyObligations.year', item.year)" class="single-portfolio-item">
+                                <img :alt="item.year" src="/assets/img/transparencyObligations.png">
+                                <div class="portfolio-details">
+                                    <h5>{{ item.year }}</h5>
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

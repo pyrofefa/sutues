@@ -5,13 +5,17 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Str as Str;
 use Illuminate\Support\Facades\Storage;
+
 use App\Models\TransparencyObligation;
 use App\Models\TransparencyObligationFile;
 
 class TransparencyObligations extends Controller
 {
     public function index(){
-        return Inertia::render('Admin/TransparencyObligations/index');
+        $transparency = TransparencyObligation::orderBy('year','desc')->paginate(10);
+        return Inertia::render('Admin/TransparencyObligations/index',[
+            'transparency' => $transparency,
+        ]);
     }
     public function create(){
         return Inertia::render('Admin/TransparencyObligations/create');
@@ -31,6 +35,6 @@ class TransparencyObligations extends Controller
         }
 
         sleep(1);
-        return redirect()->route('documents.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('transparency-obligations.index')->with('message', 'Blog Created Successfully');
     }
 }

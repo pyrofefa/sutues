@@ -6,7 +6,7 @@ import { inject } from 'vue'
 const Swal = inject('$swal')
 
 defineProps({
-    documents: {
+    transparency: {
         type: Object,
         required: true,
     },
@@ -25,7 +25,7 @@ function destroy(id) {
         confirmButtonText: 'Si, eliminar!'
     }).then((result) => {
         if (result.isConfirmed) {
-            form.delete(route("documents.destroy", id));
+            form.delete(route("transparency-obligations.destroy", id));
             Swal.fire({
                 icon: 'success',
                 text: 'Eliminado!'
@@ -35,17 +35,17 @@ function destroy(id) {
 }
 </script>
 <template>
-    <Head title="Documentos" />
+    <Head title="Obligaciones de transparencia" />
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Documentos</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Obligaciones de transparencia</h2>
         </template>
         <div>
             <div>
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <div class="flex justify-between">
-                            <Link :href="route('documents.create')" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
+                            <Link :href="route('transparency-obligations.create')" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
                                 Nuevo 
                             </Link>
                         </div>
@@ -54,19 +54,19 @@ function destroy(id) {
                                 <table class="table-auto w-full">
                                     <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                         <tr>
-                                            <th class="px-4 py-3">Titulo</th>
-                                            <th class="px-4 py-3">Descripción</th>
+                                            <th class="px-4 py-3">Año</th>
+                                            <th class="px-4 py-3">Articulo</th>
                                             <th class="px-4 py-3">Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-sm divide-y divide-gray-100" v-if="documents.data.length > 0">
-                                        <template v-for="item in documents.data">
+                                    <tbody class="text-sm divide-y divide-gray-100" v-if="transparency.data.length > 0">
+                                        <template v-for="item in transparency.data">
                                             <tr>
-                                                <td class="px-4 py-3 text-sm">{{ item.title }}</td>
-                                                <td class="px-4 py-3 text-sm"> {{ item.description }}</td>
+                                                <td class="px-4 py-3 text-sm">{{ item.year }}</td>
+                                                <td class="px-4 py-3 text-sm"> {{ item.article }}</td>
                                                 <td class="px-4 py-3 text-sm">
                                                     <div class="flex items-center space-x-4 text-sm">
-                                                        <Link :href="route('documents.edit', item.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
+                                                        <Link :href="route('transparency-obligations.edit', item.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
                                                             <i class="fa-solid fa-pen-to-square"></i>
                                                         </Link>
                                                         <button @click="destroy(item.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Delete">
@@ -85,7 +85,7 @@ function destroy(id) {
                                 </table>
                             </div>
                         </div>
-                        <Pagination :links="documents.links" />
+                        <Pagination :links="transparency.links" />
                     </div>
                 </div>
             </div>
