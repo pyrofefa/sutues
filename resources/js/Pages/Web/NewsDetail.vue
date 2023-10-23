@@ -59,10 +59,10 @@ onMounted(() => {
           <div class="blog-content-wrap">
             <div class="blog-feature-img">
               <img v-if="news.picture == null" alt="blog feature" src="/assets/img/blog/blog-details-1.jpg" />
-              <img v-else :alt="news.title" :src="'/storage/'+ news.picture"  /> 
+              <img v-else :alt="news.title" :src="'/storage/news/'+ news.picture"  />
             </div>
             <div v-html="news.content" />
-          </div>          
+          </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-12">
           <BlogSidebar />

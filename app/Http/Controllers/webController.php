@@ -69,8 +69,10 @@ class webController extends Controller
         ]);
     }
     public function transparencyObligationsYear($year){
+        $articles = TransparencyObligation::with('articles')->where('year',$year)->get();
         return Inertia::render('Web/Transparency/TransparencyObligations/Year',[
-            'year' => $year
+            'year' => $year,
+            'articles' => $articles
         ]);
     }
     /**End Trasparency */
@@ -87,7 +89,11 @@ class webController extends Controller
         return Inertia::render('Web/Convocations');
     }
     public function news(Request $request){
-        $data = News::with('type')->where('type_id',1)->where('start','>=',date('Y-m-d'))->orderBy('end')->get();
+        $data = News::with('type')->where('type_id',1)
+            ->where('start','>=',date('Y-m-d'))
+            ->where('end', '>=', date('Y-m-d'))
+            ->orderBy('end')->get();
+
         return Inertia::render('Web/News',[
             'data' => $data,
             'news' => News::with('type')->where('type_id',1)->when($request->term, function($query, $term){

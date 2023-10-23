@@ -8,4 +8,7 @@ class TransparencyObligation extends Model
     use HasFactory;
     protected $table = 'transparency_obligations';
 
+    public function articles(){
+        return $this->hasMany('App\Models\TransparencyObligationFile', 'transparency_obligations_id');
+    }
 }

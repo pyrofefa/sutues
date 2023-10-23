@@ -1,8 +1,13 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue';
-    defineProps({ 
+    import Accordion from '@/Components/Accordion.vue';
+    defineProps({
         year: String,
+        articles: {
+            type: Object,
+            default: () => ({}),
+        },
     });
 </script>
 <template>
@@ -20,8 +25,26 @@
             </div>
         </div>
     </div>
-    
+
+    <div class="faq-section gray-bg section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-10 mb-50">
+                    <div class="cp-custom-accordion">
+                        <div class="accordions">
+                                 <Accordion
+                                    v-for="question in articles"
+                                    :key="question.id"
+                                    :title="question.article"
+                                    :info="question"
+                                />
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <Footer />
 </template>
 
-    
+

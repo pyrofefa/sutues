@@ -69,7 +69,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="homepage-slides owl-carousel" id="home-2" >
-    <div class="single-slide-item hero-area-bg-3" v-for="d in data" v-bind:style="{ 'background-image': 'url(/storage/' + d.picture + ')' }">
+    <div class="single-slide-item hero-area-bg-3" v-for="d in data" v-bind:style="{ 'background-image': 'url(/storage/news/' + d.picture + ')' }">
       <div class="overlay"></div>
       <div class="hero-area-content">
         <div class="container">
@@ -86,6 +86,6 @@ onMounted(() => {
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   </div>
 </template>

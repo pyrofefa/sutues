@@ -7,7 +7,7 @@
     import moment from 'moment/moment'
     import 'moment/locale/es';
     import { ref, watch } from 'vue'
-    
+
     const props = defineProps({
         news: {
             type: Object,
@@ -18,7 +18,7 @@
         }
     });
 
-    const term = ref('');    
+    const term = ref('');
     watch(term, (value) => {
         router.get( route( 'news', { term: value } ), {}, { preserveState: true } );
     });
@@ -34,14 +34,14 @@
                         <input placeholder="Buscar" type="search" v-model='term' @keyup="search" preserve-scroll />
                         <i class="fal fa-search"></i>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="row mt-30 pt-10">
                 <div v-for="item in news.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                         <Link :href="route('newsDetails', item.slug)" class="blog-img">
                             <img v-if="item.picture == null" alt="Interior Design" class="img-fluid" src="/assets/img/newsHeader.png">
-                            <img v-else :alt="item.title" :src="'/storage/'+ item.picture" class="img-fluid" /> 
+                            <img v-else :alt="item.title" :src="'/storage/news/'+ item.picture" class="img-fluid" />
                         </Link>
                         <div class="blog-content">
                             <span>
