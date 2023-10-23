@@ -13,13 +13,13 @@ class CreateTypesSeeder extends Seeder
     public function run(): void
     {
         DB::table('types')->insert([
-            'description' => 'Noticia',
+            'name' => 'Noticia',
         ]);
         DB::table('types')->insert([
-            'description' => 'Convocatoria',
+            'name' => 'Convocatoria',
         ]);
         DB::table('types')->insert([
-            'description' => 'Documento',
+            'name' => 'Documento',
         ]);
     }
 }

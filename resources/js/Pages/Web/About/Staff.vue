@@ -1,11 +1,11 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
-    defineProps({ 
+    defineProps({
         staff: Array,
         vigilance: Array,
         honor: Array,
-        delegation: Array 
+        delegation: Array
     });
 </script>
 <template>
@@ -38,7 +38,7 @@
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
-                <p><strong>{{ item.position.description }}</strong></p>
+                <p><strong>{{ item.position.name }}</strong></p>
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
-                <p><strong>{{ item.position.description }}</strong></p>
+                <p><strong>{{ item.position.name }}</strong></p>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
-                <p><strong>{{ item.position.description }}</strong></p>
+                <p><strong>{{ item.position.name }}</strong></p>
               </div>
             </div>
           </div>
@@ -95,12 +95,12 @@
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
-                <p><strong>{{ item.position.description }}</strong></p>
+                <p><strong>{{ item.position.name }}</strong></p>
               </div>
             </div>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
     <Footer />
 </template>

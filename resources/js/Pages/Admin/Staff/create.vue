@@ -32,7 +32,7 @@ const submit = () => {
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Comite</h2>
         </template>
-        
+
         <div class="py-12">
             <div class="mx-auto max-w-7xl">
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
@@ -78,8 +78,8 @@ const submit = () => {
                             <div class="my-6">
                                 <InputLabel for="position" value="Oficina" />
                                 <select class="form-select" aria-label="Default select example" v-model="form.office" >
-                                    <option v-for="item in office" :value="item.id"> {{ item.description }}</option>
-                                </select>                              
+                                    <option v-for="item in office" :value="item.id"> {{ item.name }}</option>
+                                </select>
                                 <InputError
                                     class="mt-2"
                                     :message="form.errors.office"
@@ -88,8 +88,8 @@ const submit = () => {
                             <div class="my-6">
                                 <InputLabel for="position" value="Cargo" />
                                 <select class="form-select" aria-label="Default select example" v-model="form.position" >
-                                    <option v-for="item in position" :value="item.id"> {{ item.description }}</option>
-                                </select>                              
+                                    <option v-for="item in position" :value="item.id"> {{ item.name }}</option>
+                                </select>
                                 <InputError
                                     class="mt-2"
                                     :message="form.errors.position"

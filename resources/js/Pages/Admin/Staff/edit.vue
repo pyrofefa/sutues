@@ -24,7 +24,7 @@ const form = useForm({
     id: props.staff.person.id,
     name: props.staff.person.first_name,
     lastName: props.staff.person.last_name,
-    office: props.staff.office,
+    office: props.staff.office_id,
     position: props.staff.position.id,
 });
 
@@ -38,7 +38,7 @@ const submit = () => {
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Comité Actual</h2>
         </template>
-        
+
         <div class="py-12">
             <div class="mx-auto max-w-7xl">
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
@@ -82,11 +82,10 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                {{ form }}
                                 <InputLabel for="position" value="Oficina" />
                                 <select class="form-select" aria-label="Default select example" v-model="form.office" >
-                                    <option v-for="item in office" :value="item.id"> {{ item.description }}</option>
-                                </select>                              
+                                    <option v-for="item in office" :value="item.id"> {{ item.name }}</option>
+                                </select>
                                 <InputError
                                     class="mt-2"
                                     :message="form.errors.office"
@@ -95,8 +94,8 @@ const submit = () => {
                             <div class="my-6">
                                 <InputLabel for="position" value="Cargo" />
                                 <select class="form-select" aria-label="Default select example" v-model="form.position" >
-                                    <option v-for="item in position" :value="item.id"> {{ item.description }}</option>
-                                </select>                              
+                                    <option v-for="item in position" :value="item.id"> {{ item.name }}</option>
+                                </select>
                                 <InputError
                                     class="mt-2"
                                     :message="form.errors.position"

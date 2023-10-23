@@ -46,7 +46,7 @@ function destroy(id) {
                     <div class="p-6 bg-white border-b border-gray-200">
                         <div class="flex justify-between">
                             <Link :href="route('staff.create')" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
-                                Nuevo 
+                                Nuevo
                             </Link>
                         </div>
                         <div class="mt-4">
@@ -65,7 +65,7 @@ function destroy(id) {
                                             <tr>
                                                 <td class="px-4 py-3 text-sm">{{ item.person.first_name }}</td>
                                                 <td class="px-4 py-3 text-sm">{{ item.person.last_name }}</td>
-                                                <td class="px-4 py-3 text-sm">{{ item.position.description }}</td>
+                                                <td class="px-4 py-3 text-sm">{{ item.position.name }}</td>
                                                 <td class="px-4 py-3 text-sm">
                                                     <div class="flex items-center space-x-4 text-sm">
                                                         <Link :href="route('staff.edit', item.person.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
@@ -74,7 +74,7 @@ function destroy(id) {
                                                         <button @click="destroy(item.person.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Delete">
                                                             <i class="fa-solid fa-trash"></i>
                                                         </button>
-                                                    </div>                                                  
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </template>

@@ -11,19 +11,19 @@ class OfficeSeeder extends Seeder
         DB::table('office')->insert([
             [
                 'id' => 1,
-                'description' => 'Comité Ejecutivo Sindical',
+                'name' => 'Comité Ejecutivo Sindical',
             ],
             [
                 'id' => 2,
-                'description' => 'Comisión de Vigilancia',
+                'name' => 'Comisión de Vigilancia',
             ],
             [
                 'id' => 3,
-                'description' => 'Comisión de Honor y Justicia',
+                'name' => 'Comisión de Honor y Justicia',
             ],
             [
                 'id' => 4,
-                'description' => 'Delegaciones Sindicales',
+                'name' => 'Delegaciones Sindicales',
             ],
         ]);
     }

@@ -9,150 +9,150 @@ class PositionSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('position')->insert([
+       DB::table('positions')->insert([
             [
                 'id' => 1,
-                'description' => 'Secretaría General',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría General',
             ],
             [
                 'id' => 2,
-                'description' => 'Suplente Sría. General',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. General',
             ],
             [
                 'id' => 3,
-                'description' => 'Secretaría de Organización',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría de Organización',
             ],
             [
                 'id' => 4,
-                'description' => 'Suplente Sría. de Organización',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Organización',
             ],
             [
                 'id' => 5,
-                'description' => 'Secretaría de Comunicación, Prensa y Propaganda',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría de Comunicación, Prensa y Propaganda',
             ],
             [
                 'id' => 6,
-                'description' => 'Suplente Sría. de Comunicación, Prensa y Propaganda',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Comunicación, Prensa y Propaganda',
             ],
             [
                 'id' => 7,
-                'description' => 'Secretaría de Conflictos del Trabajo',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría de Conflictos del Trabajo',
             ],
             [
                 'id' => 8,
-                'description' => 'Suplente de Sría. de Conflictos del Trabajo',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente de Sría. de Conflictos del Trabajo',
             ],
             [
                 'id' => 9,
-                'description' => 'Secretaría de Finanzas',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría de Finanzas',
             ],
             [
                 'id' => 10,
-                'description' => 'Suplente Sría. de Finanzas',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Finanzas',
             ],
             [
                 'id' => 11,
-                'description' => 'Secretaría de Vinculación Social',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría de Vinculación Social',
             ],
             [
                 'id' => 12,
-                'description' => 'Suplente Sría. de Vinculación Social',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Vinculación Social',
             ],
             [
                 'id' => 13,
-                'description' => 'Secretaría de Actas y Acuerdos (y Archivo)',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría de Actas y Acuerdos (y Archivo)',
             ],
             [
                 'id' => 14,
-                'description' => 'Suplente Sría. de Actas y Acuerdos',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Actas y Acuerdos',
             ],
             [
                 'id' => 15,
-                'description' => 'Secretaria de Cultura, Deporte y Formación Sindical',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaria de Cultura, Deporte y Formación Sindical',
             ],
             [
                 'id' => 16,
-                'description' => 'Suplente Sría. de Cultura, Deporte y Formación Sindical',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Cultura, Deporte y Formación Sindical',
             ],
             [
                 'id' => 17,
-                'description' => 'Secretaria de Acción y Previsión Social',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaria de Acción y Previsión Social',
             ],
             [
                 'id' => 18,
-                'description' => 'Suplente Sría. de Acción y Previsión Social',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Acción y Previsión Social',
             ],
             [
                 'id' => 19,
-                'description' => 'Secretaria de Equidad, Género y Derechos Humanos',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaria de Equidad, Género y Derechos Humanos',
             ],
             [
                 'id' => 20,
-                'description' => 'Suplente Sría. de Equidad, Genero y Derechos Humanos',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Equidad, Genero y Derechos Humanos',
             ],
             [
                 'id' => 21,
-                'description' => 'Secretaría de Pensionados y Jubilados',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría de Pensionados y Jubilados',
             ],
             [
                 'id' => 22,
-                'description' => 'Suplente Sría. de Pensionados y Jubilados',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Sría. de Pensionados y Jubilados',
             ],
             [
                 'id' => 23,
-                'description' => 'Secretaría de la Contraloría',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Secretaría de la Contraloría',
             ],
             [
                 'id' => 24,
-                'description' => 'Suplente Secretaría de la Contraloría',
-                'created_at' => null,
-                'updated_at' => null,
+                'name' => 'Suplente Secretaría de la Contraloría',
+            ],
+            [
+                'id' => 25,
+                'name' => 'Presidente',
+            ],
+            [
+                'id' => 26,
+                'name' => 'Suplente Presidente',
+            ],
+            [
+                'id' => 27,
+                'name' => 'Secretario',
+            ],
+            [
+                'id' => 28,
+                'name' => 'Suplente Secretario',
+            ],
+            [
+                'id' => 29,
+                'name' => 'Vocal',
+            ],
+            [
+                'id' => 30,
+                'name' => 'Suplente Vocal',
+            ],
+            [
+                'id' => 31,
+                'name' => 'Delegado UA Hermosillo',
+            ],
+            [
+                'id' => 32,
+                'name' => 'Delegado UA San Luis Río',
+            ],
+            [
+                'id' => 33,
+                'name' => 'Delegado UA Navojoa',
+            ],
+            [
+                'id' => 34,
+                'name' => 'Delegado Rectoría',
+            ],
+            [
+                'id' => 35,
+                'name' => 'Delegado UA Magdalena',
+            ],
+            [
+                'id' => 36,
+                'name' => 'Delegado UA Benito Juárez',
             ],
         ]);
     }
