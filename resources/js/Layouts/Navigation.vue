@@ -43,6 +43,14 @@
           </NavLink>
         </li>
         <li class="relative px-6 py-3">
+          <NavLink :href="route('convocations.index')" :active="route().current('convocations.index') || route().current('convocations.create') || route().current('convocations.edit')">
+            <template #icon>
+              <i class="fa-solid fa-newspaper"></i>
+            </template>
+            Convocatorias
+          </NavLink>
+        </li>
+        <li class="relative px-6 py-3">
           <NavLink :href="route('documents.index')" :active="route().current('documents.index') || route().current('documents.create') || route().current('documents.edit')">
             <template #icon>
               <i class="fa-solid fa-newspaper"></i>

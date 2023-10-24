@@ -5,24 +5,29 @@ import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
+import CkEditor from "@/Components/CkEditor.vue";
+import Datepicker from "@/Components/Datepicker.vue";
 
 const form = useForm({
     title: "",
     description: "",
-    file:""
+    content: "",
+    start: "",
+    end: "",
+    picture:""
 });
 
 const submit = () => {
-    form.post(route("documents.store"),{
+    form.post(route("convocations.store"),{
         forceFormData: true,
     });
 };
 </script>
 <template>
-    <Head title="Crear Documento" />
-    <AuthenticatedLayout title="Crear proyecto">
+    <Head title="Crear Convocatoria" />
+    <AuthenticatedLayout title="Crear convocatoria">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Documento</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Convocatoria</h2>
         </template>
 
         <div class="py-12">
@@ -48,9 +53,19 @@ const submit = () => {
                                     :message="form.errors.title"
                                 />
                             </div>
+
                             <div class="my-6">
-                                <input type="file" @input="form.file = $event.target.files[0]" />
+                                <InputLabel for="description" value="Inicio" />
+                                <Datepicker v-model="form.start" />
                             </div>
+                            <div class="my-6">
+                                <InputLabel for="description" value="Final" />
+                                <Datepicker v-model="form.end" />
+                            </div>
+                            <div class="my-6">
+                                <input type="file" @input="form.picture = $event.target.files[0]" />
+                            </div>
+
                             <div class="my-6">
                                 <InputLabel for="description" value="Descripcion" />
 
@@ -63,10 +78,15 @@ const submit = () => {
                                     autofocus
                                     autocomplete="description"
                                 />
+
                                 <InputError
                                     class="mt-2"
                                     :message="form.errors.description"
                                 />
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="content" value="Contenido" />
+                                <CkEditor v-model="form.content" />
                             </div>
                             <PrimaryButton
                                 type="submit"

@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\DocumentsController;
 use App\Http\Controllers\Admin\TransparencyObligations;
+use App\Http\Controllers\Admin\ConvocationsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('secretaries',SecretariesController::class);
         Route::resource('staff',StaffController::class);
         Route::resource('news',NewsController::class);
+        Route::resource('convocations',ConvocationsController::class);
         Route::resource('documents',DocumentsController::class);
         Route::resource('transparency-obligations',TransparencyObligations::class);
     })->name('admin');

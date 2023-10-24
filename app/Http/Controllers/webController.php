@@ -12,7 +12,13 @@ use App\Models\TransparencyObligation;
 class webController extends Controller
 {
     public function home(){
-        return Inertia::render('Web/Home');
+        $news = News::with('type')->where('type_id',1)->where('end', '>=', date('Y-m-d'))->orderBy('end')->take(3)->get();
+        $data = News::with('type')->where('end', '>=', date('Y-m-d'))->orderBy('end')->get();
+
+        return Inertia::render('Web/Home',[
+            'news' => $news,
+            'data' => $data
+        ]);
     }
     /**Start About */
     public function history(){
@@ -90,7 +96,7 @@ class webController extends Controller
     }
     public function news(Request $request){
         $data = News::with('type')->where('type_id',1)
-            ->where('start','>=',date('Y-m-d'))
+            //->where('start','>=',date('Y-m-d'))
             ->where('end', '>=', date('Y-m-d'))
             ->orderBy('end')->get();
 

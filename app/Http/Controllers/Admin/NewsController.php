@@ -20,7 +20,7 @@ class NewsController extends Controller
     public function create(){
         return Inertia::render('Admin/News/create');
     }
-    public function store(Request $request){         
+    public function store(Request $request){
         $dt_start = new \DateTime($request->start);
         $dt_end = new \DateTime($request->end);
 
@@ -37,9 +37,9 @@ class NewsController extends Controller
             $filename = $request->file('picture')->getClientOriginalName();
             $news->picture = $filename;
             $file = $request->file('picture');
-            Storage::disk('public')->put($filename, \File::get($file));
+            Storage::disk('public')->put('/news/'.$filename, \File::get($file));
         }
-        
+
         $news->save();
         sleep(1);
 
@@ -63,14 +63,14 @@ class NewsController extends Controller
         $news->start = $dt_start->format('Y-m-d');
         $news->end = $dt_end->format('Y-m-d');
         $news->slug = Str::slug($request->title);
-        
+
         if($request->file('picture')){
             $filename = $request->file('picture')->getClientOriginalName();
             $news->picture = $filename;
             $file = $request->file('picture');
             Storage::disk('public')->put('/news/'.$filename, \File::get($file));
         }
-        
+
         $news->save();
         sleep(1);
 
