@@ -27,7 +27,7 @@ class TransparencyObligations extends Controller
         $transparency->save();
  
         foreach ($request->file as  $image) {
-            Storage::disk('public')->put('/trasparency/'. $image->getClientOriginalName(), file_get_contents($image));
+            Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$image->getClientOriginalName(), file_get_contents($image));
             $files = new TransparencyObligationFile();
             $files->transparency_obligations_id = $transparency->id;
             $files->file = $image->getClientOriginalName();
