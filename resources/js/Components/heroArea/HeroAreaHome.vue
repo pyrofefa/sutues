@@ -80,8 +80,10 @@ onMounted(() => {
                 <h1>
                   {{ d.title }}
                 </h1>
-                <Link :href="route('newsDetails', d.slug)" class="theme-btn">Leer más</Link>
-              </div>
+                <Link v-if="d.type_id == 1" :href="route('newsDetails', d.slug)" class="theme-btn">Leer más</Link>
+                <Link v-else-if="d.type_id == 2" :href="route('convocationsDetails', d.slug)" class="theme-btn">Leer más</Link>
+                <Link v-else-if="d.type_id == 3" :href="route('documentsDetails', d.slug)" class="theme-btn">Leer más</Link>
+               </div>
             </div>
           </div>
         </div>

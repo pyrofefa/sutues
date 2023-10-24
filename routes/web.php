@@ -56,6 +56,8 @@ Route::prefix('conocenos')->group(function () {
 })->name('about');
 Route::get('/documentos', [webController::class, 'documents'])->name('documents');
 Route::get('/convocatorias', [webController::class, 'convocations'])->name('convocations');
+Route::get('/convocatorias/{slug}', [webController::class, 'convocationsDetails'])->name('convocationsDetails');
+
 Route::prefix('transparencia')->group(function () {
     Route::get('/procedimiento-solicitud', [webController::class, 'applicationProcedure'])->name('applicationProcedure');
     Route::get('/oficina-de-enlace', [webController::class, 'cordinationOffice'])->name('cordinationOffice');

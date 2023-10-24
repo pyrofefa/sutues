@@ -94,6 +94,12 @@ class webController extends Controller
     public function convocations(){
         return Inertia::render('Web/Convocations');
     }
+    public function convocationsDetails($slug){
+        $news = News::where('slug','=', $slug)->firstOrFail();
+        return Inertia::render('Web/ConvocationsDetail',[
+            'news' => $news
+        ]);
+    }
     public function news(Request $request){
         $data = News::with('type')->where('type_id',1)
             //->where('start','>=',date('Y-m-d'))
