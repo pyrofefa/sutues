@@ -55,6 +55,8 @@ Route::prefix('conocenos')->group(function () {
     Route::get('/comite', [webController::class, 'staff'])->name('staff');
 })->name('about');
 Route::get('/documentos', [webController::class, 'documents'])->name('documents');
+Route::get('/documentos/{slug}', [webController::class, 'documentsDetails'])->name('documentsDetails');
+
 Route::get('/convocatorias', [webController::class, 'convocations'])->name('convocations');
 Route::get('/convocatorias/{slug}', [webController::class, 'convocationsDetails'])->name('convocationsDetails');
 

@@ -91,6 +91,13 @@ class webController extends Controller
             })->orderBy('end','desc')->paginate(21)
         ]);
     }
+    public function documentsDetails($slug){
+        $news = News::where('slug','=', $slug)->firstOrFail();
+        return Inertia::render('Web/DocumentsDetail',[
+            'news' => $news
+        ]);
+    }
+
     public function convocations(){
         return Inertia::render('Web/Convocations');
     }
