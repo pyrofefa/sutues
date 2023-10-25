@@ -66,6 +66,14 @@
             Obligaciones de transparencia
           </NavLink>
         </li>
+        <li class="relative px-6 py-3">
+          <NavLink :href="route('suppliers.index')" :active="route().current('suppliers.index') || route().current('suppliers.create') || route().current('suppliers.edit')">
+            <template #icon>
+              <i class="fa-solid fa-newspaper"></i>
+            </template>
+            Proveedores
+          </NavLink>
+        </li>
       </ul>
     </div>
   </aside>

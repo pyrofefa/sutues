@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\DocumentsController;
 use App\Http\Controllers\Admin\TransparencyObligations;
 use App\Http\Controllers\Admin\ConvocationsController;
+use App\Http\Controllers\Admin\SuppliersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +41,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('convocations',ConvocationsController::class);
         Route::resource('documents',DocumentsController::class);
         Route::resource('transparency-obligations',TransparencyObligations::class);
+        Route::resource('/suppliers',SuppliersController::class);
+
     })->name('admin');
 });
 
@@ -56,7 +59,6 @@ Route::prefix('conocenos')->group(function () {
 })->name('about');
 Route::get('/documentos', [webController::class, 'documents'])->name('documents');
 Route::get('/documentos/{slug}', [webController::class, 'documentsDetails'])->name('documentsDetails');
-
 Route::get('/convocatorias', [webController::class, 'convocations'])->name('convocations');
 Route::get('/convocatorias/{slug}', [webController::class, 'convocationsDetails'])->name('convocationsDetails');
 
