@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Staff;
 use App\Models\Person;
@@ -29,6 +30,7 @@ class StaffController extends Controller
         $person = new Person();
         $person->first_name = $request->name;
         $person->last_name = $request->lastName;
+        $person->photo = $request->file('file')->getClientOriginalName();
         $person->save();
 
         $staff = new Staff();
@@ -36,6 +38,12 @@ class StaffController extends Controller
         $staff->office_id = $request->office;
         $staff->position_id = $request->position;
         $staff->save();
+
+        if($request->file('file')){
+            $filename = $request->file('file')->getClientOriginalName();
+            $file = $request->file('file');
+            Storage::disk('public')->put('/staff/'.$filename, \File::get($file));
+        }
         sleep(1);
 
         return redirect()->route('staff.index')->with('message', 'Blog Created Successfully');
@@ -51,9 +59,16 @@ class StaffController extends Controller
         ]);
     }
     public function update(Request $request, $id){
+        if($request->file('file')){
+            $filename = $request->file('file')->getClientOriginalName();
+        }
+        else{
+            $filename = null;
+        }    
         $person = Person::find($id);
         $person->first_name = $request->name;
         $person->last_name = $request->lastName;
+        $person->photo = $filename;
         $person->save();
 
         $staff = Staff::where('person_id',$id)->first();
@@ -61,8 +76,13 @@ class StaffController extends Controller
         $staff->office_id = $request->office;
         $staff->position_id = $request->position;
         $staff->save();
-        sleep(1);
 
+        if($request->file('file')){
+            $filename = $request->file('file')->getClientOriginalName();
+            $file = $request->file('file');
+            Storage::disk('public')->put('/staff/'.$filename, \File::get($file));
+        }
+        sleep(1);
         return redirect()->route('staff.index')->with('message', 'Blog Updated Successfully');
     }
     public function destroy($id){

@@ -5,6 +5,7 @@ import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
+import FileUpload from "@/Components/FileUpload.vue";
 
 defineProps({
     office: {
@@ -19,7 +20,8 @@ const form = useForm({
     name: "",
     lastName: "",
     office: "",
-    position: ""
+    position: "",
+    file: ""
 });
 
 const submit = () => {
@@ -94,6 +96,9 @@ const submit = () => {
                                     class="mt-2"
                                     :message="form.errors.position"
                                 />
+                            </div>
+                            <div class="my-6">
+                               <FileUpload @input="form.file = $event.target.files[0]" />
                             </div>
                             <PrimaryButton
                                 type="submit"

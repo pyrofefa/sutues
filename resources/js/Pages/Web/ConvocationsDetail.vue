@@ -58,10 +58,11 @@ onMounted(() => {
         <div class="col-xl-8 col-lg-8 col-12">
           <div class="blog-content-wrap">
             <div class="blog-feature-img">
-              <img v-if="news.picture == null" alt="blog feature" src="/assets/img/blog/blog-details-1.jpg" />
-              <img v-else :alt="news.title" :src="'/storage/news/'+ news.picture"  />
+              <!--<img v-if="news.picture == null" alt="blog feature" src="/assets/img/blog/blog-details-1.jpg" />
+              <img v-else :alt="news.title" :src="'/storage/convocations/'+ news.picture"  />-->
             </div>
-            <div v-html="news.content" />
+            <object :data="'/storage/convocations/'+ news.picture" type="application/pdf" width="100%" height="900px"></object>
+            <br>
           </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-12">

@@ -98,8 +98,17 @@ class webController extends Controller
         ]);
     }
 
-    public function convocations(){
-        return Inertia::render('Web/Convocations');
+    public function convocations(Request $request){
+        $data = News::with('type')->where('type_id',2)
+            ->where('end', '>=', date('Y-m-d'))
+            ->orderBy('end')->get();
+
+        return Inertia::render('Web/Convocations',[
+            'data' => $data,
+            'convocations' => News::with('type')->where('type_id',2)->when($request->term, function($query, $term){
+                $query->where('title', 'LIKE', '%'.$term.'%');
+            })->orderBy('end','desc')->paginate(21)
+        ]);
     }
     public function convocationsDetails($slug){
         $news = News::where('slug','=', $slug)->firstOrFail();
@@ -109,7 +118,6 @@ class webController extends Controller
     }
     public function news(Request $request){
         $data = News::with('type')->where('type_id',1)
-            //->where('start','>=',date('Y-m-d'))
             ->where('end', '>=', date('Y-m-d'))
             ->orderBy('end')->get();
 

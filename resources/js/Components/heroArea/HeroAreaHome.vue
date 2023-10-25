@@ -9,7 +9,7 @@ onMounted(() => {
     items: 1,
     dots: false,
     nav: true,
-    loop: true,
+    loop: false,
     autoplay: true,
     autoplayTimeout: 6000,
     smartSpeed: 2000,

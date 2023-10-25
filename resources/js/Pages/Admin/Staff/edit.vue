@@ -6,6 +6,7 @@ import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
+import FileUpload from "@/Components/FileUpload.vue";
 
 const props = defineProps({
     staff: {
@@ -26,10 +27,19 @@ const form = useForm({
     lastName: props.staff.person.last_name,
     office: props.staff.office_id,
     position: props.staff.position.id,
+    file: props.staff.person.photo,
 });
 
 const submit = () => {
-    form.put(route("staff.update", props.staff.person.id));
+    router.post(route("staff.update", props.staff.person.id), {
+        _method: 'put',
+        id: form.id,
+        name: form.name,
+        lastName: form.lastName,
+        office: form.office,
+        position: form.position,
+        file:  form.file,
+    })
 };
 </script>
 <template>
@@ -100,6 +110,9 @@ const submit = () => {
                                     class="mt-2"
                                     :message="form.errors.position"
                                 />
+                            </div>
+                            <div class="my-6">
+                               <FileUpload @input="form.file = $event.target.files[0]" />
                             </div>
                             <PrimaryButton
                                 type="submit"

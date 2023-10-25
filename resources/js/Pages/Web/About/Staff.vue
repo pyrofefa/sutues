@@ -34,7 +34,7 @@
                 <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
               </div>
               <div class="team-img" v-else>
-                <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
+                <img :alt="item.person.first_name" :src="'/storage/staff/'+ item.person.photo" />
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
@@ -53,7 +53,7 @@
                 <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
               </div>
               <div class="team-img" v-else>
-                <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
+                <img :alt="item.person.first_name" :src="'/storage/staff/'+ item.person.photo" />
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
@@ -72,7 +72,7 @@
                 <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
               </div>
               <div class="team-img" v-else>
-                <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
+                <img :alt="item.person.first_name" :src="'/storage/staff/'+ item.person.photo" />
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>
@@ -91,7 +91,7 @@
                 <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
               </div>
               <div class="team-img" v-else>
-                <img :alt="item.person.first_name" src="/assets/img/secretary.jpeg" />
+                <img :alt="item.person.first_name" :src="'/storage/staff/'+ item.person.photo" />
               </div>
               <div class="team-info">
                 <h5>{{ item.person.first_name }} {{ item.person.last_name }}</h5>

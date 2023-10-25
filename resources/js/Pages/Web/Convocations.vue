@@ -1,194 +1,63 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
+    import HeroAreaNews from '@/Components/heroArea/HeroAreaNews.vue'
+    import { router, Link } from '@inertiajs/vue3'
+    import PaginationNews from '@/Components/PaginationNews.vue'
+    import moment from 'moment/moment'
+    import 'moment/locale/es';
+    import { ref, watch } from 'vue'
+
+    const props = defineProps({
+        convocations: {
+            type: Object,
+            default: () => ({}),
+        },
+        data: {
+            type: Array,
+        }
+    });
+
+    const term = ref('');
+    watch(term, (value) => {
+        router.get( route( 'convocations', { term: value } ), {}, { preserveState: true } );
+    });
 </script>
 <template>
     <Header />
-    <div class="breadcrumb-area bread-bg">
-        <div class="overlay"></div>
+    <HeroAreaNews :data="data" />
+    <div class="blog-two section-padding pb-60 pt-10 blog-page">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="breadcrumb-title">
-                        <h1>Convocatorias</h1>
+                <div class="col-lg-5 col-md-6 col-sm-6">
+                    <div class="search-bar-wrap d-flex text-right">
+                        <input placeholder="Buscar" type="search" v-model='term' @keyup="search" preserve-scroll />
+                        <i class="fal fa-search"></i>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="blog-two section-padding pb-60 blog-page">
-        <div class="container">
-            <!--v-if-->
-            <div class="row mt-30">
-                <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="row mt-30 pt-10">
+                <div v-for="item in convocations.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
+                        <Link :href="route('newsDetails', item.slug)" class="blog-img">
+                            <img v-if="item.picture == null" :alt="item.title" class="img-fluid" src="/assets/img/newsHeader.png">
+                            <img v-else :alt="item.title" :src="'/storage/news/'+ item.picture" class="img-fluid" />
+                        </Link>
                         <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
+                            <span>
+                                <Link :href="route('newsDetails', item.slug)">{{ item.title }}</Link>
+                            </span>
                             <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
+                                <Link :href="route('newsDetails', item.slug)" class="">{{ item.description }}</Link>
                             </h3>
                             <div class="blog-date">
-                                <p>April 10, 2023</p>
+                                <p>{{ moment(item.updated_at).locale('es').format('LL') }}</p>
                             </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
+                            <Link :href="route('newsDetails', item.slug)" class="read-more">Leer más</Link>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
-                        <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
-                            <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
-                            </h3>
-                            <div class="blog-date">
-                                <p>April 10, 2023</p>
-                            </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
-                        <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
-                            <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
-                            </h3>
-                            <div class="blog-date">
-                                <p>April 10, 2023</p>
-                            </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
-                        <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
-                            <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
-                            </h3>
-                            <div class="blog-date">
-                                <p>April 10, 2023</p>
-                            </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
-                        <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
-                            <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
-                            </h3>
-                            <div class="blog-date">
-                                <p>April 10, 2023</p>
-                            </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
-                        <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
-                            <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
-                            </h3>
-                            <div class="blog-date">
-                                <p>April 10, 2023</p>
-                            </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
-                        <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
-                            <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
-                            </h3>
-                            <div class="blog-date">
-                                <p>April 10, 2023</p>
-                            </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
-                        <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
-                            <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
-                            </h3>
-                            <div class="blog-date">
-                                <p>April 10, 2023</p>
-                            </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <a href="/blog/1" class="blog-img">
-                            <img alt="Interior Design" class="img-fluid" src="/assets/img/blog/1.jpg">
-                        </a>
-                        <div class="blog-content">
-                            <span><a href="#">Interior Design</a></span>
-                            <h3>
-                                <a href="/blog/1" class="">What to Expect When Working with an Interior Designer</a>
-                            </h3>
-                            <div class="blog-date">
-                                <p>April 10, 2023</p>
-                            </div>
-                            <a href="/blog/1" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <ul class="pagination">
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li aria-current="page" class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </li>
-                </ul>
+                <PaginationNews class="mt-6" :links="convocations.links" />
             </div>
         </div>
     </div>
