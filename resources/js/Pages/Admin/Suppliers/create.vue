@@ -14,14 +14,16 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route("staff.store"));
+    form.post(route("suppliers.store"),{
+        forceFormData: true,
+    });
 };
 </script>
 <template>
-    <Head title="Crear Secretario" />
-    <AuthenticatedLayout title="Crear proyecto">
+    <Head title="Crear Proveedor" />
+    <AuthenticatedLayout title="Crear proveedor">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Comite</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Proveedor</h2>
         </template>
 
         <div class="py-12">
@@ -48,7 +50,7 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                <textarea name="textarea" class="form-group mt-1 block w-full" rows="10" cols="50">Write something here</textarea>
+                                <textarea name="textarea" v-model="form.content" class="form-group mt-1 block w-full" rows="10" cols="50"></textarea>
                             </div>
 
                             <div class="my-6">

@@ -1,6 +1,15 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
+    import Suppliers from '@/Components/Suppliers.vue';
+
+    const props = defineProps({
+        suppliers: {
+            type: Object,
+            default: () => ({}),
+        }
+    });
+
 </script>
 <template>
     <Header />
@@ -16,39 +25,21 @@
             </div>
         </div>
     </div>
-    <div class="portfolio-area section-padding" id="port-masonry">
+
+    <div class="faq-section gray-bg section-padding">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="portfolio-list">
-                        <a href="/portfolio/5" class="single-portfolio-item">
-                            <img alt="Micalu Meseum" src="/assets/img/portfolio/1.jpg">
-                            <div class="portfolio-details">
-                                <span>Construction</span>
-                                <h5>Micalu Meseum</h5>
-                            </div>
-                        </a>
-                        <a href="/portfolio/6" class="single-portfolio-item">
-                            <img alt="Hall Room" src="/assets/img/portfolio/2.jpg">
-                            <div class="portfolio-details">
-                                <span>Interior</span>
-                                <h5>Hall Room</h5>
-                            </div>
-                        </a>
-                        <a href="/portfolio/7" class="single-portfolio-item">
-                            <img alt="Drawing Room" src="/assets/img/portfolio/3.jpg">
-                            <div class="portfolio-details">
-                                <span>Interior</span>
-                                <h5>Drawing Room</h5>
-                            </div>
-                        </a>
-                        <a href="/portfolio/8" class="single-portfolio-item">
-                            <img alt="National Perliament" src="/assets/img/portfolio/4.jpg">
-                            <div class="portfolio-details">
-                                <span>Construction</span>
-                                <h5>National Perliament</h5>
-                            </div>
-                        </a>
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-10 mb-50">
+                    <div class="cp-custom-accordion">
+                        <div class="accordions">
+                                 <Suppliers
+                                    v-for="question in suppliers"
+                                    :key="question.id"
+                                    :title="question.name"
+                                    :info="question.content"
+                                    :logo="question.logo"
+                                />
+                         </div>
                     </div>
                 </div>
             </div>

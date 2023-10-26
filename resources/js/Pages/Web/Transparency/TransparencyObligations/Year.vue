@@ -2,6 +2,7 @@
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue';
     import Accordion from '@/Components/Accordion.vue';
+
     defineProps({
         year: String,
         articles: {

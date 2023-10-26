@@ -10,8 +10,10 @@
       </button>
     </header>
     <div :style="contentStyle" class="content accordion-body" >
-      <div v-for="info in info.articles">
-        <p :style="infoStyle" class="info">{{ info.file }}</p>
+      <div v-for="i in info.articles">
+        <a :style="infoStyle" :href="'/transparencia/obligaciones-de-transparencia/download/' + i.id + '/'+ info.year" class="info">
+          <p>{{ i.file }}</p>
+        </a>
       </div>
     </div>
   </div>
@@ -24,7 +26,7 @@ export default {
   name: "Question",
   props: {
     title: String,
-    info: String,
+    info: Object,
   },
   setup() {
     const expanded = ref(false);

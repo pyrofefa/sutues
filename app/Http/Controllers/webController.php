@@ -2,12 +2,15 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Person;
 use App\Models\Secretary;
 use App\Models\Staff;
 use App\Models\News;
 use App\Models\TransparencyObligation;
+use App\Models\TransparencyObligationFile;
+use App\Models\Supplier;
 
 class webController extends Controller
 {
@@ -81,6 +84,11 @@ class webController extends Controller
             'articles' => $articles
         ]);
     }
+    public function downloadFile($id, $year) {
+        $file = TransparencyObligationFile::find($id);
+        return response()->download(storage_path('app/public/trasparency/'.$year.'/'.$file->file));
+
+    }
     /**End Trasparency */
 
     //
@@ -136,7 +144,10 @@ class webController extends Controller
     }
 
     public function suppliers(){
-        return Inertia::render('Web/Suppliers');
+        $suppliers = Supplier::all();
+        return Inertia::render('Web/Suppliers',[
+            'suppliers' => $suppliers
+        ]);
     }
     public function contactUs(){
         return Inertia::render('Web/ContactUs');

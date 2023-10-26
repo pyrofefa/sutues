@@ -42,7 +42,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('documents',DocumentsController::class);
         Route::resource('transparency-obligations',TransparencyObligations::class);
         Route::resource('/suppliers',SuppliersController::class);
-
     })->name('admin');
 });
 
@@ -68,6 +67,8 @@ Route::prefix('transparencia')->group(function () {
     Route::get('/comite-de-transparencia', [webController::class, 'transparencyCommission'])->name('transparencyCommission');
     Route::get('/obligaciones-de-transparencia', [webController::class, 'transparencyObligations'])->name('transparencyObligations');
     Route::get('/obligaciones-de-transparencia/{year}', [webController::class, 'transparencyObligationsYear'])->name('transparencyObligations.year');
+    Route::get('/obligaciones-de-transparencia/download/{id}/{year}', [webController::class, 'downloadFile'])->name('transparencyObligations.download');
+
 })->name('transparency');
 
 Route::get('/noticias', [webController::class, 'news'])->name('news');

@@ -45,7 +45,7 @@
         <li class="relative px-6 py-3">
           <NavLink :href="route('convocations.index')" :active="route().current('convocations.index') || route().current('convocations.create') || route().current('convocations.edit')">
             <template #icon>
-              <i class="fa-solid fa-newspaper"></i>
+              <i class="fa-regular fa-bell"></i>
             </template>
             Convocatorias
           </NavLink>
@@ -53,7 +53,7 @@
         <li class="relative px-6 py-3">
           <NavLink :href="route('documents.index')" :active="route().current('documents.index') || route().current('documents.create') || route().current('documents.edit')">
             <template #icon>
-              <i class="fa-solid fa-newspaper"></i>
+              <i class="fa-solid fa-file"></i>
             </template>
             Documentos
           </NavLink>
@@ -61,7 +61,7 @@
         <li class="relative px-6 py-3">
           <NavLink :href="route('transparency-obligations.index')" :active="route().current('transparency-obligations.index') || route().current('transparency-obligations.create') || route().current('transparency-obligations.edit')">
             <template #icon>
-              <i class="fa-solid fa-newspaper"></i>
+              <i class="fa-solid fa-scale-balanced"></i>
             </template>
             Obligaciones de transparencia
           </NavLink>
@@ -69,7 +69,7 @@
         <li class="relative px-6 py-3">
           <NavLink :href="route('suppliers.index')" :active="route().current('suppliers.index') || route().current('suppliers.create') || route().current('suppliers.edit')">
             <template #icon>
-              <i class="fa-solid fa-newspaper"></i>
+              <i class="fa-solid fa-truck-field"></i>
             </template>
             Proveedores
           </NavLink>

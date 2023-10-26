@@ -23,7 +23,7 @@
                     <div class="about-content-wrap">
                         <div class="section-title">
                             <h4>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam harum voluptates totam ipsam! Pariatur enim maiores iure harum, officiis nam voluptatum quibusdam quisquam unde necessitatibus numquam provident ad quae eos!
+                                
                             </h4>
                         </div>
                     </div>
