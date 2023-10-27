@@ -17,9 +17,9 @@ class ApplicationProcedure extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct($file)
+    public function __construct($data = [])
     {
-        $this->file = $file;
+        $this->data = $data;
     }
 
     /**
@@ -50,8 +50,8 @@ class ApplicationProcedure extends Mailable
     public function attachments(): array
     {
         return [
-            Attachment::fromData(fn () => $this->file, 'solicitud.pdf')
-                    ->withMime('application/pdf'),
+            Attachment::fromData(fn () => $this->data[0]->getRealPath(), $this->data[0]->getClientOriginalName())
+                    ->withMime($this->data[0]->getClientMimeType()),
         ];
     }
 }
