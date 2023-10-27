@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\ApplicationProcedure;
 
 use App\Models\Person;
 use App\Models\Secretary;
@@ -154,6 +157,12 @@ class webController extends Controller
     }
     public function contactUs(){
         return Inertia::render('Web/ContactUs');
+    }
+
+    public function sendTransparency(Request $request){
+        $file = $request->file('file');
+        Mail::to('paginasutues@gmail.com’')->send(new ApplicationProcedure($file));
+
     }
 
 }

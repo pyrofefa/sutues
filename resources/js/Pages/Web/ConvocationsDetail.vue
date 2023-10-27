@@ -70,6 +70,12 @@ onMounted(() => {
             <div v-if="attacheds.length == 1 && news.content == null " v-for="attached in attacheds" >
                 <object :data="'/storage/convocations/attacheds/'+ attached.file" type="application/pdf" width="100%" height="900px"></object>
             </div>
+            <div v-else class="popular-tag-wrap">
+                <h5 class="mb-8">Archivos Adjuntos</h5>
+                <div v-for="attached in attacheds">
+                    <span>{{ attached.file }}</span>
+                </div>
+            </div>
             <br>
           </div>
         </div>

@@ -68,6 +68,8 @@ Route::prefix('transparencia')->group(function () {
     Route::get('/obligaciones-de-transparencia', [webController::class, 'transparencyObligations'])->name('transparencyObligations');
     Route::get('/obligaciones-de-transparencia/{year}', [webController::class, 'transparencyObligationsYear'])->name('transparencyObligations.year');
     Route::get('/obligaciones-de-transparencia/download/{id}/{year}', [webController::class, 'downloadFile'])->name('transparencyObligations.download');
+    Route::post('/obligaciones-de-transparencia/send', [webController::class, 'sendTransparency'])->name('transparency-obligations.send');
+
 
 })->name('transparency');
 
