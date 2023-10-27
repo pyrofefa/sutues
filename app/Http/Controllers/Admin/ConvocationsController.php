@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Models\News;
 use App\Models\Type;
+use App\Models\Attached;
 
 class ConvocationsController extends Controller
 {
@@ -22,7 +23,6 @@ class ConvocationsController extends Controller
     }
     public function store(Request $request){
         $dt_end = new \DateTime($request->end);
-
         $news = new News();
         $news->title = $request->title;
         $news->description = $request->description;
@@ -37,8 +37,17 @@ class ConvocationsController extends Controller
             $file = $request->file('picture');
             Storage::disk('public')->put('/convocations/'.$filename, \File::get($file));
         }
-
         $news->save();
+
+        /**Guardando adjuntos */
+        foreach ($request->file as  $image) {
+            Storage::disk('public')->put('/convocations/attacheds/'.$image->getClientOriginalName(), file_get_contents($image));
+            $files = new Attached();
+            $files->news_id = $news->id;
+            $files->type_id = 2;
+            $files->file = $image->getClientOriginalName();
+            $files->save();
+        }
         sleep(1);
 
         return redirect()->route('convocations.index')->with('message', 'Blog Created Successfully');

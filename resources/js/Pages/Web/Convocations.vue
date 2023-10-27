@@ -40,7 +40,8 @@
                 <div v-for="item in convocations.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                         <Link :href="route('convocationsDetails', item.slug)" class="blog-img">
-                            <img :alt="item.title" src="/assets/img/convocations.png" class="img-fluid" /> 
+                            <img v-if="item.picture == null" :alt="item.title" class="img-fluid" src="/assets/img/convocations.png">
+                            <img v-else :alt="item.title" :src="'/storage/convocations/'+ item.picture" class="img-fluid" />
                         </Link>
                         <div class="blog-content">
                             <span>

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Models\News;
 use App\Models\Type;
+use App\Models\Attached;
 
 class NewsController extends Controller
 {

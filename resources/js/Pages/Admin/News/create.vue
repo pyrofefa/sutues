@@ -13,7 +13,8 @@ const form = useForm({
     description: "",
     content: "",
     end: "",
-    picture:""
+    picture:"",
+    file: "",
 });
 
 const submit = () => {
@@ -28,7 +29,7 @@ const submit = () => {
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Noticia</h2>
         </template>
-        
+
         <div class="py-12">
             <div class="mx-auto max-w-7xl">
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
@@ -54,9 +55,10 @@ const submit = () => {
                             </div>
                             <div class="my-6">
                                 <InputLabel for="end" value="Fecha de vecimiento" />
-                                <Datepicker v-model="form.end" />  
+                                <Datepicker v-model="form.end" />
                             </div>
                             <div class="my-6">
+                                <InputLabel for="description" value="Imagen encabezado" />
                                 <input type="file" @input="form.picture = $event.target.files[0]" />
                             </div>
 
@@ -79,8 +81,12 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                <InputLabel for="content" value="Contenido" />                            
-                                <CkEditor v-model="form.content" />                                                               
+                                <InputLabel for="description" value="Archivos adjuntos" />
+                                <FileUpload @input="form.file = $event.target.files" />
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="content" value="Contenido" />
+                                <CkEditor v-model="form.content" />
                             </div>
                             <PrimaryButton
                                 type="submit"

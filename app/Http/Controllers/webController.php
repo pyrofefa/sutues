@@ -11,6 +11,7 @@ use App\Models\News;
 use App\Models\TransparencyObligation;
 use App\Models\TransparencyObligationFile;
 use App\Models\Supplier;
+use App\Models\Attached;
 
 class webController extends Controller
 {
@@ -120,8 +121,10 @@ class webController extends Controller
     }
     public function convocationsDetails($slug){
         $news = News::where('slug','=', $slug)->firstOrFail();
+        $attacheds = Attached::where('news_id',$news->id)->get();
         return Inertia::render('Web/ConvocationsDetail',[
-            'news' => $news
+            'news' => $news,
+            'attacheds' => $attacheds
         ]);
     }
     public function news(Request $request){

@@ -7,13 +7,15 @@ import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import CkEditor from "@/Components/CkEditor.vue";
 import Datepicker from "@/Components/Datepicker.vue";
+import FileUpload from "@/Components/FileUpload.vue";
 
 const form = useForm({
     title: "",
     description: "",
     content: "",
     end: "",
-    picture:""
+    picture:"",
+    file: ""
 });
 
 const submit = () => {
@@ -58,6 +60,7 @@ const submit = () => {
                                 <Datepicker v-model="form.end" />
                             </div>
                             <div class="my-6">
+                                <InputLabel for="description" value="Imagen encabezado" />
                                 <input type="file" @input="form.picture = $event.target.files[0]" />
                             </div>
 
@@ -78,6 +81,10 @@ const submit = () => {
                                     class="mt-2"
                                     :message="form.errors.description"
                                 />
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="description" value="Archivos adjuntos" />
+                                <FileUpload @input="form.file = $event.target.files" />
                             </div>
                             <div class="my-6">
                                 <InputLabel for="content" value="Contenido" />
