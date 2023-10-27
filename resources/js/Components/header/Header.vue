@@ -113,7 +113,7 @@ onMounted(() => {
 }
 .main-menu ul > li > ul li a:hover {
     display: block;
-    color: #832e2d;
+    color: #683431;
     padding: 12px 25px;
     font-size: 12px;
     text-transform: uppercase;

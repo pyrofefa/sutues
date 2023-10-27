@@ -21,7 +21,6 @@ class ConvocationsController extends Controller
         return Inertia::render('Admin/Convocations/create');
     }
     public function store(Request $request){
-        $dt_start = new \DateTime($request->start);
         $dt_end = new \DateTime($request->end);
 
         $news = new News();
@@ -29,7 +28,6 @@ class ConvocationsController extends Controller
         $news->description = $request->description;
         $news->type_id = 2;
         $news->content = $request->content;
-        $news->start = $dt_start->format('Y-m-d');
         $news->end = $dt_end->format('Y-m-d');
         $news->slug = Str::slug($request->title);
 

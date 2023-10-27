@@ -46,7 +46,7 @@
 </template>
 <style>
 .footer-area {
-    background: #832e2d;
+    background: #683431;
     color: #fff;
  }
 .footer-area p {

@@ -20,7 +20,6 @@ const form = useForm({
     title: props.news.title,
     description: props.news.description,
     content: props.news.content,
-    start:  props.news.start,
     end:  props.news.end,
     picture:  props.news.picture,
     _method: "PUT"
@@ -63,11 +62,7 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                <InputLabel for="description" value="Inicio" />
-                                <Datepicker v-model="form.start" />  
-                            </div>
-                            <div class="my-6">
-                                <InputLabel for="description" value="Final" />
+                                <InputLabel for="description" value="Fecha de vecimiento" />
                                 <Datepicker v-model="form.end" />  
                             </div>
                               <div class="my-6">

@@ -23,7 +23,6 @@ class NewsFactory extends Factory
             'description' => $this->faker->sentence(15),
             'type_id' => 1,
             'content' => $this->faker->text(),
-            'start' => $this->faker->date('Y-m-d'),
             'end' => $this->faker->date('Y-m-d'),
             'slug' => $slug
         ];

@@ -58,8 +58,8 @@
   </template>
 <style>
 .contact-page .contact-form button[type="submit"] {
-    background: #832e2d !important;
-    border: 1px solid #832e2d;
+    background: #683431 !important;
+    border: 1px solid #683431;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;

@@ -27,7 +27,6 @@ class DocumentsController extends Controller
         $news = new News();
         $news->title = $request->title;
         $news->description = $request->description;
-        $news->start = $dt_start->format('Y-m-d');
         $news->end = $dt_end->format('Y-m-d');
         $news->content = "";
         $news->type_id = 3;

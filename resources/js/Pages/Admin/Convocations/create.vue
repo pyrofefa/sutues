@@ -12,7 +12,6 @@ const form = useForm({
     title: "",
     description: "",
     content: "",
-    start: "",
     end: "",
     picture:""
 });
@@ -55,11 +54,7 @@ const submit = () => {
                             </div>
 
                             <div class="my-6">
-                                <InputLabel for="description" value="Inicio" />
-                                <Datepicker v-model="form.start" />
-                            </div>
-                            <div class="my-6">
-                                <InputLabel for="description" value="Final" />
+                                <InputLabel for="end" value="Fecha de vecimiento" />
                                 <Datepicker v-model="form.end" />
                             </div>
                             <div class="my-6">

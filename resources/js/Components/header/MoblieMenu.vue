@@ -120,7 +120,7 @@ onMounted(() => {
     scroll-behavior: smooth;
     overflow-y: scroll;
     transition: right 0.5s ease-in;
-    background-color: #832e2d;
+    background-color: #683431;
     padding: 20px;
     z-index: 9999;
     box-shadow: 0 13px 35px -12px rgba(35, 35, 35, 0.15);
@@ -141,6 +141,6 @@ onMounted(() => {
 .mobile-nav .sidebar-nav .metismenu a:hover, .mobile-nav .sidebar-nav .metismenu a:focus, .mobile-nav .sidebar-nav .metismenu a:active {
     text-decoration: none;
     color: #f8f9fa;
-    background: #832e2d;
+    background: #683431;
 }
 </style>
