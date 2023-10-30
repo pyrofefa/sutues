@@ -49,12 +49,6 @@ class ApplicationProcedure extends Mailable
      */
     public function attachments(): array
     {
-        dd($this->data[0]->getRealPath());
-        /*return [
-            Attachment::fromStorage('/path/to/file')
-                    ->as('name.pdf')
-                    ->withMime('application/pdf'),
-        ];*/
         return [
             Attachment::fromData(fn () => $this->data[0]->getRealPath(), $this->data[0]->getClientOriginalName())
                     ->withMime($this->data[0]->getClientMimeType()),
