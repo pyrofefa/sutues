@@ -16,8 +16,10 @@
         <div class="col-xl-4 col-lg-4 col-md-6 col-12" v-for="d in data">
           <div class="single-blog-wrap">
             <div class="blog-bg">
+              <div class="thumbs">
                 <img v-if="d.picture == null" :alt="d.title" src="/assets/img/newsHeader.png">
                 <img v-else :alt="d.title" :src="'/storage/heroarea/'+ d.picture" />
+              </div>
             </div>
             <div class="blog-content">
               <h3><Link :href="route('newsDetails', d.slug)">{{ d.title.substring(0,50) }}</Link></h3>
@@ -43,12 +45,8 @@
     transform: none;
     font-size: 22px;
 }
-/*.parent {
-   width: 652px; 
-   height: 439px;
+.thumbs img {
+  width: 640px;
+  height: 327px;
 }
-.parent img {
-   height: 100%;
-   width: 100%;
-}*/
 </style>

@@ -40,12 +40,14 @@
                 <div v-for="item in news.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                         <Link :href="route('newsDetails', item.slug)" class="blog-img">
-                            <img v-if="item.picture == null" :alt="item.title" class="img-fluid" src="/assets/img/newsHeader.png">
-                            <img v-else :alt="item.title" :src="'/storage/news/'+ item.picture" class="img-fluid" />
+                            <div class="thumbs">
+                                <img v-if="item.picture == null" :alt="item.title" class="img-fluid" src="/assets/img/newsHeader.png">
+                                <img v-else :alt="item.title" :src="'/storage/heroarea/'+ item.picture" class="img-fluid" />
+                            </div>
                         </Link>
                         <div class="blog-content">
                             <span>
-                                <Link :href="route('newsDetails', item.slug)">{{ item.title.substring(0,50) }}</Link>
+                                <Link :href="route('newsDetails', item.slug)">{{ item.title.substring(0,80) }}</Link>
                             </span>
                             <h3>
                                 <Link :href="route('newsDetails', item.slug)" class="">{{ item.description.substring(0,100) }}</Link>
@@ -72,5 +74,9 @@
 .search-bar-wrap {
     background: #eee;
     padding: 15px;
+}
+.thumbs img {
+  width: 640px;
+  height: 327px;
 }
 </style>
