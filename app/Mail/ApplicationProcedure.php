@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Mail;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -38,7 +36,7 @@ class ApplicationProcedure extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mails.ApplicationProcedure',
+            markdown: 'emails.applicationProcedure',
         );
     }
 
