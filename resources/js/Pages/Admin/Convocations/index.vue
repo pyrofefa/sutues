@@ -40,6 +40,15 @@ function destroy(id) {
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Convocatorias</h2>
         </template>
+        <div v-if="$page.props.flash.success" class="alert alert-success" role="alert">
+            {{ $page.props.flash.success }}
+        </div>
+        <div v-if="$page.props.flash.warning" class="alert alert-warning" role="alert">
+            {{ $page.props.flash.warning }}
+        </div>
+        <div v-if="$page.props.flash.danger" class="alert alert-danger" role="alert">
+            {{ $page.props.flash.danger }}
+        </div>
         <div>
             <div>
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">

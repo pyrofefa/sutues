@@ -169,6 +169,7 @@ class webController extends Controller
         $file = $request->file('file');
         Mail::to('paginasutues@gmail.com’')->send(new ApplicationProcedure($file));
 
+        return redirect()->route('applicationProcedure')->with('success', 'Solicitud enviada con éxito');
     }
 
 }

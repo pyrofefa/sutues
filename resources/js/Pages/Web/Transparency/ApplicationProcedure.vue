@@ -34,6 +34,9 @@
             <div class="row align-items-center wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                 <div class="col-xl-6 col-lg-6 col-md-7">
                     <div class="about-content-wrap mt-10">
+                        <div v-if="$page.props.flash.success" class="alert alert-success" role="alert">
+                            {{ $page.props.flash.success }}
+                        </div>
                         <div class="section-title">
                             <h3>Datos que debe contener la solicitud:</h3>
                         </div>

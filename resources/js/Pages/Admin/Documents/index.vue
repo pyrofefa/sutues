@@ -40,13 +40,22 @@ function destroy(id) {
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Documentos</h2>
         </template>
+        <div v-if="$page.props.flash.success" class="alert alert-success" role="alert">
+            {{ $page.props.flash.success }}
+        </div>
+        <div v-if="$page.props.flash.warning" class="alert alert-warning" role="alert">
+            {{ $page.props.flash.warning }}
+        </div>
+        <div v-if="$page.props.flash.danger" class="alert alert-danger" role="alert">
+            {{ $page.props.flash.danger }}
+        </div>
         <div>
             <div>
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <div class="flex justify-between">
                             <Link :href="route('documents.create')" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
-                                Nuevo 
+                                Nuevo
                             </Link>
                         </div>
                         <div class="mt-4">

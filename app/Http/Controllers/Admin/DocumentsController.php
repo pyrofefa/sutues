@@ -20,8 +20,8 @@ class DocumentsController extends Controller
     public function create(){
         return Inertia::render('Admin/Documents/create');
     }
-   
-    public function store(Request $request){         
+
+    public function store(Request $request){
         $dt_start = new \DateTime();
         $dt_end = new \DateTime();
 
@@ -39,12 +39,12 @@ class DocumentsController extends Controller
             $file = $request->file('file');
             Storage::disk('public')->put('/documents/'.$filename, \File::get($file));
         }
-        
+
         $news->save();
         sleep(1);
 
-        return redirect()->route('documents.index')->with('message', 'Blog Created Successfully');
-    } 
+        return redirect()->route('documents.index')->with('success', 'Creado con éxito');
+    }
     public function edit($id){
         $documents = News::find($id);
         return Inertia::render('Admin/Documents/edit',[
@@ -69,18 +69,18 @@ class DocumentsController extends Controller
             $file = $request->file('file');
             Storage::disk('public')->put('/documents/'.$filename, \File::get($file));
         }
-        
+
         $news->save();
         sleep(1);
 
-        return redirect()->route('documents.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('documents.index')->with('warning', 'Editado con éxito');
     }
     public function destroy($id){
         $file = News::find($id);
         Storage::disk('public')->delete('/documents/'.$file->picture);
         $news = News::find($id)->delete();
         sleep(1);
-        
-        return redirect()->route('documents.index')->with('message', 'Blog Delete Successfully');
+
+        return redirect()->route('documents.index')->with('danger', 'Eliminado con éxito');
     }
 }
