@@ -50,14 +50,16 @@ class ConvocationsController extends Controller
         }
         sleep(1);
 
-        return redirect()->route('convocations.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('convocations.index')->with('success', 'Creado con éxito');
+
     }
     public function destroy($id){
         $file = News::find($id);
         Storage::disk('public')->delete('/convocations/'.$file->picture);
         $news = News::find($id)->delete();
         sleep(1);
-        
-        return redirect()->route('convocations.index')->with('message', 'Blog Delete Successfully');
+
+        return redirect()->route('convocations.index')->with('danger', 'Eliminado con éxito');
+
     }
 }
