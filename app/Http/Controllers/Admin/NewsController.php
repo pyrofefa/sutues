@@ -49,7 +49,8 @@ class NewsController extends Controller
         }
         sleep(1);
 
-        return redirect()->route('news.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('news.index')->with('success', 'Creado con éxito');
+
     }
     public function edit($id){
         $news = News::find($id);
@@ -79,7 +80,8 @@ class NewsController extends Controller
         $news->save();
         sleep(1);
 
-        return redirect()->route('news.index')->with('message', 'Blog Updated Successfully');
+        return redirect()->route('news.index')->with('warning', 'Editado con éxito');
+
     }
     public function destroy($id){
         $file = News::find($id);
@@ -87,6 +89,6 @@ class NewsController extends Controller
         $news = News::find($id)->delete();
         sleep(1);
 
-        return redirect()->route('news.index')->with('message', 'Blog Delete Successfully');
+        return redirect()->route('news.index')->with('danger', 'Eliminado con éxito');
     }
 }
