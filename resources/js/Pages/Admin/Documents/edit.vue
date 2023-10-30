@@ -6,14 +6,24 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 
+const props = defineProps({
+    documents: {
+        type: Object,
+        default: () => ({}),
+    },
+});
+
+
 const form = useForm({
-    title: "",
-    description: "",
-    file:""
+    id: props.documents.id,
+    title: props.documents.title,
+    description: props.documents.description,
+    file:  props.documents.picture,
+    _method: "PUT"
 });
 
 const submit = () => {
-    form.post(route("documents.store"),{
+    form.post(route("documents.update", props.documents.id),{
         forceFormData: true,
     });
 };

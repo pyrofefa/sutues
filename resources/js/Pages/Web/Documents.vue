@@ -47,20 +47,20 @@
             <div class="row mt-30 pt-10">
                 <div v-for="item in documents.data" :key="item.id" class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-blog wow fadeInLeft" data-wow-delay="0.30000000000000004s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                        <Link :href="route('newsDetails', item.slug)" class="blog-img">
+                        <Link :href="route('documentsDetails', item.slug)" class="blog-img">
                             <img :alt="item.title" src="/assets/img/documents.png" class="img-fluid" /> 
                         </Link>
                         <div class="blog-content">
                             <span>
-                                <Link :href="route('newsDetails', item.slug)">{{ item.title }}</Link>
+                                <Link :href="route('documentsDetails', item.slug)">{{ item.title }}</Link>
                             </span>
                             <h3>
-                                <Link :href="route('newsDetails', item.slug)" class="">{{ item.description }}</Link>
+                                <Link :href="route('documentsDetails', item.slug)" class="">{{ item.description }}</Link>
                             </h3>
                             <div class="blog-date">
                                 <p>{{ moment(item.updated_at).locale('es').format('LL') }}</p>
                             </div>
-                            <Link :href="route('newsDetails', item.slug)" class="read-more">Leer más</Link>
+                            <Link :href="route('documentsDetails', item.slug)" class="read-more">Leer más</Link>
                         </div>
                     </div>
                 </div>

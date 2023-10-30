@@ -45,10 +45,10 @@
                         </Link>
                         <div class="blog-content">
                             <span>
-                                <Link :href="route('newsDetails', item.slug)">{{ item.title }}</Link>
+                                <Link :href="route('newsDetails', item.slug)">{{ item.title.substring(0,50) }}</Link>
                             </span>
                             <h3>
-                                <Link :href="route('newsDetails', item.slug)" class="">{{ item.description }}</Link>
+                                <Link :href="route('newsDetails', item.slug)" class="">{{ item.description.substring(0,100) }}</Link>
                             </h3>
                             <div class="blog-date">
                                 <p>{{ moment(item.updated_at).locale('es').format('LL') }}</p>

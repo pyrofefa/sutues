@@ -37,4 +37,16 @@ class TransparencyObligations extends Controller
         sleep(1);
         return redirect()->route('transparency-obligations.index')->with('message', 'Blog Created Successfully');
     }
+    public function destroy($id){
+        $transparency = TransparencyObligation::find($id);
+        $files = TransparencyObligationFile::where('transparency_obligations_id',$id)->get();
+        foreach ($files as  $image) {
+            Storage::disk('public')->delete('/trasparency/'.$transparency->year.'/'.$image->file);
+        }
+        $transparency->delete();
+        $delete =TransparencyObligationFile::where('transparency_obligations_id',$id)->delete();
+        sleep(1);
+        
+        return redirect()->route('transparency-obligations.index')->with('message', 'Blog Delete Successfully');
+    }
 }

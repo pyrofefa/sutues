@@ -1,36 +1,23 @@
 <script setup>
-import { onBeforeMount, ref } from "vue";
-import axios from "axios";
+import { Link } from '@inertiajs/vue3'
 
-const recent = ref([]);
+defineProps(['recents'])
 
-onBeforeMount(async () => {
-  try {
-    const { data: fetched } = await axios.get("/data/blogs.json");
-    const len = fetched.blogs.length;
-    recent.value = fetched.blogs.slice(len - 3);
-  } catch (error) {
-    console.log(error);
-  }
-});
 </script>
 <template>
   <div class="blog-sidebar">
-    <div class="search-bar-wrap d-flex">
-      <input placeholder="search" type="search" />
-      <i class="fal fa-search"></i>
-    </div>
     <div class="recent-post-wrap">
-      <h5>Recent Post</h5>
-      <div v-for="r in recent.slice()" :key="r.id" class="single-recent-post">
+      <h5 v-if="recents[0].type_id == 1">Noticias Recientes</h5>
+      <h5 v-else-if="recents[0].type_id == 2">Convocatorias Recientes</h5>
+      <div v-for="r in recents" :key="r.id" class="single-recent-post">
         <div class="recent-post-thumbs">
-          <img :alt="r.title" :src="r.img" />
+          <img :alt="r.title" :src="'/storage/heroarea/'+ r.picture" />
         </div>
         <div class="recent-post-content">
           <p>{{ r.published }}</p>
-          <router-link :to="{ name: 'blogDetails', params: { id: r.id } }"
-            ><h6>{{ r.title }}</h6></router-link
-          >
+          <Link :href="route('newsDetails', r.slug)">
+            <h6>{{ r.title }}</h6>
+          </Link>
         </div>
       </div>
     </div>

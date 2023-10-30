@@ -123,11 +123,13 @@ class webController extends Controller
         ]);
     }
     public function convocationsDetails($slug){
+        $recents = News::with('type')->where('type_id',2)->where('end', '>=', date('Y-m-d'))->orderBy('end')->take(3)->get();
         $news = News::where('slug','=', $slug)->firstOrFail();
         $attacheds = Attached::where('news_id',$news->id)->get();
         return Inertia::render('Web/ConvocationsDetail',[
             'news' => $news,
-            'attacheds' => $attacheds
+            'attacheds' => $attacheds,
+            'recents' => $recents
         ]);
     }
     public function news(Request $request){
@@ -143,9 +145,13 @@ class webController extends Controller
         ]);
     }
     public function newsDetails($slug){
+        $recents = News::with('type')->where('type_id',1)->where('end', '>=', date('Y-m-d'))->orderBy('end')->take(3)->get();
         $news = News::where('slug','=', $slug)->firstOrFail();
+        $attacheds = Attached::where('news_id',$news->id)->get();
         return Inertia::render('Web/NewsDetail',[
-            'news' => $news
+            'news' => $news,
+            'attacheds' => $attacheds,
+            'recents' => $recents
         ]);
     }
 

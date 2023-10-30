@@ -19,7 +19,14 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-basic-styles": "^40.0.0",
         "@ckeditor/ckeditor5-build-classic": "^40.0.0",
+        "@ckeditor/ckeditor5-ckbox": "^40.0.0",
+        "@ckeditor/ckeditor5-editor-classic": "^40.0.0",
+        "@ckeditor/ckeditor5-essentials": "^40.0.0",
+        "@ckeditor/ckeditor5-link": "^40.0.0",
+        "@ckeditor/ckeditor5-paragraph": "^40.0.0",
+        "@ckeditor/ckeditor5-theme-lark": "^40.0.0",
         "@ckeditor/ckeditor5-vue": "^5.1.0",
         "@fortawesome/fontawesome-free": "^6.4.2",
         "@vuepic/vue-datepicker": "^7.1.0",

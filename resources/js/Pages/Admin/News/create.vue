@@ -7,6 +7,7 @@ import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import CkEditor from "@/Components/CkEditor.vue";
 import Datepicker from "@/Components/Datepicker.vue";
+import FileUpload from "@/Components/FileUpload.vue";
 
 const form = useForm({
     title: "",

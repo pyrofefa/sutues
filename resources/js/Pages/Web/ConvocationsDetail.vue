@@ -16,6 +16,10 @@ const props = defineProps({
         type: Object,
         default: () => ({}),
     },
+    recents: {
+        type: Object,
+        default: () => ({}),
+    },
 });
 
 const news = useForm({
@@ -61,9 +65,9 @@ onMounted(() => {
       <div class="row">
         <div class="col-xl-8 col-lg-8 col-12">
           <div class="blog-content-wrap">
-            <div class="blog-feature-img">
+            <div class="blog-feature-img" v-if="attacheds.length > 1 && news.content != null">
               <img v-if="news.picture == null" alt="blog feature" src="/assets/img/blog/blog-details-1.jpg" />
-              <img v-else :alt="news.title" :src="'/storage/convocations/'+ news.picture"  />
+              <img v-else :alt="news.title" :src="'/storage/heroarea/'+ news.picture"  />
             </div>
             <br>
             <div v-if="news.content != null" v-html="news.content" />
@@ -80,7 +84,7 @@ onMounted(() => {
           </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-12">
-          <BlogSidebar />
+          <BlogSidebar :recents="recents" />
         </div>
       </div>
     </div>

@@ -35,7 +35,7 @@ class ConvocationsController extends Controller
             $filename = $request->file('picture')->getClientOriginalName();
             $news->picture = $filename;
             $file = $request->file('picture');
-            Storage::disk('public')->put('/convocations/'.$filename, \File::get($file));
+            Storage::disk('public')->put('/heroarea/'.$filename, \File::get($file));
         }
         $news->save();
 
@@ -51,5 +51,13 @@ class ConvocationsController extends Controller
         sleep(1);
 
         return redirect()->route('convocations.index')->with('message', 'Blog Created Successfully');
+    }
+    public function destroy($id){
+        $file = News::find($id);
+        Storage::disk('public')->delete('/convocations/'.$file->picture);
+        $news = News::find($id)->delete();
+        sleep(1);
+        
+        return redirect()->route('convocations.index')->with('message', 'Blog Delete Successfully');
     }
 }

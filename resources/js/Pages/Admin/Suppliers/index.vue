@@ -77,7 +77,7 @@ function destroy(id) {
                                     </tbody>
                                     <tbody v-else>
                                         <tr class="bg-red-400 text-white text-center">
-                                            <td colspan="4" class="border px-4 py-2">No hay noticias para mostrar</td>
+                                            <td colspan="4" class="border px-4 py-2">No hay proveedores para mostrar</td>
                                         </tr>
                                     </tbody>
                                 </table>

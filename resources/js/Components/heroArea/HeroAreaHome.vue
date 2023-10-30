@@ -9,7 +9,7 @@ onMounted(() => {
     items: 1,
     dots: false,
     nav: true,
-    loop: false,
+    loop: true,
     autoplay: true,
     autoplayTimeout: 6000,
     smartSpeed: 2000,
@@ -69,24 +69,62 @@ onMounted(() => {
 </script>
 <template>
   <div class="homepage-slides owl-carousel" id="home-2" >
-    <div class="single-slide-item hero-area-bg-3" v-for="d in data" v-bind:style="{ 'background-image': 'url(/storage/news/' + d.picture + ')' }">
-      <div class="overlay"></div>
-      <div class="hero-area-content">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 wow fadeInUp animated" data-wow-delay=".2s">
-              <div class="section-title">
-                <h6 class="text-white">{{ d.description}}</h6>
-                <h1>
-                  {{ d.title }}
-                </h1>
-                <Link v-if="d.type_id == 1" :href="route('newsDetails', d.slug)" class="theme-btn">Leer más</Link>
-                <Link v-else-if="d.type_id == 2" :href="route('convocationsDetails', d.slug)" class="theme-btn">Leer más</Link>
-                <Link v-else-if="d.type_id == 3" :href="route('documentsDetails', d.slug)" class="theme-btn">Leer más</Link>
-               </div>
+    <div v-for="d in data">
+      <div class="single-slide-item hero-area-bg-3" v-if="d.picture != null"  v-bind:style="{ 'background-image': 'url(/storage/heroarea/' + d.picture + ')' }">  
+        <div class="overlay"></div>
+        <div class="hero-area-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 wow fadeInUp animated" data-wow-delay=".2s">
+                <div class="section-title">
+                  <h6 class="text-white">{{ d.description}}</h6>
+                  <h1>
+                    {{ d.title }}
+                  </h1>
+                  <Link v-if="d.type_id == 1" :href="route('newsDetails', d.slug)" class="theme-btn">Leer más</Link>
+                  <Link v-else-if="d.type_id == 2" :href="route('convocationsDetails', d.slug)" class="theme-btn">Leer más</Link>
+                  <Link v-else-if="d.type_id == 3" :href="route('documentsDetails', d.slug)" class="theme-btn">Leer más</Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </div>        
+      </div>
+      <div class="single-slide-item hero-area-bg-3" v-else-if="d.picure == null && d.type_id == 1" style="background-image: url('/assets/img/headerConvocations.jpg');">  
+        <div class="overlay"></div>
+        <div class="hero-area-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 wow fadeInUp animated" data-wow-delay=".2s">
+                <div class="section-title">
+                  <h6 class="text-white">{{ d.description}}</h6>
+                  <h1>
+                    {{ d.title }}
+                  </h1>
+                  <Link :href="route('newsDetails', d.slug)" class="theme-btn">Leer más</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>      
+      <div class="single-slide-item hero-area-bg-3" v-else-if="d.picure == null && d.type_id == 2" style="background-image: url('/assets/img/headerConvocations.jpg');">  
+        <div class="overlay"></div>
+        <div class="hero-area-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 wow fadeInUp animated" data-wow-delay=".2s">
+                <div class="section-title">
+                  <h6 class="text-white">{{ d.description}}</h6>
+                  <h1>
+                    {{ d.title }}
+                  </h1>
+                  <Link :href="route('convocationsDetails', d.slug)" class="theme-btn">Leer más</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
       </div>
     </div>
   </div>
