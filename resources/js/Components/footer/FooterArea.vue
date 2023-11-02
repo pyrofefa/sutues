@@ -7,7 +7,7 @@
             <a href="/" class="logo">
               <img alt="" src="/assets/img/Footer-Sutues.png" width="200" />
             </a>
-            <p>             
+            <p>
               Sindicato Único de Trabajadores de la Universidad Estatal de Sonora
             </p>
           </div>
@@ -15,7 +15,7 @@
             <h5>Dirección</h5>
             <p>
               <i class="fa-solid fa-location-dot fa-xl"></i>
-              Ley Federal del Trabajo, S/N esquina con Perimetral. <br> 
+              Ley Federal del Trabajo, S/N esquina con Perimetral. <br>
               Universidad Estatal de Sonora.
             </p>
             <div class="phone-number">
@@ -46,7 +46,8 @@
 </template>
 <style>
 .footer-area {
-    background: #683431;
+    background: rgb(1,0,18);
+background: linear-gradient(90deg, rgba(1,0,18,1) 0%, rgba(104,52,49,1) 35%, rgba(62,62,62,1) 100%);
     color: #fff;
  }
 .footer-area p {
