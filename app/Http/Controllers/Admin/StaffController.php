@@ -46,7 +46,7 @@ class StaffController extends Controller
         }
         sleep(1);
 
-        return redirect()->route('staff.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('staff.index')->with('success', 'Creado con éxito');
     }
     public function edit($id){
         $staff = Staff::where('person_id',$id)->with('person')->with('position')->join('office', 'office.id', '=', 'staff.office_id')->first();
@@ -64,7 +64,7 @@ class StaffController extends Controller
         }
         else{
             $filename = null;
-        }    
+        }
         $person = Person::find($id);
         $person->first_name = $request->name;
         $person->last_name = $request->lastName;
@@ -83,13 +83,13 @@ class StaffController extends Controller
             Storage::disk('public')->put('/staff/'.$filename, \File::get($file));
         }
         sleep(1);
-        return redirect()->route('staff.index')->with('message', 'Blog Updated Successfully');
+        return redirect()->route('staff.index')->with('warning', 'Editado con éxito');
     }
     public function destroy($id){
         $person = Person::find($id)->delete();
         $staff = Staff::where('person_id',$id)->delete();
         sleep(1);
 
-        return redirect()->route('staff.index')->with('message', 'Blog Delete Successfully');
+        return redirect()->route('staff.index')->with('danger', 'Eliminado con éxito');
     }
 }

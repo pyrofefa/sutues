@@ -30,7 +30,7 @@ class SecretariesController extends Controller
         $secretary->save();
         sleep(1);
 
-        return redirect()->route('secretaries.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('secretaries.index')->with('success', 'Creado con éxito');
     }
     public function edit($id){
         $secretary = Secretary::where('person_id',$id)->with('person')->orderBy('period','desc')->first();
@@ -49,13 +49,13 @@ class SecretariesController extends Controller
         $secretary->save();
         sleep(1);
 
-        return redirect()->route('secretaries.index')->with('message', 'Blog Updated Successfully');
+        return redirect()->route('secretaries.index')->with('warning', 'Editado con éxito');
     }
     public function destroy($id){
         $person = Person::find($id)->delete();
         $secretary = Secretary::where('person_id',$id)->delete();
         sleep(1);
 
-        return redirect()->route('secretaries.index')->with('message', 'Blog Delete Successfully');
+        return redirect()->route('secretaries.index')->with('danger', 'Eliminado con éxito');
     }
 }

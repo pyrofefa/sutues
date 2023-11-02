@@ -32,7 +32,7 @@ class SuppliersController extends Controller
         }
         sleep(1);
 
-        return redirect()->route('suppliers.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('suppliers.index')->with('success', 'Creado con éxito');
     }
 
 }

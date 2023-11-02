@@ -25,7 +25,7 @@ class TransparencyObligations extends Controller
         $transparency->year = $request->year;
         $transparency->article = $request->article;
         $transparency->save();
- 
+
         foreach ($request->file as  $image) {
             Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$image->getClientOriginalName(), file_get_contents($image));
             $files = new TransparencyObligationFile();
@@ -35,7 +35,7 @@ class TransparencyObligations extends Controller
         }
 
         sleep(1);
-        return redirect()->route('transparency-obligations.index')->with('message', 'Blog Created Successfully');
+        return redirect()->route('transparency-obligations.index')->with('success', 'Creado con éxito');
     }
     public function destroy($id){
         $transparency = TransparencyObligation::find($id);
@@ -46,7 +46,7 @@ class TransparencyObligations extends Controller
         $transparency->delete();
         $delete =TransparencyObligationFile::where('transparency_obligations_id',$id)->delete();
         sleep(1);
-        
-        return redirect()->route('transparency-obligations.index')->with('message', 'Blog Delete Successfully');
+
+        return redirect()->route('transparency-obligations.index')->with('danger', 'Eliminado con éxito');
     }
 }
