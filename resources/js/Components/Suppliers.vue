@@ -1,7 +1,6 @@
 <template>
     <div class="question accordion-buttons">
       <header>
-        <img :alt="title" :src="'/storage/supplier/'+ logo">
         <h2 @click="expanded = !expanded" class="question-title">
             {{ title }}
         </h2>
@@ -11,7 +10,7 @@
         </button>
       </header>
       <div :style="contentStyle" class="content accordion-body" >
-          <p :style="infoStyle" class="info">{{ info }}</p>
+          <img :src="'/storage/supplier/'+ logo" />
       </div>
     </div>
   </template>

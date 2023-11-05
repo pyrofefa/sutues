@@ -360,7 +360,7 @@ class PeopleSeeder extends Seeder
             ],
             [
                 'id' => 51,
-                'first_name' => 'MAUNEL ALEJANDRO',
+                'first_name' => 'MANUEL ALEJANDRO',
                 'last_name' => 'VÁSQUEZ QUIJADA',
                 'created_at' => '2023-10-21 04:24:42',
                 'updated_at' => '2023-10-21 04:24:42',

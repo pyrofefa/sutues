@@ -23,7 +23,7 @@
             </div>
             <div class="blog-content">
               <h3><Link :href="route('newsDetails', d.slug)">{{ d.title.substring(0,50) }}</Link></h3>
-              <p>{{ d.description.substring(0,100) }}</p>
+              <p v-if="d.description != null">{{ d.description.substring(0,100) }}</p>
               <Link :href="route('newsDetails', d.slug)" class="details-link"><i class="fa-brands fa-readme"></i></Link>
             </div>
           </div>

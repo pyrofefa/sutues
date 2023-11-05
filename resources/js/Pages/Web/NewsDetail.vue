@@ -30,8 +30,6 @@ const news = useForm({
     picture: props.news.picture,
 });
 
-const blog = ref({});
-
 onMounted(() => {
   $("[data-background").each(function () {
     $(this).css(
@@ -77,7 +75,11 @@ onMounted(() => {
             <div v-else class="popular-tag-wrap">
                 <h5 class="mb-8">Archivos Adjuntos</h5>
                 <div v-for="attached in attacheds">
-                    <span>{{ attached.file }}</span>
+                    <span>
+                      <a :href="'/download/' + news.id + '/'+ news.type_id" >
+                        {{ attached.file }}
+                      </a>
+                    </span>
                 </div>
             </div>
             <br>

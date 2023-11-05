@@ -88,10 +88,9 @@ class webController extends Controller
             'articles' => $articles
         ]);
     }
-    public function downloadFile($id, $year) {
+    public function downloadFileTransparency($id, $year) {
         $file = TransparencyObligationFile::find($id);
         return response()->download(storage_path('app/public/trasparency/'.$year.'/'.$file->file));
-
     }
     /**End Trasparency */
 
@@ -105,8 +104,12 @@ class webController extends Controller
     }
     public function documentsDetails($slug){
         $news = News::where('slug','=', $slug)->firstOrFail();
+        $recents = News::with('type')->where('type_id',3)->orderBy('end')->take(5)->get();
+        $attacheds = Attached::where('news_id',$news->id)->get();
         return Inertia::render('Web/DocumentsDetail',[
-            'news' => $news
+            'news' => $news,
+            'attacheds' => $attacheds,
+            'recents' => $recents           
         ]);
     }
 
@@ -123,7 +126,7 @@ class webController extends Controller
         ]);
     }
     public function convocationsDetails($slug){
-        $recents = News::with('type')->where('type_id',2)->where('end', '>=', date('Y-m-d'))->orderBy('end')->take(3)->get();
+        $recents = News::with('type')->where('type_id',2)->orderBy('end')->take(3)->get();
         $news = News::where('slug','=', $slug)->firstOrFail();
         $attacheds = Attached::where('news_id',$news->id)->get();
         return Inertia::render('Web/ConvocationsDetail',[
@@ -170,6 +173,11 @@ class webController extends Controller
         Mail::to('paginasutues@gmail.com’')->send(new ApplicationProcedure($file));
 
         return redirect()->route('applicationProcedure')->with('success', 'Solicitud enviada con éxito');
+    }
+
+    public function downloadFile($id, $type) {
+        $attached = Attached::find($id);
+        return response()->download(storage_path('app/public/convocations/attacheds/'.$attached->file));
     }
 
 }

@@ -39,13 +39,15 @@ class NewsController extends Controller
         }
         $news->save();
         /**Guardando adjuntos */
-        foreach ($request->file as  $image) {
-            Storage::disk('public')->put('/news/attacheds/'.$image->getClientOriginalName(), file_get_contents($image));
-            $files = new Attached();
-            $files->news_id = $news->id;
-            $files->type_id = 2;
-            $files->file = $image->getClientOriginalName();
-            $files->save();
+        if($request->file){
+            foreach ($request->file as  $image) {
+                Storage::disk('public')->put('/news/attacheds/'.$image->getClientOriginalName(), file_get_contents($image));
+                $files = new Attached();
+                $files->news_id = $news->id;
+                $files->type_id = 1;
+                $files->file = $image->getClientOriginalName();
+                $files->save();
+            }
         }
         sleep(1);
 
@@ -59,9 +61,7 @@ class NewsController extends Controller
         ]);
     }
     public function update(Request $request, $id){
-        $dt_start = new \DateTime($request->start);
         $dt_end = new \DateTime($request->end);
-
         $news = News::find($id);
         $news->title = $request->title;
         $news->description = $request->description;
@@ -69,19 +69,27 @@ class NewsController extends Controller
         $news->content = $request->content;
         $news->end = $dt_end->format('Y-m-d');
         $news->slug = Str::slug($request->title);
-
         if($request->file('picture')){
             $filename = $request->file('picture')->getClientOriginalName();
             $news->picture = $filename;
             $file = $request->file('picture');
             Storage::disk('public')->put('/heroarea/'.$filename, \File::get($file));
         }
-
         $news->save();
+        /**Guardando adjuntos */
+        if($request->file){
+            foreach ($request->file as  $image) {
+                Storage::disk('public')->put('/news/attacheds/'.$image->getClientOriginalName(), file_get_contents($image));
+                $files = new Attached();
+                $files->news_id = $news->id;
+                $files->type_id = 1;
+                $files->file = $image->getClientOriginalName();
+                $files->save();
+            }
+        }
         sleep(1);
 
         return redirect()->route('news.index')->with('warning', 'Editado con éxito');
-
     }
     public function destroy($id){
         $file = News::find($id);

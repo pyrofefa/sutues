@@ -28,6 +28,7 @@ const news = useForm({
     content: props.news.content,
     date: props.news.updated_at,
     picture: props.news.picture,
+    type: props.news.type_id
 });
 
 const blog = ref({});
@@ -77,7 +78,9 @@ onMounted(() => {
             <div v-else class="popular-tag-wrap">
                 <h5 class="mb-8">Archivos Adjuntos</h5>
                 <div v-for="attached in attacheds">
+                  <a :href="'/download/' + attached.id + '/'+ news.type" >
                     <span>{{ attached.file }}</span>
+                  </a>
                 </div>
             </div>
             <br>

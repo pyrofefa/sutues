@@ -15,7 +15,7 @@ const props = defineProps({
 
 const form = useForm({
     id: props.secretary.person.id,
-    name: props.secretary.person.name,
+    name: props.secretary.person.first_name,
     lastName: props.secretary.person.last_name,
     period: props.secretary.period,
 });

@@ -5,6 +5,9 @@ import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
+import CkEditor from "@/Components/CkEditor.vue";
+import Datepicker from "@/Components/Datepicker.vue";
+import FileUpload from "@/Components/FileUpload.vue";
 
 const props = defineProps({
     documents: {
@@ -17,8 +20,11 @@ const props = defineProps({
 const form = useForm({
     id: props.documents.id,
     title: props.documents.title,
+    end: props.documents.end,
     description: props.documents.description,
-    file:  props.documents.picture,
+    content: props.documents.content,
+    picture: props.documents.picture,
+    file:  props.documents.file,
     _method: "PUT"
 });
 
@@ -59,8 +65,14 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                <input type="file" @input="form.file = $event.target.files[0]" />
+                                <InputLabel for="end" value="Fecha de vecimiento" />
+                                <Datepicker v-model="form.end" />
                             </div>
+                            <div class="my-6">
+                                <InputLabel for="description" value="Imagen encabezado" />
+                                <input type="file" @input="form.picture = $event.target.files[0]" />
+                            </div>
+
                             <div class="my-6">
                                 <InputLabel for="description" value="Descripcion" />
 
@@ -72,10 +84,19 @@ const submit = () => {
                                     autofocus
                                     autocomplete="description"
                                 />
+
                                 <InputError
                                     class="mt-2"
                                     :message="form.errors.description"
                                 />
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="description" value="Archivos adjuntos" />
+                                <FileUpload @input="form.file = $event.target.files" />
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="content" value="Contenido" />
+                                <CkEditor v-model="form.content" />
                             </div>
                             <PrimaryButton
                                 type="submit"
@@ -88,6 +109,6 @@ const submit = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>   
     </AuthenticatedLayout>
 </template>

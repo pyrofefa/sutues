@@ -67,7 +67,7 @@ Route::prefix('transparencia')->group(function () {
     Route::get('/comite-de-transparencia', [webController::class, 'transparencyCommission'])->name('transparencyCommission');
     Route::get('/obligaciones-de-transparencia', [webController::class, 'transparencyObligations'])->name('transparencyObligations');
     Route::get('/obligaciones-de-transparencia/{year}', [webController::class, 'transparencyObligationsYear'])->name('transparencyObligations.year');
-    Route::get('/obligaciones-de-transparencia/download/{id}/{year}', [webController::class, 'downloadFile'])->name('transparencyObligations.download');
+    Route::get('/obligaciones-de-transparencia/download/{id}/{year}', [webController::class, 'downloadFileTransparency'])->name('transparencyObligations.download');
     Route::post('/obligaciones-de-transparencia/send', [webController::class, 'sendTransparency'])->name('transparency-obligations.send');
 })->name('transparency');
 
@@ -77,5 +77,6 @@ Route::get('/proveedores', [webController::class, 'suppliers'])->name('suppliers
 
 Route::get('/contactanos', [webController::class, 'contactUs'])->name('contactUs');
 
+Route::get('/download/{id}/{type}', [webController::class, 'downloadFile'])->name('download');
 
 require __DIR__.'/auth.php';

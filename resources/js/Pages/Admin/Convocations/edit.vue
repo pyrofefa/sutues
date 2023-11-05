@@ -10,36 +10,35 @@ import Datepicker from "@/Components/Datepicker.vue";
 import FileUpload from "@/Components/FileUpload.vue";
 
 const props = defineProps({
-    news: {
+    convocations: {
         type: Object,
         default: () => ({}),
     },
 });
 
 const form = useForm({
-    id: props.news.id,
-    title: props.news.title,
-    description: props.news.description,
-    content: props.news.content,
-    end:  props.news.end,
-    picture: props.news.picture,
-    file:  props.news.file,
+    id: props.convocations.id,
+    title: props.convocations.title,
+    end: props.convocations.end,
+    description: props.convocations.description,
+    content: props.convocations.content,
+    picture: props.convocations.picture,
+    file:  props.convocations.file,
     _method: "PUT"
 });
-
 const submit = () => {
-    form.post(route("news.update", props.news.id),{
+    form.post(route("convocations.update", props.convocations.id),{
         forceFormData: true,
     });
 };
 </script>
 <template>
-    <Head title="Editar Noticia" />
-    <AuthenticatedLayout title="Crear proyecto">
+    <Head title="Crear Convocatoria" />
+    <AuthenticatedLayout title="Crear convocatoria">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Noticia</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Convocatoria</h2>
         </template>
-        
+
         <div class="py-12">
             <div class="mx-auto max-w-7xl">
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
@@ -63,6 +62,7 @@ const submit = () => {
                                     :message="form.errors.title"
                                 />
                             </div>
+
                             <div class="my-6">
                                 <InputLabel for="end" value="Fecha de vecimiento" />
                                 <Datepicker v-model="form.end" />

@@ -2,7 +2,7 @@
   <aside class="z-20 hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0">
     <div class="py-4 text-gray-500">
       <Link class="ml-6 text-lg font-bold text-gray-800" :href="route('dashboard')">
-        Windmill
+        <img alt="" src="/assets/img/Header-Sutues.png" width="150" />
       </Link>
 
       <ul class="mt-6">
@@ -19,7 +19,7 @@
           </NavLink>
         </li>
         <li class="relative px-6 py-3">
-          <NavLink :href="route('secretaries.index')" :active="route().current('secretaries.index') || route().current('secretaries.create') || route().current('secretaries.edit') ">
+          <NavLink :href="route('secretaries.index')" :active="route().current('secretaries.index') || route().current('secretaries.create') || route().current('secretaries.edit')">
             <template #icon>
               <i class="fa-regular fa-user"></i>
             </template>
@@ -27,7 +27,7 @@
           </NavLink>
         </li>
         <li class="relative px-6 py-3">
-          <NavLink :href="route('staff.index')" :active="route().current('staff.index')">
+          <NavLink :href="route('staff.index')" :active="route().current('staff.index') || route().current('staff.create') || route().current('staff.edit')">
             <template #icon>
               <i class="fa-regular fa-address-card"></i>
             </template>

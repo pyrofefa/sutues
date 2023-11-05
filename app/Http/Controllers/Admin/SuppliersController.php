@@ -34,5 +34,13 @@ class SuppliersController extends Controller
 
         return redirect()->route('suppliers.index')->with('success', 'Creado con éxito');
     }
+    public function destroy($id){
+        $file = Supplier::find($id);
+        Storage::disk('public')->delete('/supplier/'.$file->picture);
+        $supplier = Supplier::find($id)->delete();
+        sleep(1);
+
+        return redirect()->route('suppliers.index')->with('danger', 'Eliminado con éxito');
+    }
 
 }

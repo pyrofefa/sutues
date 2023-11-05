@@ -77,7 +77,7 @@ function destroy(id) {
                                                 <td class="px-4 py-3 text-sm">{{ item.period }}</td>
                                                 <td class="px-4 py-3 text-sm">
                                                     <div class="flex items-center space-x-4 text-sm">
-                                                        <Link :href="route('news.edit', item.person.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
+                                                        <Link :href="route('secretaries.edit', item.person.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
                                                             <i class="fa-solid fa-pen-to-square"></i>
                                                         </Link>
                                                         <button @click="destroy(item.person.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Delete">
