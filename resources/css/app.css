@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bread-bg {
-    background-image:  url(../../public/assets/img/protesta_sutues.jpg);
+    background-image:  url(../../assets/img/protesta_sutues.jpg);
 }
 .search-bar-wrap i {
     font-size: 18px;
