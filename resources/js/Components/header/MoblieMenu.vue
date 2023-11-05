@@ -143,4 +143,19 @@ onMounted(() => {
     color: #f8f9fa;
     background: #683431;
 }
+.theme-btn, .bordered-btn {
+    display: inline-block;
+    background: #683431;
+    color: #eee;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 16px 40px;
+    border: 1px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 0.3s;
+}
 </style>

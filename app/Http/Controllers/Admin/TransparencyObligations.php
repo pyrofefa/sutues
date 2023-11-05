@@ -25,7 +25,7 @@ class TransparencyObligations extends Controller
         $transparency->year = $request->year;
         $transparency->article = $request->article;
         $transparency->save();
-
+        
         foreach ($request->file as  $image) {
             Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$image->getClientOriginalName(), file_get_contents($image));
             $files = new TransparencyObligationFile();
@@ -36,6 +36,31 @@ class TransparencyObligations extends Controller
 
         sleep(1);
         return redirect()->route('transparency-obligations.index')->with('success', 'Creado con éxito');
+    }
+    public function edit($id){
+        $transparency = TransparencyObligation::find($id);
+        return Inertia::render('Admin/TransparencyObligations/edit',[
+            'transparency' => $transparency
+        ]);
+    }
+    public function update(Request $request, $id){
+        $transparency = TransparencyObligation::find($id);
+        $transparency->year = $request->year;
+        $transparency->article = $request->article;
+        $transparency->save();
+        
+        if($request->file){
+            foreach ($request->file as  $image) {
+                Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$image->getClientOriginalName(), file_get_contents($image));
+                $files = new TransparencyObligationFile();
+                $files->transparency_obligations_id = $transparency->id;
+                $files->file = $image->getClientOriginalName();
+                $files->save();
+            }
+        }
+       
+        sleep(1);
+        return redirect()->route('transparency-obligations.index')->with('warning', 'Editado con éxito');
     }
     public function destroy($id){
         $transparency = TransparencyObligation::find($id);
