@@ -4,14 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
-        <!-- Fonts -->
-        <!-- Scripts -->
-        @routes
-            @vite([
-                'resources/js/app.js',
-                "resources/js/Pages/{$page['component']}.vue",
-                ])
-        @inertiaHead
+         <!-- Bootstrap CSS -->
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
         <!-- Font Awesome CSS -->
         <link href="{{ asset('assets/css/fontAwesomePro.css') }}" rel="stylesheet" />
         <!-- Animate CSS-->
@@ -38,6 +32,14 @@
         <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
         <!-- jquery -->
         <script src="{{ asset('assets/js/jquery-1.12.4.min.js') }}"></script>
+        <!-- Fonts -->
+        <!-- Scripts -->
+        @routes
+            @vite([
+                'resources/js/app.js',
+                "resources/js/Pages/{$page['component']}.vue",
+                ])
+        @inertiaHead       
     </head>
     <body>
         @inertia
