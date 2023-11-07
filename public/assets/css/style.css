@@ -3813,7 +3813,18 @@ ul.port-menu li:hover {
   padding-left: 20px;
   transition: 0.3s;
 }
-
+@media  screen and (max-width: 1366px) {
+  /* insert styles here */
+  .main-menu ul > li > a {
+    display: inline-block;
+    font-size: 14px;
+    text-transform: capitalize;
+    line-height: 1;
+    padding: 35px 0;
+    overflow: hidden;
+    margin-right: 30px;
+  }
+}
 /*
 
 
