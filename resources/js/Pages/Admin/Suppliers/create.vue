@@ -9,7 +9,6 @@ import FileUpload from "@/Components/FileUpload.vue";
 
 const form = useForm({
     name: "",
-    content: "",
     file: ""
 });
 
@@ -49,10 +48,6 @@ const submit = () => {
                                     :message="form.errors.name"
                                 />
                             </div>
-                            <div class="my-6">
-                                <textarea name="textarea" v-model="form.content" class="form-group mt-1 block w-full" rows="10" cols="50"></textarea>
-                            </div>
-
                             <div class="my-6">
                                <FileUpload @input="form.file = $event.target.files[0]" />
                             </div>

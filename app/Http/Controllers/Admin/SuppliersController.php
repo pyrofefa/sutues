@@ -21,7 +21,6 @@ class SuppliersController extends Controller
     public function store(Request $request){
         $supplier = new Supplier();
         $supplier->name = $request->name;
-        $supplier->content = $request->content;
         $supplier->logo = $request->file('file')->getClientOriginalName();
         $supplier->save();
 

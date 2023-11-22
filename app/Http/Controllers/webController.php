@@ -15,6 +15,7 @@ use App\Models\TransparencyObligation;
 use App\Models\TransparencyObligationFile;
 use App\Models\Supplier;
 use App\Models\Attached;
+use App\Models\Statutes;
 
 class webController extends Controller
 {
@@ -32,7 +33,10 @@ class webController extends Controller
         return Inertia::render('Web/About/History');
     }
     public function statutes(){
-        return Inertia::render('Web/About/Statutes');
+        $statutes = Statutes::all();
+        return Inertia::render('Web/About/Statutes',[
+            'statutes' => $statutes
+        ]);
     }
     public function objectives(){
         return Inertia::render('Web/About/Objectives');
@@ -109,7 +113,7 @@ class webController extends Controller
         return Inertia::render('Web/DocumentsDetail',[
             'news' => $news,
             'attacheds' => $attacheds,
-            'recents' => $recents           
+            'recents' => $recents
         ]);
     }
 
