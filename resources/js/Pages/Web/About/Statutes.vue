@@ -1,15 +1,6 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
-    import Accordion from '@/Components/Statutes.vue';
-
-    defineProps({
-        statutes: {
-            type: Object,
-            default: () => ({}),
-        },
-    });
-
 </script>
 <template>
     <Header />
@@ -25,19 +16,19 @@
             </div>
         </div>
     </div>
-    <div class="about-section gray-bg section-padding">
+    <div class="about-section section-padding">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-xl-12 col-lg-12 col-md-12">
-                    <div class="cp-custom-accordion">
-                        <div class="accordions">
-                            <Accordion
-                                v-for="statute in statutes"
-                                :key="statute.id"
-                                :title="statute.article"
-                                :info="statute.content"
-                            />
-                         </div>
+                <div class="col-xl-8 col-lg-8 col-md-7">
+                    <div class="about-content-wrap">
+                        <div class="section-title">
+                            <object data="/data/Estatutos-SUTUES.pdf" type="application/pdf" width="100%" height="900px"></object>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-5">
+                    <div class="about-bg-wrapper">
+                        <img alt="our project design" src="/assets/img/history.png">
                     </div>
                 </div>
             </div>
