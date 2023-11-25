@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 
 use App\Mail\ApplicationProcedure;
+use App\Mail\ContactForm;
 
 use App\Models\Person;
 use App\Models\Secretary;
@@ -167,7 +168,10 @@ class webController extends Controller
     public function contactUs(){
         return Inertia::render('Web/ContactUs');
     }
-
+    public function sendContactUs(Request $request){
+        Mail::to('paginasutues@gmail.com’')->send(new ContactForm($request));
+        return redirect()->route('contactUs')->with('success', 'Mensaje enviado con éxito');
+    }
     public function sendTransparency(Request $request){
         $file = $request->file('file');
         Mail::to('paginasutues@gmail.com’')->send(new ApplicationProcedure($file));

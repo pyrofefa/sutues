@@ -76,6 +76,8 @@ Route::get('/noticias/{slug}', [webController::class, 'newsDetails'])->name('new
 Route::get('/proveedores', [webController::class, 'suppliers'])->name('suppliers');
 
 Route::get('/contactanos', [webController::class, 'contactUs'])->name('contactUs');
+Route::post('/contactanos/send', [webController::class, 'sendContactUs'])->name('contactUs.send');
+
 
 Route::get('/download/{id}/{type}', [webController::class, 'downloadFile'])->name('download');
 

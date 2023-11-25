@@ -1,6 +1,18 @@
 <script setup>
     import Header from '@/Components/header/Header.vue';
     import Footer from '@/Components/footer/FooterArea.vue'
+    import { useForm  } from '@inertiajs/vue3';
+
+    const form = useForm({
+        name: "",
+        email: "",
+        subject: "",
+        content: ""
+    });
+
+    const submit = () => {
+        form.post(route("contactUs.send"));
+    };
 </script>
 <template>
     <Header />
@@ -25,24 +37,27 @@
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-12">
+                    <div v-if="$page.props.flash.success" class="alert alert-success" role="alert">
+                        {{ $page.props.flash.success }}
+                    </div>
                     <div class="contact-form">
-                        <form>
+                        <form @submit.prevent="submit">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Nombres*</label>
-                                    <input placeholder="Nombres" type="text">
+                                    <input placeholder="Nombres" v-model="form.name" type="text" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Correo electrónico*</label>
-                                    <input placeholder="Correo electrónico" type="email">
+                                    <input placeholder="Correo electrónico" v-model="form.email" type="email" required>
                                 </div>
                                 <div class="col-12">
                                     <label>Asunto*</label>
-                                    <input placeholder="Asunto" type="text">
+                                    <input placeholder="Asunto" type="text" v-model="form.subject" required>
                                 </div>
                                 <div class="col-12">
                                     <label>Mensaje*</label>
-                                    <textarea cols="30" id="message" name="message" placeholder="" rows="10"></textarea>
+                                    <textarea cols="30" id="message" name="message" v-model="form.content" placeholder="" rows="10"></textarea>
                                 </div>
                                 <div>
                                     <button class="bordered-btn" type="submit">Enviar</button>
