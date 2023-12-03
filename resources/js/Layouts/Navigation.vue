@@ -74,6 +74,14 @@
             Proveedores
           </NavLink>
         </li>
+        <li class="relative px-6 py-3">
+          <NavLink :href="route('users.index')" :active="route().current('users.index') || route().current('users.create') || route().current('users.edit')">
+            <template #icon>
+              <i class="fa-regular fa-user"></i>
+            </template>
+            Usuarios
+          </NavLink>
+        </li>
       </ul>
     </div>
   </aside>

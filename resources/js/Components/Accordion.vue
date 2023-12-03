@@ -1,8 +1,9 @@
 <template>
+ 
   <div class="question accordion-buttons">
     <header>
       <h2 @click="expanded = !expanded" class="question-title">
-        {{ title }}
+        {{ title }} - {{ article }}
       </h2>
       <button class="btn" @click="expanded = !expanded">
         <i class="fa-solid fa-arrow-up" v-show="expanded"></i>
@@ -26,6 +27,7 @@ export default {
   name: "Question",
   props: {
     title: String,
+    article: String,
     info: Object,
   },
   setup() {

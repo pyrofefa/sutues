@@ -9,6 +9,7 @@ import FileUpload from "@/Components/FileUpload.vue";
 
 const form = useForm({
     year: "",
+    quarter: "",
     article: "",
     file:""
 });
@@ -47,6 +48,23 @@ const submit = () => {
                                 <InputError
                                     class="mt-2"
                                     :message="form.errors.title"
+                                />
+                            </div>
+                            <div class="my-6">
+                                <InputLabel for="quarter" value="Trimestre" />
+
+                                <TextInput
+                                    id="article"
+                                    type="text"
+                                    class="mt-1 block w-full"
+                                    v-model="form.quarter"
+                                    required
+                                    autofocus
+                                    autocomplete="quarter"
+                                />
+                                <InputError
+                                    class="mt-2"
+                                    :message="form.errors.article"
                                 />
                             </div>
                             <div class="my-6">

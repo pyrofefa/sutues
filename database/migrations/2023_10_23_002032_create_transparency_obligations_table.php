@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('transparency_obligations', function (Blueprint $table) {
             $table->id();
             $table->string('year');
+            $table->string('quarter');
             $table->string('article');
             $table->timestamps();
         });

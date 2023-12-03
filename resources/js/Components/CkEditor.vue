@@ -15,6 +15,22 @@ export default {
             editor: ClasicEditor,
             editorConfig: {
                 // The configuration of the editor.
+                toolbar: {
+                    items: [
+                    'heading',
+                    '|',
+                    'bold',
+                    'italic',
+                    '|',
+                    'bulletedList',
+                    'numberedList',
+                    '|',
+                    'insertTable',
+                    '|',
+                    'undo',
+                    'redo'
+                    ]
+                },
             },
         };
     },

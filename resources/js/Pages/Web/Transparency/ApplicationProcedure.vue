@@ -38,13 +38,31 @@
                             {{ $page.props.flash.success }}
                         </div>
                         <div class="section-title">
-                            <h3>Datos que debe contener la solicitud:</h3>
+                            <h3>Descripción de las reglas de procedimiento para obtener información pública:</h3>
                         </div>
                         <div class="single-team-item">
-                            <h3>* Nombre del solicitante. </h3>
-                            <h4>* Descripción de la información solicitada. </h4>
-                            <h4>* Lugar o medio para recibir la información. </h4>
-                            <h4>* El acceso a la información es gratuito. Cuando sea necesario o requerido proporcionarla a través de copias simples, certificados o formatos electrónicos el solicitante deberá cubrir el pago correspondiente.</h4>
+                            <h4>1. El acceso a la  información pública básica  se encuentra  a disponible  gratuitamente  en la dirección electrónica: 
+                                <a href="https://consultapublicamx.plataformadetransparencia.org.mx/" target="_blank">https://consultapublicamx.plataformadetransparencia.org.mx</a>
+                            </h4>
+                            <br>
+                            <h4>2. Las solicitudes de información se presentarán ante la Unidad de Enlace</h4>
+                            <h4>UNIDAD DE ENLACE Y ACCESO A LA INFORMACIÓN</h4><br>
+                            <h4>Titular: MORENO GARZÓN JESÚS LEONARDO</h4>
+                            <h4>Dirección: Ley Federal del Trabajo esquina con Israel González s/n Unidad Académica Hermosillo edificio R</h4>
+                            <h4>E-mail: </h4>
+                            <h4>Telefono: </h4>
+                            <br>
+                            <h4>3. Las solicitudes de información así como el mecanismo por el cual los solicitantes serán notificados podrá ser:</h4><br>
+                            <h4>Mensajería o correo certificado con acuse de recibo, siempre que el solicitante cubra el pago del servicio respectivo.</h4><br>
+                            <h4>Personalmente en la Unidad de Enlace, en un horario de 8:00 a 15:00 horas en días hábiles, de acuerdo al calendario de la institución.</h4><br>
+                            <h4>Correo electrónico.</h4><br>
+
+                            <h4>Datos que debe contener la solicitud:</h4><br>
+                            <h4>Nombre del solicitante.</h4>
+                            <h4>Descripción de la información solicitada</h4>
+                            <h4>Lugar o medio para recibir la información.</h4><br>
+
+                            <h4>El acceso a la información es gratuito. Cuando sea necesario o requerido proporcionarla a través de copias simples, certificados o formatos electrónicos el solicitante deberá cubrir el pago correspondiente.</h4>
                         </div>
                         <div class="single-team-item">
                             <form @submit.prevent="submit">

@@ -64,6 +64,7 @@ function destroy(id) {
                                     <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                         <tr>
                                             <th class="px-4 py-3">Año</th>
+                                            <th class="px-4 py-3">Trimestre</th>
                                             <th class="px-4 py-3">Articulo</th>
                                             <th class="px-4 py-3">Acciones</th>
                                         </tr>
@@ -72,6 +73,7 @@ function destroy(id) {
                                         <template v-for="item in transparency.data">
                                             <tr>
                                                 <td class="px-4 py-3 text-sm">{{ item.year }}</td>
+                                                <td class="px-4 py-3 text-sm"> {{ item.quarter }}</td>
                                                 <td class="px-4 py-3 text-sm"> {{ item.article }}</td>
                                                 <td class="px-4 py-3 text-sm">
                                                     <div class="flex items-center space-x-4 text-sm">

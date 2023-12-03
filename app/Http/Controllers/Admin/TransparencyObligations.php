@@ -23,13 +23,16 @@ class TransparencyObligations extends Controller
     public function store(Request $request){
         $transparency = new TransparencyObligation();
         $transparency->year = $request->year;
+        $transparency->quarter = $request->quarter;
         $transparency->article = $request->article;
         $transparency->save();
-        
+       
         foreach ($request->file as  $image) {
-            Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$image->getClientOriginalName(), file_get_contents($image));
+            Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$request->quarter.'/'.$image->getClientOriginalName(), file_get_contents($image));
             $files = new TransparencyObligationFile();
             $files->transparency_obligations_id = $transparency->id;
+            $files->article = $request->article;
+            $files->quarter = $request->quarter;
             $files->file = $image->getClientOriginalName();
             $files->save();
         }
@@ -46,14 +49,17 @@ class TransparencyObligations extends Controller
     public function update(Request $request, $id){
         $transparency = TransparencyObligation::find($id);
         $transparency->year = $request->year;
+        $transparency->quarter = $request->quarter;
         $transparency->article = $request->article;
         $transparency->save();
         
         if($request->file){
             foreach ($request->file as  $image) {
-                Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$image->getClientOriginalName(), file_get_contents($image));
+                Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$request->quarter.'/'.$image->getClientOriginalName(), file_get_contents($image));
                 $files = new TransparencyObligationFile();
                 $files->transparency_obligations_id = $transparency->id;
+                $files->article = $request->article;
+                $files->quarter = $request->quarter;
                 $files->file = $image->getClientOriginalName();
                 $files->save();
             }

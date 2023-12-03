@@ -77,13 +77,13 @@ class webController extends Controller
         ]);
     }
     public function transparencyObligations(){
-        $years = TransparencyObligation::select('year')->orderBy('year','desc')->groupBy('year')->get();
+        $years = TransparencyObligation::select('year')->orderBy('quarter','desc')->groupBy('year')->get();
         return Inertia::render('Web/Transparency/TransparencyObligations',[
             'years' => $years
         ]);
     }
     public function transparencyObligationsYear($year){
-        $articles = TransparencyObligation::with('articles')->where('year',$year)->get();
+        $articles = TransparencyObligation::with('articles')->where('year',$year)->groupBy('quarter')->get();
         return Inertia::render('Web/Transparency/TransparencyObligations/Year',[
             'year' => $year,
             'articles' => $articles
@@ -91,7 +91,7 @@ class webController extends Controller
     }
     public function downloadFileTransparency($id, $year) {
         $file = TransparencyObligationFile::find($id);
-        return response()->download(storage_path('app/public/trasparency/'.$year.'/'.$file->file));
+        return response()->download(storage_path('app/public/trasparency/'.$year.'/'.$file->quarter.'/'.$file->file));
     }
     /**End Trasparency */
 

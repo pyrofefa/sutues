@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('transparency_obligations_files', function (Blueprint $table) {
             $table->id();
             $table->integer('transparency_obligations_id');
+            $table->string('article');
+            $table->string('quarter');
             $table->string('file');
             $table->timestamps();
         });

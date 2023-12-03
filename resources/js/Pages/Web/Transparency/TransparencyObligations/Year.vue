@@ -36,7 +36,8 @@
                                  <Accordion
                                     v-for="question in articles"
                                     :key="question.id"
-                                    :title="question.article"
+                                    :article="question.article"
+                                    :title="question.quarter"
                                     :info="question"
                                 />
                          </div>
@@ -44,6 +45,10 @@
                 </div>
             </div>
         </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
     </div>
     <Footer />
 </template>
