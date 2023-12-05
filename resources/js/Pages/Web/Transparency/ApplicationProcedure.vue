@@ -49,8 +49,8 @@
                             <h4>UNIDAD DE ENLACE Y ACCESO A LA INFORMACIÓN</h4><br>
                             <h4>Titular: MORENO GARZÓN JESÚS LEONARDO</h4>
                             <h4>Dirección: Ley Federal del Trabajo esquina con Israel González s/n Unidad Académica Hermosillo edificio R</h4>
-                            <h4>E-mail: </h4>
-                            <h4>Telefono: </h4>
+                            <h4>E-mail: transparencia.sutues@outlook.com</h4>
+                            <h4>Telefono: 6622 85 11 52</h4>
                             <br>
                             <h4>3. Las solicitudes de información así como el mecanismo por el cual los solicitantes serán notificados podrá ser:</h4><br>
                             <h4>Mensajería o correo certificado con acuse de recibo, siempre que el solicitante cubra el pago del servicio respectivo.</h4><br>
