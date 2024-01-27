@@ -83,7 +83,7 @@ class webController extends Controller
         ]);
     }
     public function transparencyObligationsYear($year){
-        $articles = TransparencyObligation::with('articles')->where('year',$year)->groupBy('quarter')->get();
+        $articles = TransparencyObligation::with('articles')->where('year',$year)->get();
         return Inertia::render('Web/Transparency/TransparencyObligations/Year',[
             'year' => $year,
             'articles' => $articles
