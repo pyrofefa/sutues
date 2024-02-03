@@ -181,7 +181,16 @@ class webController extends Controller
 
     public function downloadFile($id, $type) {
         $attached = Attached::find($id);
-        return response()->download(storage_path('app/public/convocations/attacheds/'.$attached->file));
+
+        if($type == 1){
+            return response()->download(storage_path('app/public/news/attacheds/'.$attached->file));
+
+        }else if($type == 2){
+            return response()->download(storage_path('app/public/convocations/attacheds/'.$attached->file));
+        }
+        else{
+            return response()->download(storage_path('app/public/documents/attacheds/'.$attached->file));
+        }
     }
 
 }

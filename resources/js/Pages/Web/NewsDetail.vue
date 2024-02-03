@@ -25,6 +25,7 @@ const props = defineProps({
 const news = useForm({
     id: props.news.id,
     title: props.news.title,
+    type: props.news.type_id,
     content: props.news.content,
     date: props.news.updated_at,
     picture: props.news.picture,
@@ -76,7 +77,7 @@ onMounted(() => {
                 <h5 class="mb-8">Archivos Adjuntos</h5>
                 <div v-for="attached in attacheds">
                     <span>
-                      <a :href="'/download/' + news.id + '/'+ news.type_id" >
+                      <a :href="'/download/' + news.id + '/'+ news.type" >
                         {{ attached.file }}
                       </a>
                     </span>
@@ -85,7 +86,7 @@ onMounted(() => {
             <br>
           </div>
         </div>
-        <div class="col-xl-4 col-lg-4 col-12">
+        <div class="col-xl-4 col-lg-4 col-12" v-if="news.recents != null">
           <BlogSidebar :recents="recents" />
         </div>
       </div>

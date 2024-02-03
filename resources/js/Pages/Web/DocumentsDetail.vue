@@ -28,6 +28,7 @@ const news = useForm({
     content: props.news.content,
     date: props.news.updated_at,
     picture: props.news.picture,
+    type: props.news.type_id
 });
 
 
@@ -82,7 +83,7 @@ onMounted(() => {
             <br>
           </div>
         </div>
-        <div class="col-xl-4 col-lg-4 col-12">
+        <div class="col-xl-4 col-lg-4 col-12" v-if="news.recents != null">
           <BlogSidebar :recents="recents" />
         </div>
       </div>
