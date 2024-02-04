@@ -183,13 +183,13 @@ class webController extends Controller
         $attached = Attached::find($id);
 
         if($type == 1){
-            return response()->download(storage_path('app/public/news/attacheds/'.$attached->file));
+            return response()->download(storage_path('app/public/news/attacheds/'.$attached->news_id.'/'.$attached->file));
 
         }else if($type == 2){
-            return response()->download(storage_path('app/public/convocations/attacheds/'.$attached->file));
+            return response()->download(storage_path('app/public/convocations/attacheds/'.$attached->news_id.'/'.$attached->file));
         }
         else{
-            return response()->download(storage_path('app/public/documents/attacheds/'.$attached->file));
+            return response()->download(storage_path('app/public/documents/attacheds/'.$attached->news_id.'/'.$attached->file));
         }
     }
 

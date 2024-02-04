@@ -64,7 +64,7 @@ onMounted(() => {
       <div class="row">
         <div class="col-xl-8 col-lg-8 col-12">
           <div class="blog-content-wrap">
-            <div class="blog-feature-img" v-if="attacheds.length > 1 && news.content != null">
+            <div class="blog-feature-img" v-if="attacheds.length >= 1 && news.content != null">
               <img v-if="news.picture == null" alt="blog feature" src="/assets/img/blog/blog-details-1.jpg" />
               <img v-else :alt="news.title" :src="'/storage/heroarea/'+ news.picture"  />
             </div>
@@ -77,7 +77,7 @@ onMounted(() => {
                 <h5 class="mb-8">Archivos Adjuntos</h5>
                 <div v-for="attached in attacheds">
                     <span>
-                      <a :href="'/download/' + news.id + '/'+ news.type" >
+                      <a :href="'/download/' + attached.id + '/'+ news.type" >
                         {{ attached.file }}
                       </a>
                     </span>

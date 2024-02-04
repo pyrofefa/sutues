@@ -43,6 +43,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('documents',DocumentsController::class);
         Route::resource('transparency-obligations',TransparencyObligations::class);
         Route::resource('/suppliers',SuppliersController::class);
+
+        Route::prefix('files-delete')->group(function () {
+            Route::get('/news/{id}', [NewsController::class, 'deleteFile'])->name('file.news');
+            Route::get('/convocations/{id}', [ConvocationsController::class, 'deleteFile'])->name('file.convocations');
+            Route::get('/documents/{id}', [DocumentsController::class, 'deleteFile'])->name('file.documents');
+        })->name('files');
+
+        Route::prefix('pictures-delete')->group(function () {
+            Route::get('/news/{id}', [NewsController::class, 'deletePicture'])->name('picture.news');
+            Route::get('/convocations/{id}', [ConvocationsController::class, 'deletePicture'])->name('picture.convocations');
+            Route::get('/documents/{id}', [DocumentsController::class, 'deletePicture'])->name('picture.documents');
+        })->name('files');
+
     })->name('admin');
 });
 
