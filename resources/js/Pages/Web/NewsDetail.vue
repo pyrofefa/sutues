@@ -64,14 +64,14 @@ onMounted(() => {
       <div class="row">
         <div class="col-xl-8 col-lg-8 col-12">
           <div class="blog-content-wrap">
-            <div class="blog-feature-img" v-if="attacheds.length >= 1 && news.content != null">
+            <div class="blog-feature-img" v-if="news.content != null">
               <img v-if="news.picture == null" alt="blog feature" src="/assets/img/blog/blog-details-1.jpg" />
               <img v-else :alt="news.title" :src="'/storage/heroarea/'+ news.picture"  />
             </div>
             <br>
             <div v-if="news.content != null" v-html="news.content" />
             <div v-if="attacheds.length == 1 && news.content == null " v-for="attached in attacheds" >
-                <object :data="'/storage/news/attacheds/'+ attached.file" type="application/pdf" width="100%" height="900px"></object>
+                <object :data="'/storage/news/attacheds/'+news.id+'/'+ attached.file" type="application/pdf" width="100%" height="900px"></object>
             </div>
             <div v-else class="popular-tag-wrap">
                 <h5 class="mb-8">Archivos Adjuntos</h5>
