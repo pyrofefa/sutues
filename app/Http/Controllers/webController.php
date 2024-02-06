@@ -77,7 +77,7 @@ class webController extends Controller
         ]);
     }
     public function transparencyObligations(){
-        $years = TransparencyObligation::select('year')->orderBy('quarter','desc')->groupBy('year')->get();
+        $years = TransparencyObligation::select('year')->orderBy('article','desc')->groupBy('year')->get();
         return Inertia::render('Web/Transparency/TransparencyObligations',[
             'years' => $years
         ]);
