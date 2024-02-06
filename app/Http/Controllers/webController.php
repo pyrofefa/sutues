@@ -91,7 +91,7 @@ class webController extends Controller
     }
     public function downloadFileTransparency($id, $year) {
         $file = TransparencyObligationFile::find($id);
-        return response()->download(storage_path('app/public/trasparency/'.$year.'/'.$file->quarter.'/'.$file->file));
+        return response()->download(storage_path('app/public/trasparency/'.$file->quarter));
     }
     /**End Trasparency */
 

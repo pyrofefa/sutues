@@ -1,14 +1,20 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import { inject } from 'vue'
 import { Head, useForm  } from '@inertiajs/vue3';
 import TextInput from "@/Components/TextInput.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import FileUpload from "@/Components/FileUpload.vue";
+const Swal = inject('$swal')
 
 const props = defineProps({
     transparency: {
+        type: Object,
+        default: () => ({}),
+    },
+    files: {
         type: Object,
         default: () => ({}),
     },
@@ -26,10 +32,28 @@ const submit = () => {
         forceFormData: true,
     });
 };
+
+const deleteFile = (id) => {
+    Swal.fire({
+        title: 'Estás seguro?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            form.get(route("file.transparency",id),{
+                forceFormData: true,
+            });
+        }
+    })
+};
 </script>
 <template>
-    <Head title="Crear Noticia" />
-    <AuthenticatedLayout title="Crear proyecto">
+    <Head title="Editar Obligaciones" />
+    <AuthenticatedLayout title="Editar Obligaciones">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Editar Obligaciones</h2>
         </template>
@@ -92,7 +116,32 @@ const submit = () => {
                                 />
                             </div>
                             <div class="my-6">
-                                <FileUpload @input="form.file = $event.target.files" />
+                                <InputLabel for="description" value="Archivos adjuntos" />
+                                <div class="row">
+                                    <div class="col-7">
+                                        <FileUpload @input="form.file = $event.target.files" />
+                                    </div>
+                                    <div class="col-5">
+                                        <table class="table-auto w-full">
+                                            <tbody class="text-sm divide-y divide-gray-100">
+                                                <template v-for="item in files">
+                                                    <tr>
+                                                        <td class="px-4 py-3 text-sm">
+                                                            <a :href="'/storage/trasparency/'+ item.quarter" target="_blank" >{{ item.file }}</a>
+                                                        </td>
+                                                        <td class="px-4 py-3 text-sm">
+                                                            <div class="flex items-center space-x-4 text-sm">
+                                                                <button type="button" @click="deleteFile(item.id)" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Delete">
+                                                                    <i class="fa-solid fa-trash"></i>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </template>
+                                            </tbody>                                  
+                                        </table>
+                                    </div>
+                                </div>                                
                             </div>
                             <PrimaryButton
                                 type="submit"

@@ -21,8 +21,8 @@ const submit = () => {
 };
 </script>
 <template>
-    <Head title="Crear Noticia" />
-    <AuthenticatedLayout title="Crear proyecto">
+    <Head title="Crear Obligaciones" />
+    <AuthenticatedLayout title="Crear Obligaciones">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">Crear Obligaciones</h2>
         </template>

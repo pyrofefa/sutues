@@ -28,11 +28,12 @@ class TransparencyObligations extends Controller
         $transparency->save();
        
         foreach ($request->file as  $image) {
-            Storage::disk('public')->put('/trasparency/'.$request->year.'/'.$request->quarter.'/'.$image->getClientOriginalName(), file_get_contents($image));
+            $path = Str::slug($request->year).'/'.Str::slug($request->article).'/'.Str::slug($request->quarter);
+            Storage::disk('public')->put('/trasparency/'.$path.'/'.$image->getClientOriginalName(), file_get_contents($image));
             $files = new TransparencyObligationFile();
             $files->transparency_obligations_id = $transparency->id;
             $files->article = $request->article;
-            $files->quarter = $request->quarter;
+            $files->quarter = $path.'/'.$image->getClientOriginalName();;
             $files->file = $image->getClientOriginalName();
             $files->save();
         }
@@ -42,8 +43,10 @@ class TransparencyObligations extends Controller
     }
     public function edit($id){
         $transparency = TransparencyObligation::find($id);
+        $files = TransparencyObligationFile::where('transparency_obligations_id',$transparency->id)->get();
         return Inertia::render('Admin/TransparencyObligations/edit',[
-            'transparency' => $transparency
+            'transparency' => $transparency,
+            'files' => $files
         ]);
     }
     public function update(Request $request, $id){
@@ -72,12 +75,17 @@ class TransparencyObligations extends Controller
         $transparency = TransparencyObligation::find($id);
         $files = TransparencyObligationFile::where('transparency_obligations_id',$id)->get();
         foreach ($files as  $image) {
-            Storage::disk('public')->delete('/trasparency/'.$transparency->year.'/'.$image->file);
+            Storage::disk('public')->delete('/trasparency/'.$image->quarter);
         }
         $transparency->delete();
         $delete =TransparencyObligationFile::where('transparency_obligations_id',$id)->delete();
         sleep(1);
 
         return redirect()->route('transparency-obligations.index')->with('danger', 'Eliminado con éxito');
+    }
+    public function deleteFile($id){
+        $file = TransparencyObligationFile::find($id);
+        Storage::disk('public')->delete('/trasparency/'.$file->quarter);
+        $file = TransparencyObligationFile::find($id)->delete();
     }
 }

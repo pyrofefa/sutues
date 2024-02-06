@@ -48,6 +48,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/news/{id}', [NewsController::class, 'deleteFile'])->name('file.news');
             Route::get('/convocations/{id}', [ConvocationsController::class, 'deleteFile'])->name('file.convocations');
             Route::get('/documents/{id}', [DocumentsController::class, 'deleteFile'])->name('file.documents');
+            Route::get('/transparency/{id}', [TransparencyObligations::class, 'deleteFile'])->name('file.transparency');
         })->name('files');
 
         Route::prefix('pictures-delete')->group(function () {
@@ -55,7 +56,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/convocations/{id}', [ConvocationsController::class, 'deletePicture'])->name('picture.convocations');
             Route::get('/documents/{id}', [DocumentsController::class, 'deletePicture'])->name('picture.documents');
         })->name('files');
-
     })->name('admin');
 });
 
