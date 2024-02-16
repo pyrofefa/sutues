@@ -86,7 +86,7 @@ onMounted(() => {
             <br>
           </div>
         </div>
-        <div class="col-xl-4 col-lg-4 col-12" v-if="news.recents != null">
+        <div class="col-xl-4 col-lg-4 col-12" v-if="recents.length > 0">
           <BlogSidebar :recents="recents" />
         </div>
       </div>
