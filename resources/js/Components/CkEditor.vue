@@ -21,6 +21,7 @@ export default {
                     '|',
                     'bold',
                     'italic',
+                    'link',
                     '|',
                     'bulletedList',
                     'numberedList',
