@@ -31,11 +31,27 @@
                         </div>
                         <div class="team-info">
                             <h5>MORENO GARZÓN JESÚS LEONARDO</h5>
-                            <p><strong>Secretaría de Actas y Acuerdos</strong></p><br>
+                            <p><strong>Enlace de la Unidad de Transparencia</strong></p><br>
                             <p>
-                                <strong>              
-                                    <i class="fa-solid fa-location-dot fa-xl"></i> Ley Federal del Trabajo esquina con Israel González s/n  Unidad Académica Hermosillo edificio R 
-                                </strong>
+                                <strong>Ubicación</strong><br>  
+                                Calle Ley Federal del Trabajo esquina con Israel González, S/N,  Col. Apolo.
+                                Unidad Académica Hermosillo edificio R.                             
+                                C.P. 83100. 
+                            </p>
+                            <br>
+                            <p>
+                                <strong>Horario de atención</strong><br>  
+                                Lunes a viernes de 8:00 a 15:00 horas.                           
+                            </p>
+                            <br>
+                            <p>
+                                <strong>Correo electrónico</strong><br>  
+                                transparencia.sutues@outlokk.com                           
+                            </p>
+                            <br>
+                            <p>
+                                <strong>Teléfono</strong><br>  
+                                (662) 285 11 52                          
                             </p>
                         </div>
                     </div>
