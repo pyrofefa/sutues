@@ -71,7 +71,7 @@ class webController extends Controller
         return Inertia::render('Web/Transparency/CordinationOffice');
     }
     public function transparencyCommission(){
-        $staff = Staff::with('person')->with('position')->join('office', 'office.id', '=', 'staff.office_id')->where('office.id',2)->get();
+        $staff = Staff::with('person')->with('position')->join('office', 'office.id', '=', 'staff.office_id')->where('office.id',5)->get();
         return Inertia::render('Web/Transparency/TransparencyCommission',[
             'staff' => $staff
         ]);
