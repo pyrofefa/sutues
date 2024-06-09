@@ -67,6 +67,14 @@
           </NavLink>
         </li>
         <li class="relative px-6 py-3">
+          <NavLink :href="route('quarterly-reports.index')" :active="route().current('quarterly-reports.index') || route().current('quarterly-reports.create') || route().current('quarterly-reports.edit')">
+            <template #icon>
+              <i class="fa-solid fa-scale-balanced"></i>
+            </template>
+            Informes trimestrales de Secretarías
+          </NavLink>
+        </li>
+        <li class="relative px-6 py-3">
           <NavLink :href="route('suppliers.index')" :active="route().current('suppliers.index') || route().current('suppliers.create') || route().current('suppliers.edit')">
             <template #icon>
               <i class="fa-solid fa-truck-field"></i>

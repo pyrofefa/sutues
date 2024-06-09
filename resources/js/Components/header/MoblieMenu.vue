@@ -80,6 +80,12 @@ onMounted(() => {
                 <li>
                     <Link href="/transparencia/obligaciones-de-transparencia">Obligaciones de Transparencia</Link>
                 </li>
+                <li>
+                    <Link href="/transparencia/obligaciones-de-transparencia">Informes trimestrales de Secretarías</Link>
+                </li>
+                <li>
+                   <a target="_blank" href="http://consultapublicamx.inai.org.mx:8080/vut-web/?idSujetoObigadoParametro=16045&idEntidadParametro=26&idSectorParametro=20">Plataforma Nacional de Transparencia</a>
+                </li>
               </ul>
             </li>
             <li>

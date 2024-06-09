@@ -13,7 +13,7 @@
 
     function showModal(person) {
       Swal.fire({
-          title: person.first_name + person.last_name,
+          title: person.first_name +" "+ person.last_name,
           text: person.summary,
           showCloseButton: true,
           showConfirmButton: false,

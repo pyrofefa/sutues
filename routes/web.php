@@ -12,9 +12,11 @@ use App\Http\Controllers\Admin\SecretariesController;
 use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\DocumentsController;
-use App\Http\Controllers\Admin\TransparencyObligations;
+use App\Http\Controllers\Admin\TransparencyObligationsController;
 use App\Http\Controllers\Admin\ConvocationsController;
 use App\Http\Controllers\Admin\SuppliersController;
+use App\Http\Controllers\Admin\QuarterlyReportsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,14 +43,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('news',NewsController::class);
         Route::resource('convocations',ConvocationsController::class);
         Route::resource('documents',DocumentsController::class);
-        Route::resource('transparency-obligations',TransparencyObligations::class);
+        Route::resource('transparency-obligations',TransparencyObligationsController::class);
+        Route::resource('quarterly-reports',QuarterlyReportsController::class);
         Route::resource('/suppliers',SuppliersController::class);
 
         Route::prefix('files-delete')->group(function () {
             Route::get('/news/{id}', [NewsController::class, 'deleteFile'])->name('file.news');
             Route::get('/convocations/{id}', [ConvocationsController::class, 'deleteFile'])->name('file.convocations');
             Route::get('/documents/{id}', [DocumentsController::class, 'deleteFile'])->name('file.documents');
-            Route::get('/transparency/{id}', [TransparencyObligations::class, 'deleteFile'])->name('file.transparency');
+            Route::get('/transparency/{id}', [TransparencyObligationsController::class, 'deleteFile'])->name('file.transparency');
+            Route::get('quarterly-reports/{id}',[QuarterlyReportsController::class, 'deleteFile'])->name('file.quarterly');
         })->name('files');
 
         Route::prefix('pictures-delete')->group(function () {
@@ -83,6 +87,7 @@ Route::prefix('transparencia')->group(function () {
     Route::get('/obligaciones-de-transparencia/{year}', [webController::class, 'transparencyObligationsYear'])->name('transparencyObligations.year');
     Route::get('/obligaciones-de-transparencia/download/{id}/{year}', [webController::class, 'downloadFileTransparency'])->name('transparencyObligations.download');
     Route::post('/obligaciones-de-transparencia/send', [webController::class, 'sendTransparency'])->name('transparency-obligations.send');
+    Route::get('/informes-trimestrales-de-secretarias/{year}', [webController::class, 'quarterlyReports'])->name('quarterly-reports.years');
 })->name('transparency');
 
 Route::get('/noticias', [webController::class, 'news'])->name('news');

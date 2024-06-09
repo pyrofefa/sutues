@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\TransparencyObligation;
 use App\Models\TransparencyObligationFile;
 
-class TransparencyObligations extends Controller
+class TransparencyObligationsController extends Controller
 {
     public function index(){
         $transparency = TransparencyObligation::orderBy('year','desc')->paginate(10);

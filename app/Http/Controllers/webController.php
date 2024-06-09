@@ -17,6 +17,9 @@ use App\Models\TransparencyObligationFile;
 use App\Models\Supplier;
 use App\Models\Attached;
 
+use App\Models\QuarterlyReport;
+use App\Models\QuarterlyReportFile;
+
 class webController extends Controller
 {
     public function home(){
@@ -93,6 +96,15 @@ class webController extends Controller
         $file = TransparencyObligationFile::find($id);
         return response()->download(storage_path('app/public/trasparency/'.$file->quarter));
     }
+
+    public function quarterlyReports($year) {
+        $articles = QuarterlyReport::with('articles')->where('year',$year)->get();
+        return Inertia::render('Web/Transparency/QuarterlyReport',[
+            'year' => $year,
+            'articles' => $articles
+        ]);
+    }
+
     /**End Trasparency */
 
     //
