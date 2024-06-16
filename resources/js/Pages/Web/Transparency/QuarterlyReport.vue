@@ -26,7 +26,6 @@
             </div>
         </div>
     </div>
-
     <div class="faq-section gray-bg section-padding">
         <div class="container">
             <div class="row justify-content-center">
@@ -45,11 +44,7 @@
                 </div>
             </div>
         </div>
-        <br><br>
-        <br><br>
-        <br><br>
-        <br><br>
-    </div>
+    </div>                    
     <Footer />
 </template>
 

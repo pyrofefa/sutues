@@ -1,30 +1,26 @@
 <template>
- 
     <div class="question accordion-buttons">
-      <header>
-        <h2 @click="expanded = !expanded" class="question-title">
-          {{ title }} - {{ article }}
-        </h2>
-        <button class="btn" @click="expanded = !expanded">
-          <i class="fa-solid fa-arrow-up" v-show="expanded"></i>
-          <i class="fa-solid fa-arrow-down" v-show="!expanded"></i>
-        </button>
-      </header>
-      <div :style="contentStyle" class="content accordion-body" >
-        <div v-for="i in info.articles">
-          <!--<a :style="infoStyle" :href="'/transparencia/obligaciones-de-transparencia/download/' + i.id + '/'+ info.year" class="info">
-            <p>{{ i.file }}</p>
-          </a>-->
-          <object :data="'/storage/quarterly-reports/'+ i.path" type="application/pdf" width="50%" height="900px"></object>
-
-        </div>
+     <header>
+       <h2 @click="expanded = !expanded" class="question-title">
+         {{ title }} - {{ article }}
+       </h2>
+       <button class="btn" @click="expanded = !expanded">
+         <i class="fa-solid fa-arrow-up" v-show="expanded"></i>
+         <i class="fa-solid fa-arrow-down" v-show="!expanded"></i>
+      </button>
+    </header>
+    <div :style="contentStyle" class="content accordion-body" >
+      <div v-for="i in info.articles">
+        <a @click.prevent="showModal(i.file, '/storage/quarterly-reports/'+i.path)" :style="infoStyle" href="#" class="info">
+          <p>{{ i.file }}</p>
+        </a>
       </div>
     </div>
-  </template>
-  
-  <script>
-  import { ref, computed } from "vue";
-  
+  </div>
+</template>
+<script>
+  import { ref, computed, inject } from "vue";
+
   export default {
     name: "Question",
     props: {
@@ -41,8 +37,22 @@
       const infoStyle = computed(() => {
         return { opacity: expanded.value ? 1 : 0 };
       });
+
+      const Swal = inject('$swal')
+
+
+      function showModal(file, path) {
+        Swal.fire({
+            title: file,
+            html:
+            `<object data="${path}" type="application/pdf" width="100%" height="600px"></object>`,
+            showCloseButton: true,
+            showConfirmButton: false,
+            width: '900px',
+        })
+      }
   
-      return { expanded, contentStyle, infoStyle };
+      return { expanded, contentStyle, infoStyle, showModal };
     },
   };
   </script>
@@ -116,5 +126,5 @@
       opacity: 1;
       color: #333;
   }
-  </style>
+</style>
   
