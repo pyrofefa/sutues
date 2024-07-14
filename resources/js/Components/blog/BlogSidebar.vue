@@ -12,6 +12,7 @@ defineProps(['recents'])
       <h5 v-if="recents[0].type_id == 1">Noticias Recientes</h5>
       <h5 v-else-if="recents[0].type_id == 2">Convocatorias Recientes</h5>
       <h5 v-else-if="recents[0].type_id == 3">Documentos Recientes</h5>
+      <h5 v-else-if="recents[0].type_id == 4">Otras Actas</h5>
       <div v-for="r in recents" :key="r.id" class="single-recent-post">
         <div class="recent-post-thumbs" v-if="r.picture == null && r.type_id == 1">
           <img :alt="r.title" src="/assets/img/headerNews.jpg" />
@@ -20,6 +21,9 @@ defineProps(['recents'])
           <img :alt="r.title" src="/assets/img/headerConvocations.jpg" />
         </div>
         <div class="recent-post-thumbs" v-else-if="r.picture == null && r.type_id == 3">
+          <img :alt="r.title" src="/assets/img/headerDocuments.jpg" />
+        </div>
+        <div class="recent-post-thumbs" v-else-if="r.picture == null && r.type_id == 4">
           <img :alt="r.title" src="/assets/img/headerDocuments.jpg" />
         </div>
         <div class="recent-post-thumbs" v-else>
@@ -34,6 +38,9 @@ defineProps(['recents'])
             <h6>{{ r.title }}</h6>
           </Link>
           <Link v-else-if="r.type_id == 3" :href="route('documentsDetails', r.slug)">
+            <h6>{{ r.title }}</h6>
+          </Link>
+          <Link v-else-if="r.type_id == 4" :href="route('meetingsDetails', r.slug)">
             <h6>{{ r.title }}</h6>
           </Link>
         </div>

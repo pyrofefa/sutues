@@ -104,6 +104,25 @@ class webController extends Controller
             'articles' => $articles
         ]);
     }
+    public function meetingSessions(Request $request) {
+        return Inertia::render('Web/Transparency/MeetingSessions',[
+            'meetings' => News::with('type')->where('type_id',4)->when($request->term, function($query, $term){
+                $query->where('title', 'LIKE', '%'.$term.'%');
+            })->paginate(21)
+        ]);
+    }
+
+    public function meetingsDetails ($slug){
+        $news = News::where('slug','=', $slug)->firstOrFail();
+        $recents = News::with('type')->where('type_id',4)->take(3)->get();
+        $attacheds = Attached::where('news_id',$news->id)->get();
+        return Inertia::render('Web/Transparency/MeetingsDetail',[
+            'news' => $news,
+            'attacheds' => $attacheds,
+            'recents' => $recents
+        ]);
+    }
+    
 
     /**End Trasparency */
 

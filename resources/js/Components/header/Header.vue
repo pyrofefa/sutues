@@ -64,6 +64,9 @@ onMounted(() => {
                     <Link href="/transparencia/comite-de-transparencia">Comité de Transparencia</Link>
                   </li>
                   <li>
+                    <Link href="/transparencia/actas-de-sesiones">Actas de Sesiones</Link>
+                  </li>
+                  <li>
                     <Link href="/transparencia/obligaciones-de-transparencia">Obligaciones de Transparencia</Link>
                   </li>
                   <li>

@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\TransparencyObligationsController;
 use App\Http\Controllers\Admin\ConvocationsController;
 use App\Http\Controllers\Admin\SuppliersController;
 use App\Http\Controllers\Admin\QuarterlyReportsController;
+use App\Http\Controllers\Admin\MeetingSesionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('transparency-obligations',TransparencyObligationsController::class);
         Route::resource('quarterly-reports',QuarterlyReportsController::class);
         Route::resource('/suppliers',SuppliersController::class);
+        Route::resource('/meetings',MeetingSesionsController::class);
 
         Route::prefix('files-delete')->group(function () {
             Route::get('/news/{id}', [NewsController::class, 'deleteFile'])->name('file.news');
@@ -53,6 +55,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('/documents/{id}', [DocumentsController::class, 'deleteFile'])->name('file.documents');
             Route::get('/transparency/{id}', [TransparencyObligationsController::class, 'deleteFile'])->name('file.transparency');
             Route::get('quarterly-reports/{id}',[QuarterlyReportsController::class, 'deleteFile'])->name('file.quarterly');
+            Route::get('meetings/{id}',[MeetingSesionsController::class, 'deleteFile'])->name('file.meetings');
+
         })->name('files');
 
         Route::prefix('pictures-delete')->group(function () {
@@ -88,6 +92,8 @@ Route::prefix('transparencia')->group(function () {
     Route::get('/obligaciones-de-transparencia/download/{id}/{year}', [webController::class, 'downloadFileTransparency'])->name('transparencyObligations.download');
     Route::post('/obligaciones-de-transparencia/send', [webController::class, 'sendTransparency'])->name('transparency-obligations.send');
     Route::get('/informes-trimestrales-de-secretarias/{year}', [webController::class, 'quarterlyReports'])->name('quarterly-reports.years');
+    Route::get('/actas-de-sesiones', [webController::class, 'meetingSessions'])->name('meeting-sessions');
+    Route::get('/actas-de-sesiones/{slug}', [webController::class, 'meetingsDetails'])->name('meetingsDetails');
 })->name('transparency');
 
 Route::get('/noticias', [webController::class, 'news'])->name('news');

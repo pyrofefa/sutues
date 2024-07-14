@@ -75,6 +75,14 @@
           </NavLink>
         </li>
         <li class="relative px-6 py-3">
+          <NavLink :href="route('meetings.index')" :active="route().current('meetings.index') || route().current('meetings.create') || route().current('meetings.edit')">
+            <template #icon>
+              <i class="fa-solid fa-scale-balanced"></i>
+            </template>
+            Actas de Sesiones
+          </NavLink>
+        </li>
+        <li class="relative px-6 py-3">
           <NavLink :href="route('suppliers.index')" :active="route().current('suppliers.index') || route().current('suppliers.create') || route().current('suppliers.edit')">
             <template #icon>
               <i class="fa-solid fa-truck-field"></i>
